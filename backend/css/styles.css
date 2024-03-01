@@ -72,6 +72,13 @@ h2 {
     font-size: 24px;
     color: #000;
 }
+.active-set {
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    color: #4CAF50;
+    display: none;
+}
 .year-container {
     text-align: center;
     padding: 20px;
@@ -155,11 +162,15 @@ table {
         -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: rgb(0, 0, 0);
     }
+    .backmainmenu:hover {
+        color: #4CAF50;
+    }
     .metaheader {
         background-color: #000;
     color: yellow;
     text-align: center;
     padding: 10px;
     }
+    
           
       

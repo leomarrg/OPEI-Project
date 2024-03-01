@@ -11,6 +11,12 @@ header {
     text-align: center;
     padding: 10px;
 }
+h2 {
+    background-color: #0e0e0e;
+    color: yellow;
+    text-align: center;
+    padding: 10px;
+}
 
 .menu-bar {
     display: flex;
@@ -81,7 +87,7 @@ header {
     background-color: #000;
     color: yellow;
     text-align: center;
-    padding: 10px 0;
+    padding: 1px 0;
     position: fixed;
     bottom: 0%;
     width: 100%;
@@ -99,7 +105,7 @@ table {
   th, td {
     border: 2px solid  #8d8b8b;
     text-align: center;
-    padding: 8px;
+    padding: 1em;
   }
   
 .table th, .table td {
@@ -127,14 +133,14 @@ table {
     .table-option {
         width: 200px;
         height: 75px;
-        margin: 0 175px;
+        margin: 0 90%;
         background-color: #333; 
         color: #FFD700;
         text-align: center;
         line-height: 75px;
         font-size: 18px;
         text-decoration: none;
-        display: inline-block;
+        display: block;
         border-radius: 10px;
         transition: background-color 0.3s ease;
     }
@@ -142,6 +148,18 @@ table {
     .table-option:hover {
         background-color: #FFC107;
         color: #4CAF50;
+    }
+    .backmainmenu {
+        color: yellow;
+        text-align: center;
+        -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: rgb(0, 0, 0);
+    }
+    .metaheader {
+        background-color: #000;
+    color: yellow;
+    text-align: center;
+    padding: 10px;
     }
           
       

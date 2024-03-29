@@ -153,4 +153,34 @@ $(function() {
         addRow('myTable14');
     });
 
+    // dropdown.js
+window.addEventListener('DOMContentLoaded', (event) => {
+    // Get the dropdown element
+    const dropdown = document.getElementById('metaDropdown');
+
+    // Get the dropdown content element
+    const dropdownContent = dropdown.querySelector('.dropdown-content');
+
+    // Set the width of the dropdown content to fit the longest link
+    const longestLinkWidth = Math.max(...Array.from(dropdownContent.children).map(link => link.clientWidth));
+    dropdownContent.style.width = `${longestLinkWidth}px`;
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    var dropdown = document.querySelector(".dropdown");
+    var dropbtn = document.querySelector(".dropbtn");
+    var dropdownContent = document.querySelector(".dropdown-content");
+
+    dropbtn.addEventListener("click", function() {
+        dropdownContent.classList.toggle("show");
+    });
+
+    window.addEventListener("click", function(event) {
+        if (!dropdown.contains(event.target)) {
+            dropdownContent.classList.remove("show");
+        }
+    });
+});
+
+
 });

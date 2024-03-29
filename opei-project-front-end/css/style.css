@@ -203,12 +203,12 @@ th {
 }
 
 .header {
-  background-color: #d6af00;
+  background: #d6af00 url('../images/arecibo.ico') no-repeat;
   color: #000000;
   text-align: center;
-  height: 100px;
+  height: 70px; 
   width: 100%;
-  background-size: 20%;
+  background-size: contain;
 }
 
 .top-box h1 {

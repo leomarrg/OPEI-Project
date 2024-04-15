@@ -209,5 +209,19 @@ table {
       input[type="submit"]:hover {
         background-color: #4CAF50;
       }
+      .dropdown-container {
+        text-align: center;
+        margin-top: 20px; 
+      }
+      
+      #yearDropdown {
+        width: 150px; 
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        outline: none;
+        cursor: pointer;
+      }
      
       

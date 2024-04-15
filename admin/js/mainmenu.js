@@ -19,3 +19,18 @@ function showOptions(className, setName, element) {
 
     document.querySelector('#active-set-text').innerText = setName;
 }
+function showDepartmentDropdown() {
+    var roleSelect = document.getElementById("role");
+    var departmentDropdown = document.getElementById("departmentDropdown");
+  
+    if (roleSelect.value === "user") {
+      departmentDropdown.style.display = "block";
+    } else {
+      departmentDropdown.style.display = "none";
+    }
+  }
+  const urlParams = new URLSearchParams(window.location.search);
+  const department = urlParams.get('department');
+
+  // Update the header with the department value
+  document.getElementById('departmentHeader').innerText = department;

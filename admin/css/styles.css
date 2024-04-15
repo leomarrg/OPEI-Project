@@ -105,7 +105,7 @@ table {
     border-collapse: collapse;
     width: 75%;
     margin-bottom: 20px;
-    border: 2px solid #ddd; /* Set the border color and width */
+    border: 2px solid #ddd; 
     margin: auto;
     border: 2px solid  #8d8b8b;
   }
@@ -118,7 +118,7 @@ table {
 .table th, .table td {
       padding: 0.75rem;
       vertical-align: top;
-      border-top: 1px solid #dee2e6; 
+      border-top: 1px solid #000000; 
     }
 .table thead th {
       vertical-align: bottom;
@@ -127,7 +127,7 @@ table {
 
     }
 .table tbody + tbody {
-      border-top: 2px solid #dee2e6; 
+      border-top: 2px solid #000000; 
     }
     .table-container {
         flex-wrap: wrap;
@@ -171,6 +171,43 @@ table {
     text-align: center;
     padding: 10px;
     }
-    
-          
+    form {
+        max-width: 400px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+      label {
+        display: block;
+        text-align: left;
+        margin-bottom: 5px;
+        color: #555;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 15px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      input[type="submit"] {
+        background-color: #FFC107;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+      }
+      input[type="submit"]:hover {
+        background-color: #4CAF50;
+      }
+     
       

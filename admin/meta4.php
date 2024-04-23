@@ -8,9 +8,11 @@
 </head>
 <body>
     <header>
+      <?php $year = $_GET['year']; ?>
       <a href='Website.html' class="backmainmenu"><h1>UPRA Reports</h1></a>
       <h2 class="metaheader" id="departmentHeader">Nombre del departamento</h2>
       <h2 class="metaheader">Meta 4 <span id="year"></span></h2>
+      <h2 class="metaheader"><?php echo'Año Académico: ' . $year . '-' . $year+1 ."";?></h2>
     </header>
       <!--Table 4.1-->
       <h2>Table 4.1</h2>
@@ -256,9 +258,6 @@
       }
       ?>
       <br>
-      <div class="table-container">
-        <a href="#" class="table-option">Exportar Excel</a>
-    </div>
     <br> <br> <br>
     <div class="footer-box">
         <!-- Content for the footer box goes here -->

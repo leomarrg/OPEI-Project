@@ -8,9 +8,11 @@
 </head>
 <body>
     <header>
+      <?php $year = $_GET['year']; ?>
       <a href='Website.html' class="backmainmenu"><h1>UPRA Reports</h1></a>
       <h2 class="metaheader" id="departmentHeader">Nombre del departamento</h2>
       <h2 class="metaheader">Meta 2 <span id="year"></span></h2>
+      <h2 class="metaheader"><?php echo'Año Académico: ' . $year . '-' . $year+1 ."";?></h2>
     </header>
 <!--Table 2.1A-->
       <h2>Table 2.1A</h2>
@@ -86,7 +88,6 @@
           <tr>
             <th scope='col'>#</th>
             <th scope='col'>Profesor</th>
-            <th scope='col' colspan='2'>Título&nbsp;de&nbsp;la&nbsp;actividad</th>
             <th scope='col'>Fecha</th>
             <th scope='col'>Publicada</th>
             <th scope='col'>Clasificación&nbsp;de&nbsp;la&nbsp;publicación</th>
@@ -137,7 +138,6 @@
                       <th scope='col'>#</th>
                       <th scope='col'>Profesor</th>
                       <th scope='col' colspan='2'>Título&nbsp;de&nbsp;la&nbsp;actividad</th>
-                      <th scope='col'>Estrategia&nbsp;o&nbsp;instrumento&nbsp;de&nbsp;avalúo</th>
                       <th scope='col'>Fecha</th>
                       <th scope='col'>Clasificación&nbsp;de&nbsp;actividad&nbsp;de&nbsp;creación&nbsp;y&nbsp;divulgación</th>
                       <th scope='col'>Auspiciada&nbsp;por&nbsp;el&nbsp;CIC</th>
@@ -160,7 +160,6 @@
                       <td>" . $row["field4"]. "</td>
                       <td>" . $row["field5"]. "</td>
                       <td>" . $row["field6"]. "</td>
-                      <td>" . $row["field7"]. "</td>
                       <td><a href='#'>Editar</a></td>
                       <td><a href='?actionB=delete&idB=" . $row["table21bID"] . "&department=$department&year=$year'>Borrar</a></td>
                     </tr>";
@@ -176,7 +175,6 @@
                       <th scope='col'>#</th>
                       <th scope='col'>Profesor</th>
                       <th scope='col' colspan='2'>Título&nbsp;de&nbsp;la&nbsp;actividad</th>
-                      <th scope='col'>Estrategia&nbsp;o&nbsp;instrumento&nbsp;de&nbsp;avalúo</th>
                       <th scope='col'>Fecha</th>
                       <th scope='col'>Clasificación&nbsp;de&nbsp;actividad&nbsp;de&nbsp;creación&nbsp;y&nbsp;divulgación</th>
                       <th scope='col'>Auspiciada&nbsp;por&nbsp;el&nbsp;CIC</th>
@@ -509,9 +507,6 @@
         }
       ?>
       <br>
-      <div class="table-container">
-        <a href="#" class="table-option">Exportar Excel</a>
-    </div>
     <br> <br> <br>
     <div class="footer-box">
         <!-- Content for the footer box goes here -->

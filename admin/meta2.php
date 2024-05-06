@@ -20,6 +20,16 @@
       session_start();
       include 'db_info.php';
 
+      // Function to update a row in the table21a table
+      function updateRowa($id, $field1, $field2, $field3, $field4,$field5, $field6, $field7, $field8) {
+        global $conn;
+        $sql = "UPDATE table21a SET field1=?, field2=?, field3=?, field4=?, field5=?, field6=?, field7=?, field8=? WHERE table21aID=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssssssssi", $field1, $field2, $field3, $field4, $field5, $field6, $field7, $field8, $id);
+        $stmt->execute();
+        $stmt->close();
+      }
+
       $department = $_GET['department'];
       $year = $_GET['year'];
 
@@ -34,7 +44,25 @@
       
       
   }
+  // Check if the salvar button was clicked
+  if (isset($_POST['actionA']) && $_POST['actionA'] == 'salvar' && isset($_POST['idA'])) {
+    $id = $_POST['idA'];
+    $field1 = $_POST['field1'];
+    $field2 = $_POST['field2'];
+    $field3 = $_POST['field3'];
+    $field4 = $_POST['field4'];
+    $field5 = $_POST['field5'];
+    $field6 = $_POST['field6'];
+    $field7 = $_POST['field7'];
+    $field8 = $_POST['field8'];
 
+
+    updateRowa($id, $field1, $field2, $field3, $field4, $field5, $field6, $field7, $field8);
+    
+    // Redirect back to the same department and year after updating
+    $department = $_GET['department'];
+    $year = $_GET['year'];
+  }
       // SQL query to retrieve data from table21a based on department and year
       $sql = "SELECT * FROM table21a WHERE DepartmentID = (SELECT DepartmentID FROM departamento WHERE DepartmentName = '$department') AND year = $year";
 
@@ -54,8 +82,9 @@
                       <th scope='col'>*Tipo&nbsp;de&nbsp;Publicación</th>
                       <th scope='col'>Auspiciada&nbsp;por&nbsp;el&nbsp;CIC</th>
                       <th scope='col'>Entidad&nbsp;que&nbsp;publica</th>
-                      <th scope='col'>Editar</th>
-                      <th scope='col'>Borrar</th>
+                      <th scope='col' class='editar-header'>Editar</th>
+                      <th scope='col' class='borrar-header'>Borrar</th>
+                      <th scope='col' class='salvar-header' style='display: none;'>Modo de editar</th> 
                     </tr>
                   </thead>
                   <tbody>";
@@ -65,17 +94,22 @@
 
           while($row = $result->fetch_assoc()) {
               echo "<tr>
+                      <form method='post'>
+                      <input type='hidden' name='idA' value='" . $row["table21aID"] . "'>
                       <th scope='row'>" . $counter . "</th>
-                      <td>" . $row["field1"]. "</td>
-                      <td colspan='2'>" . $row["field2"]. "</td>
-                      <td>" . $row["field3"]. "</td>
-                      <td>" . $row["field4"]. "</td>
-                      <td>" . $row["field5"]. "</td>
-                      <td>" . $row["field6"]. "</td>
-                      <td>" . $row["field7"]. "</td>
-                      <td>" . $row["field8"]. "</td>
-                      <td><a href='#'>Editar</a></td>
-                      <td><a href='?actionA=delete&idA=" . $row["table21aID"] . "&department=$department&year=$year'>Borrar</a></td>
+                      <td><input type='text' name='field1' value='" . $row["field1"] . "' class='editable' readonly></td>
+                      <td colspan='2'><input type='text' name='field2' value='" . $row["field2"] . "' class='editable' readonly></td>
+                      <td><input type='text' name='field3' value='" . $row["field3"] . "' class='editable' readonly></td>
+                      <td><input type='text' name='field4' value='" . $row["field4"] . "' class='editable' readonly></td>
+                      <td><input type='text' name='field5' value='" . $row["field5"] . "' class='editable' readonly></td>
+                      <td><input type='text' name='field6' value='" . $row["field6"] . "' class='editable' readonly></td>
+                      <td><input type='text' name='field7' value='" . $row["field7"] . "' class='editable' readonly></td>
+                      <td><input type='text' name='field8' value='" . $row["field8"] . "' class='editable' readonly></td>
+                      <td class='editar-column'><a href='#' class='editar-btn' onclick='makeEditable(event)'>Editar</a></td>
+                      <td class='borrar-column'><a href='?actionA=delete&idA=" . $row["table21aID"] . "&department=$department&year=$year' class='borrar-btn'>Borrar</a></td>
+                      <td class='salvar-column' style='display: none;'> <button type='submit' name='actionA' value='salvar' class='salvar-btn'>Salvar Cambios</button></td>
+                      </form>
+              
                     </tr>";
               
               // Increment counter
@@ -94,8 +128,6 @@
             <th scope='col'>*Tipo&nbsp;de&nbsp;Publicación</th>
             <th scope='col'>Auspiciada&nbsp;por&nbsp;el&nbsp;CIC</th>
             <th scope='col'>Entidad&nbsp;que&nbsp;publica</th>
-            <th scope='col'>Editar</th>
-            <th scope='col'>Borrar</th>
           </tr>
         </thead>
         </table>";
@@ -109,6 +141,16 @@
       <h2>Table 2.1B</h2>
       <?php
       include 'db_info.php';
+
+      // Function to update a row in the table21b table
+      function updateRowb($id, $field1, $field2, $field3, $field4,$field5, $field6) {
+        global $conn;
+        $sql = "UPDATE table21b SET field1=?, field2=?, field3=?, field4=?, field5=?, field6=? WHERE table21bID=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssssssi", $field1, $field2, $field3, $field4, $field5, $field6, $id);
+        $stmt->execute();
+        $stmt->close();
+      }
     
       $department = $_GET['department'];
       $year = $_GET['year'];
@@ -124,7 +166,23 @@
       
       
   }
+  // Check if the salvar button was clicked
+  if (isset($_POST['actionB']) && $_POST['actionB'] == 'salvar' && isset($_POST['idB'])) {
+    $id = $_POST['idB'];
+    $field1 = $_POST['field1'];
+    $field2 = $_POST['field2'];
+    $field3 = $_POST['field3'];
+    $field4 = $_POST['field4'];
+    $field5 = $_POST['field5'];
+    $field6 = $_POST['field6'];
 
+
+    updateRowb($id, $field1, $field2, $field3, $field4, $field5, $field6);
+    
+    // Redirect back to the same department and year after updating
+    $department = $_GET['department'];
+    $year = $_GET['year'];
+  }
       // SQL query to retrieve data from table21b based on department and year
       $sql = "SELECT * FROM table21b WHERE DepartmentID = (SELECT DepartmentID FROM departamento WHERE DepartmentName = '$department') AND year = $year";
       
@@ -142,8 +200,9 @@
                       <th scope='col'>Clasificación&nbsp;de&nbsp;actividad&nbsp;de&nbsp;creación&nbsp;y&nbsp;divulgación</th>
                       <th scope='col'>Auspiciada&nbsp;por&nbsp;el&nbsp;CIC</th>
                       <th scope='col'>Lugar&nbsp;de&nbsp;divulgación</th>
-                      <th scope='col'>Editar</th>
-                      <th scope='col'>Borrar</th>
+                      <th scope='col' class='editar-header'>Editar</th>
+                      <th scope='col' class='borrar-header'>Borrar</th>
+                      <th scope='col' class='salvar-header' style='display: none;'>Modo de editar</th> 
                     </tr>
                   </thead>
                   <tbody>";
@@ -153,15 +212,19 @@
       
           while($row = $result->fetch_assoc()) {
               echo "<tr>
-                      <th scope='row'>" . $counter . "</th>
-                      <td>" . $row["field1"]. "</td>
-                      <td colspan='2'>" . $row["field2"]. "</td>
-                      <td>" . $row["field3"]. "</td>
-                      <td>" . $row["field4"]. "</td>
-                      <td>" . $row["field5"]. "</td>
-                      <td>" . $row["field6"]. "</td>
-                      <td><a href='#'>Editar</a></td>
-                      <td><a href='?actionB=delete&idB=" . $row["table21bID"] . "&department=$department&year=$year'>Borrar</a></td>
+                        <form method='post'>
+                        <input type='hidden' name='idB' value='" . $row["table21bID"] . "'>
+                        <th scope='row'>" . $counter . "</th>
+                        <td><input type='text' name='field1' value='" . $row["field1"] . "' class='editable' readonly></td>
+                        <td colspan='2'><input type='text' name='field2' value='" . $row["field2"] . "' class='editable' readonly></td>
+                        <td><input type='text' name='field3' value='" . $row["field3"] . "' class='editable' readonly></td>
+                        <td><input type='text' name='field4' value='" . $row["field4"] . "' class='editable' readonly></td>
+                        <td><input type='text' name='field5' value='" . $row["field5"] . "' class='editable' readonly></td>
+                        <td><input type='text' name='field6' value='" . $row["field6"] . "' class='editable' readonly></td>
+                        <td class='editar-column'><a href='#' class='editar-btn' onclick='makeEditable(event)'>Editar</a></td>
+                        <td class='borrar-column'><a href='?actionB=delete&idB=" . $row["table21bID"] . "&department=$department&year=$year' class='borrar-btn'>Borrar</a></td>
+                        <td class='salvar-column' style='display: none;'> <button type='submit' name='actionB' value='salvar' class='salvar-btn'>Salvar Cambios</button></td>
+                        </form>
                     </tr>";
               
               // Increment counter
@@ -179,8 +242,6 @@
                       <th scope='col'>Clasificación&nbsp;de&nbsp;actividad&nbsp;de&nbsp;creación&nbsp;y&nbsp;divulgación</th>
                       <th scope='col'>Auspiciada&nbsp;por&nbsp;el&nbsp;CIC</th>
                       <th scope='col'>Lugar&nbsp;de&nbsp;divulgación</th>
-                      <th scope='col'>Editar</th>
-                      <th scope='col'>Borrar</th>
                     </tr>
                   </thead>
                   </table>";
@@ -193,6 +254,16 @@
       <h2>Table 2.2</h2>
       <?php
        include 'db_info.php';
+
+       // Function to update a row in the table22 table
+       function updateRowc($id, $field1, $field2, $field3, $field4) {
+        global $conn;
+        $sql = "UPDATE table22 SET field1=?, field2=?, field3=?, field4=? WHERE table22ID=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssssi", $field1, $field2, $field3, $field4, $id);
+        $stmt->execute();
+        $stmt->close();
+      }
 
       $department = $_GET['department'];
       $year = $_GET['year'];
@@ -208,6 +279,24 @@
       
       
   }
+  // Check if the salvar button was clicked
+  if (isset($_POST['actionC']) && $_POST['actionC'] == 'salvar' && isset($_POST['idC'])) {
+    $id = $_POST['idC'];
+    $field1 = $_POST['field1'];
+    $field2 = $_POST['field2'];
+    $field3 = $_POST['field3'];
+    $field4 = $_POST['field4'];
+   
+
+
+    updateRowc($id, $field1, $field2, $field3, $field4);
+    
+    // Redirect back to the same department and year after updating
+    $department = $_GET['department'];
+    $year = $_GET['year'];
+  }
+
+
       // SQL query to retrieve data from table22 based on department and year
       $sql = "SELECT * FROM table22 WHERE DepartmentID = (SELECT DepartmentID FROM departamento WHERE DepartmentName = '$department') AND year = $year";
       
@@ -223,8 +312,9 @@
                       <th scope='col' colspan='2'>Agencia&nbsp;o&nbsp;institución</th>
                       <th scope='col'>Estatus</th>
                       <th scope='col'>Total&nbsp;de&nbsp;fondos</th>
-                      <th scope='col'>Editar</th>
-                      <th scope='col'>Borrar</th>
+                      <th scope='col' class='editar-header'>Editar</th>
+                      <th scope='col' class='borrar-header'>Borrar</th>
+                      <th scope='col' class='salvar-header' style='display: none;'>Modo de editar</th> 
                     </tr>
                   </thead>
                   <tbody>";
@@ -234,13 +324,17 @@
       
           while($row = $result->fetch_assoc()) {
               echo "<tr>
+                      <form method='post'>
+                      <input type='hidden' name='idC' value='" . $row["table22ID"] . "'>
                       <th scope='row'>" . $counter . "</th>
-                      <td>" . $row["field1"]. "</td>
-                      <td colspan='2'>" . $row["field2"]. "</td>
-                      <td>" . $row["field3"]. "</td>
-                      <td>" . $row["field4"]. "</td>
-                      <td><a href='#'>Editar</a></td>
-                      <td><a href='?actionC=delete&idC=" . $row["table22ID"] . "&department=$department&year=$year'>Borrar</a></td>
+                      <td><input type='text' name='field1' value='" . $row["field1"] . "' class='editable' readonly></td>
+                      <td colspan='2'><input type='text' name='field2' value='" . $row["field2"] . "' class='editable' readonly></td>
+                      <td><input type='text' name='field3' value='" . $row["field3"] . "' class='editable' readonly></td>
+                      <td><input type='text' name='field4' value='" . $row["field4"] . "' class='editable' readonly></td>
+                      <td class='editar-column'><a href='#' class='editar-btn' onclick='makeEditable(event)'>Editar</a></td>
+                      <td class='borrar-column'><a href='?actionC=delete&idC=" . $row["table22ID"] . "&department=$department&year=$year' class='borrar-btn'>Borrar</a></td>
+                      <td class='salvar-column' style='display: none;'> <button type='submit' name='actionC' value='salvar' class='salvar-btn'>Salvar Cambios</button></td>
+                      </form>
                     </tr>";
               
               // Increment counter
@@ -271,6 +365,16 @@
       <?php
        include 'db_info.php';
 
+       // Function to update a row in the table23 table
+       function updateRowd($id, $field1, $field2, $field3, $field4) {
+        global $conn;
+        $sql = "UPDATE table23 SET field1=?, field2=?, field3=?, field4=? WHERE table23ID=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssssi", $field1, $field2, $field3, $field4, $id);
+        $stmt->execute();
+        $stmt->close();
+      }
+
        $department = $_GET['department'];
         $year = $_GET['year'];
 
@@ -284,6 +388,22 @@
       $stmt->close();
       
       
+  }
+  // Check if the salvar button was clicked
+  if (isset($_POST['actionD']) && $_POST['actionD'] == 'salvar' && isset($_POST['idD'])) {
+    $id = $_POST['idD'];
+    $field1 = $_POST['field1'];
+    $field2 = $_POST['field2'];
+    $field3 = $_POST['field3'];
+    $field4 = $_POST['field4'];
+   
+
+
+    updateRowd($id, $field1, $field2, $field3, $field4);
+    
+    // Redirect back to the same department and year after updating
+    $department = $_GET['department'];
+    $year = $_GET['year'];
   }
 
         // SQL query to retrieve data from table23 based on department and year
@@ -301,8 +421,9 @@
                         <th scope='col' colspan='2'>Agencia</th>
                         <th scope='col'>Estatus</th>
                         <th scope='col'>Total de fondos</th>
-                        <th scope='col'>Editar</th>
-                        <th scope='col'>Borrar</th>
+                        <th scope='col' class='editar-header'>Editar</th>
+                        <th scope='col' class='borrar-header'>Borrar</th>
+                        <th scope='col' class='salvar-header' style='display: none;'>Modo de editar</th> 
                       </tr>
                     </thead>
                     <tbody>";
@@ -312,13 +433,17 @@
 
             while($row = $result->fetch_assoc()) {
                 echo "<tr>
+                        <form method='post'>
+                        <input type='hidden' name='idD' value='" . $row["table23ID"] . "'>
                         <th scope='row'>" . $counter . "</th>
-                        <td>" . $row["field1"]. "</td>
-                        <td colspan='2'>" . $row["field2"]. "</td>
-                        <td>" . $row["field3"]. "</td>
-                        <td>" . $row["field4"]. "</td>
-                        <td><a href='#'>Editar</a></td>
-                        <td><a href='?actionD=delete&idD=" . $row["table23ID"] . "&department=$department&year=$year'>Borrar</a></td>
+                        <td><input type='text' name='field1' value='" . $row["field1"] . "' class='editable' readonly></td>
+                        <td colspan='2'><input type='text' name='field2' value='" . $row["field2"] . "' class='editable' readonly></td>
+                        <td><input type='text' name='field3' value='" . $row["field3"] . "' class='editable' readonly></td>
+                        <td><input type='text' name='field4' value='" . $row["field4"] . "' class='editable' readonly></td>
+                        <td class='editar-column'><a href='#' class='editar-btn' onclick='makeEditable(event)'>Editar</a></td>
+                        <td class='borrar-column'><a href='?actionD=delete&idD=" . $row["table23ID"] . "&department=$department&year=$year' class='borrar-btn'>Borrar</a></td>
+                        <td class='salvar-column' style='display: none;'> <button type='submit' name='actionD' value='salvar' class='salvar-btn'>Salvar Cambios</button></td>
+                        </form>
                       </tr>";
                 
                 // Increment counter
@@ -334,8 +459,6 @@
                         <th scope='col' colspan='2'>Agencia</th>
                         <th scope='col'>Estatus</th>
                         <th scope='col'>Total de fondos</th>
-                        <th scope='col'>Editar</th>
-                        <th scope='col'>Borrar</th>
                       </tr>
                     </thead>
                     </table>";
@@ -348,6 +471,15 @@
       <h2>Table 2.4</h2>
       <?php
       include 'db_info.php';
+
+      function updateRowe($id, $field1, $field2, $field3, $field4,$field5) {
+        global $conn;
+        $sql = "UPDATE table24 SET field1=?, field2=?, field3=?, field4=?, field5=? WHERE table24ID=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sssssi", $field1, $field2, $field3, $field4, $field5, $id);
+        $stmt->execute();
+        $stmt->close();
+      }
 
       $department = $_GET['department'];
       $year = $_GET['year'];
@@ -363,6 +495,22 @@
       
       
   }
+      // Check if the salvar button was clicked
+      if (isset($_POST['actionE']) && $_POST['actionE'] == 'salvar' && isset($_POST['idE'])) {
+        $id = $_POST['idE'];
+        $field1 = $_POST['field1'];
+        $field2 = $_POST['field2'];
+        $field3 = $_POST['field3'];
+        $field4 = $_POST['field4'];
+        $field5 = $_POST['field5'];
+
+
+        updateRowe($id, $field1, $field2, $field3, $field4, $field5);
+        
+        // Redirect back to the same department and year after updating
+        $department = $_GET['department'];
+        $year = $_GET['year'];
+      }
       
       // SQL query to retrieve data from table24 based on department and year
       $sql = "SELECT * FROM table24 WHERE DepartmentID = (SELECT DepartmentID FROM departamento WHERE DepartmentName = '$department') AND year = $year";
@@ -377,11 +525,12 @@
                       <th scope='col'>#</th>
                       <th scope='col'>Título&nbsp;del&nbsp;trabajo&nbsp;de&nbsp;investigación&nbsp;o&nbsp;creación</th>
                       <th scope='col' colspan='2'>Clasificación</th>
-                      <th scope='col'>Fecha</th>
+                      <th scope='col' colspan='2'>Fecha</th>
                       <th scope='col'>Profesor&nbsp;(mentor&nbsp;o&nbsp;supervisor)</th>
                       <th scope='col'>Número&nbsp;de&nbsp;estudiantes&nbsp;investigadores&nbsp;por&nbsp;proyecto</th>
-                      <th scope='col'>Editar</th>
-                      <th scope='col'>Borrar</th>
+                      <th scope='col' class='editar-header'>Editar</th>
+                      <th scope='col' class='borrar-header'>Borrar</th>
+                      <th scope='col' class='salvar-header' style='display: none;'>Modo de editar</th>
                     </tr>
                   </thead>
                   <tbody>";
@@ -391,15 +540,20 @@
       
           while($row = $result->fetch_assoc()) {
               echo "<tr>
-                      <th scope='row'>" . $counter . "</th>
-                      <td>" . $row["field1"]. "</td>
-                      <td colspan='2'>" . $row["field2"]. "</td>
-                      <td>" . $row["field3"]. "</td>
-                      <td>" . $row["field4"]. "</td>
-                      <td>" . $row["field5"]. "</td>
-                      <td><a href='#'>Editar</a></td>
-                      <td><a href='?actionE=delete&idE=" . $row["table24ID"] . "&department=$department&year=$year'>Borrar</a></td>
-                    </tr>";
+                          <form method='post'>
+                          <input type='hidden' name='idE' value='" . $row["table24ID"] . "'>
+                          <th scope='row'>" . $counter . "</th>
+                          <td><input type='text' name='field1' value='" . $row["field1"] . "' class='editable' readonly></td>
+                          <td colspan='2'><input type='text' name='field2' value='" . $row["field2"] . "' class='editable' readonly></td>
+                          <td colspan='2'><input type='text' name='field3' value='" . $row["field3"] . "' class='editable' readonly></td>
+                          <td><input type='text' name='field4' value='" . $row["field4"] . "' class='editable' readonly></td>
+                          <td><input type='text' name='field5' value='" . $row["field5"] . "' class='editable' readonly></td>
+                          
+                          <td class='editar-column'><a href='#' class='editar-btn' onclick='makeEditable(event)'>Editar</a></td>
+                          <td class='borrar-column'><a href='?actionE=delete&idE=" . $row["table24ID"] . "&department=$department&year=$year' class='borrar-btn'>Borrar</a></td>
+                          <td class='salvar-column' style='display: none;'> <button type='submit' name='actionE' value='salvar' class='salvar-btn'>Salvar Cambios</button></td>
+                          </form>
+                      </tr>";
               
               // Increment counter
               $counter++;
@@ -431,6 +585,15 @@
       <?php
       include 'db_info.php';
 
+      function updateRowf($id, $field1, $field2, $field3, $field4,$field5) {
+        global $conn;
+        $sql = "UPDATE table25 SET field1=?, field2=?, field3=?, field4=?, field5=? WHERE table25ID=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sssssi", $field1, $field2, $field3, $field4, $field5, $id);
+        $stmt->execute();
+        $stmt->close();
+      }
+
         $department = $_GET['department'];
         $year = $_GET['year'];
 
@@ -445,6 +608,23 @@
       
       
   }
+
+       // Check if the salvar button was clicked
+       if (isset($_POST['actionF']) && $_POST['actionF'] == 'salvar' && isset($_POST['idF'])) {
+        $id = $_POST['idF'];
+        $field1 = $_POST['field1'];
+        $field2 = $_POST['field2'];
+        $field3 = $_POST['field3'];
+        $field4 = $_POST['field4'];
+        $field5 = $_POST['field5'];
+
+
+        updateRowf($id, $field1, $field2, $field3, $field4, $field5);
+        
+        // Redirect back to the same department and year after updating
+        $department = $_GET['department'];
+        $year = $_GET['year'];
+      }
 
         // SQL query to retrieve data from table25 based on department and year
         $sql = "SELECT * FROM table25 WHERE DepartmentID = (SELECT DepartmentID FROM departamento WHERE DepartmentName = '$department') AND year = $year";
@@ -462,8 +642,9 @@
                         <th scope='col'>2.3 Apoyar proyectos de investigación&nbsp;y&nbsp;creación dirigidos a&nbsp;la captación de fondos.</th>
                         <th scope='col'>2.4&nbsp;Propiciar&nbsp;la&nbsp;investigación&nbsp;estudiantil&nbsp;y&nbsp;las actividades de creación estudiantil bajo la mentoría de los profesores.</th>
                         <th scope='col'>2.5 Fomentar una cultura de avalúo en&nbsp;la&nbsp;investigación y creación.</th>
-                        <th scope='col'>Editar</th>
-                        <th scope='col'>Borrar</th>
+                        <th scope='col' class='editar-header'>Editar</th>
+                        <th scope='col' class='borrar-header'>Borrar</th>
+                        <th scope='col' class='salvar-header' style='display: none;'>Modo de editar</th>
                       </tr>
                     </thead>
                     <tbody>";
@@ -473,14 +654,18 @@
 
             while($row = $result->fetch_assoc()) {
                 echo "<tr>
-                        <th scope='row'>" . $counter . "</th>
-                        <td>" . $row["field1"]. "</td>
-                        <td colspan='2'>" . $row["field2"]. "</td>
-                        <td>" . $row["field3"]. "</td>
-                        <td>" . $row["field4"]. "</td>
-                        <td>" . $row["field5"]. "</td>
-                        <td><a href='#'>Editar</a></td>
-                        <td><a href='?actionF=delete&idF=" . $row["table25ID"] . "&department=$department&year=$year'>Borrar</a></td>
+                          <form method='post'>
+                          <input type='hidden' name='idF' value='" . $row["table25ID"] . "'>
+                          <th scope='row'>" . $counter . "</th>
+                          <td><input type='text' name='field1' value='" . $row["field1"] . "' class='editable' readonly></td>
+                          <td colspan='2'><input type='text' name='field2' value='" . $row["field2"] . "' class='editable' readonly></td>
+                          <td><input type='text' name='field3' value='" . $row["field3"] . "' class='editable' readonly></td>
+                          <td><input type='text' name='field4' value='" . $row["field4"] . "' class='editable' readonly></td>
+                          <td><input type='text' name='field5' value='" . $row["field5"] . "' class='editable' readonly></td>
+                          <td class='editar-column'><a href='#' class='editar-btn' onclick='makeEditable(event)'>Editar</a></td>
+                          <td class='borrar-column'><a href='?actionF=delete&idF=" . $row["table25ID"] . "&department=$department&year=$year' class='borrar-btn'>Borrar</a></td>
+                          <td class='salvar-column' style='display: none;'> <button type='submit' name='actionF' value='salvar' class='salvar-btn'>Salvar Cambios</button></td>
+                          </form>
                       </tr>";
                 
                 // Increment counter
@@ -497,8 +682,6 @@
                         <th scope='col'>2.3 Apoyar proyectos de investigación&nbsp;y&nbsp;creación dirigidos a&nbsp;la captación de fondos.</th>
                         <th scope='col'>2.4&nbsp;Propiciar&nbsp;la&nbsp;investigación&nbsp;estudiantil&nbsp;y&nbsp;las actividades de creación estudiantil bajo la mentoría de los profesores.</th>
                         <th scope='col'>2.5 Fomentar una cultura de avalúo en&nbsp;la&nbsp;investigación y creación.</th>
-                        <th scope='col'>Editar</th>
-                        <th scope='col'>Borrar</th>
                       </tr>
                     </thead>
                     </table>";

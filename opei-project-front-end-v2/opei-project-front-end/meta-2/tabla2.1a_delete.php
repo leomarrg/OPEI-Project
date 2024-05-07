@@ -1,21 +1,6 @@
 <?php
 // Establish a database connection
-$servername = "localhost";
-//$username = "leomar"; // Your database username
-//$password = "italia101pr"; // Your database password
-//$dbname = "opei"; // Your database name
-// Establish a database connection
-$username = "leomarrg"; // Your database username
-$password = "1234"; // Your database password
-$dbname = "opei-database"; // Your database name
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'db_info.php';
 
 // Check if ID parameter is provided
 if (isset($_GET['id']) && !empty($_GET['id'])) {

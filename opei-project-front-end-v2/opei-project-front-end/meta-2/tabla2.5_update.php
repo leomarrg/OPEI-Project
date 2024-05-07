@@ -2,21 +2,8 @@
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Establish a database connection
-    $servername = "localhost";
- /*   $username = "leomar";
-    $password = "italia101pr";
-    $dbname = "opei";*/
-    $username = "leomarrg";
-    $password = "1234";
-    $dbname = "opei-database";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    include 'db_info.php';
+    
     // Retrieve data from the POST request
     $table25ID = $_POST['table25ID'];
     $field1 = $_POST['field1'];

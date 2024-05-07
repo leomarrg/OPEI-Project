@@ -1,21 +1,7 @@
 <?php
 session_start();
 // Establish a database connection
-$servername = "localhost";
-//$username = "leomar";
-//$password = "italia101pr";
-//$dbname = "opei";
-$username = "leomarrg";
-$password = "1234";
-$dbname = "opei-database";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'db_info.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cambAcademico = $_POST['cambAcademico'];

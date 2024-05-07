@@ -141,35 +141,51 @@ body {
 
 table {
   border-collapse: collapse;
-  width: 80%;
+  width: 100%;
   border: 2px solid #ddd; /* Set the border color and width */
   margin-left: auto; /* Justify margin to the left */
   margin-right: auto;
+  vertical-align: top;
 }
 
 td {
   max-width: 200px; /* Limit the maximum width of table cells */
-  overflow: hidden; /* Hide content that exceeds the maximum width */
   text-overflow: ellipsis; /* Display ellipsis (...) for truncated text */
   white-space: nowrap; /* Prevent text from wrapping */
 }
 
-table1-2 {
-  border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 20px;
-  border: 2px solid #ddd; /* Set the border color and width */
+.table input[type="text"] {
+  width: 100%; /* Ensure text input takes up full width of parent cell */
+  box-sizing: border-box; /* Include padding and border in the width */
+  resize: both; /* Allow resizing both horizontally and vertically */
 }
+
 
 th, td {
   border: 1px solid #dddddd;
-  text-align: center;
+  text-align: left;
   padding: 8px;
+  font-size: 18px;
+  vertical-align: top;
 }
 
 th {
   background-color: #f2f2f2;
+  vertical-align: top;
 }
+
+.table thead th {
+  vertical-align: top; /* Align table headers at the top */
+}
+
+.table th,
+.table td {
+    padding: 8px; /* Adjust padding as needed */
+    text-align: left; /* Align text to the left */
+    white-space: normal; /* Allow text to wrap */
+    word-wrap: break-word; /* Wrap long words to the next line */
+}
+
 
 .table-title {
   text-align: center;
@@ -184,7 +200,6 @@ th {
 
 .my-table {
   width: 100%;
-  border-collapse: collapse;
   margin-bottom: 20px;
 }
 
@@ -222,6 +237,8 @@ header {
   height: 70px; 
   width: 100%;
   background-size: contain;
+  display: flex;
+  justify-content: center;
 }
 
 /* Add styling for the footer box */
@@ -235,6 +252,8 @@ header {
   width: 100%;
   z-index: 999;
   font-weight: bold;
+  margin-top: 100px;
+  z-index: -1;
 }
 
 .footer-boxtabla1-2 {
@@ -295,6 +314,7 @@ html, body {
     align-items: center;
     justify-content: center;
     padding: 48px;
+    max-height: 900px;
     
 
   }
@@ -306,6 +326,9 @@ html, body {
     padding: 48px;
     margin-left: auto; /* Justify margin to the left */
     margin-right: auto;
+    min-height: 580px;
+    max-height: 900px;
+
 
   }
 
@@ -328,8 +351,11 @@ html, body {
 
   .formbold-form-wrapper-edit {
     margin: 0 auto;
-    width: 100%;
+    width: 80%;
     background: white;
+    min-height: 580px;
+    max-height: 900px;
+    margin-bottom: 100px;
   }
 
   .formbold-form-wrapper {
@@ -337,6 +363,9 @@ html, body {
     max-width: 550px;
     width: 100%;
     background: white;
+    min-height: 550px;
+    max-height: 900px;
+
   }
 
   .formbold-form-wrapper h5 {
@@ -346,11 +375,22 @@ html, body {
     margin-bottom: 10px; /* Adjust margin as needed */
 }
 
+.hide {
+  display: none;
+  font-size: 14px;
+  color: #000;
+  font-weight: 800;
+}
+
+.formbold-input-flex:hover + .hide {
+  display: block;
+}
+
 .formbold-input-flex {
   display: flex;
-  gap: 20px;
-  margin-bottom: 22px;
+  gap: 22px;
 }
+
   .formbold-input-flex > div {
     width: 60%;
     display: flex;
@@ -399,6 +439,8 @@ html, body {
     height: 30px;
 
   }
+
+
   .formbold-form-input::placeholder {
     color: #000;
   }
@@ -439,15 +481,13 @@ html, body {
   .formbold-input-file .formbold-input-label {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 22px;
     position: relative;
   }
 
   .formbold-filename-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    margin-bottom: 22px;
   }
   .formbold-filename {
     display: flex;
@@ -499,12 +539,13 @@ html, body {
 
 /* Style the dropdown button */
 .dashboardbtn {
-  background-color: #3498db;
-  color: white;
+  background-color: #d6af00;
+  color: rgb(0, 0, 0);
   padding: 10px;
   font-size: 16px;
   border: none;
   cursor: pointer;
+  width: 155px;
 }
 
 /* Style the dropdown content (hidden by default) */
@@ -513,7 +554,7 @@ html, body {
   position: absolute;
   top: 100%; /* Position the dropdown below the button */
   left: 0; /* Align with the left edge of the button */
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -534,25 +575,29 @@ html, body {
 
 /* Show the dropdown menu */
 .show {
-  display: block;
+  display: flex;
 }
 
 .dashdropdown-wrapper {
-  display: inline-block;
+  display: flex;
   justify-content: left;
-  align-items: flex-start; /* Center vertically */
-  text-align: center; /* Center horizontally */
-  margin-top: 200px;
-  margin: 0, 10px;
+  margin: 8px;
 }
 
 .dashdropdown {
-  position: relative;
+  position:relative;
 }
 
 .dashdropdown-container {
   text-align: center; /* Center the dropdown containers */
 }
 
+select {
+  width: 100%;
+  height: 40px;
+}
 
+.hidden {
+  display: none;
+}
 

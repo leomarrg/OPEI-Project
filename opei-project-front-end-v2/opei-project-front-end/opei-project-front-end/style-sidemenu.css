@@ -4,6 +4,7 @@
 }
 :root {
   --accent-color: #d6af00;
+  --gradient-color: #FBFBFB;
 }
 .sidemenu{
   position: fixed;
@@ -14,14 +15,15 @@
   align-items: center;
    width: 100vw;
   height: 100vh;
+  background-image: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%);
 }
 
 .sidebar{
-  position: absolute;
+  position: fixed;
   width: 240px;
   left: -240px;
-  height: 50%;
-  background-color: #ffffff;
+  height: 100%;
+  background-color: #dadada;
   transition: all .5s ease;
   margin-top: -32px;
 }
@@ -31,7 +33,7 @@
   line-height: 70px;
   text-align: center;
   align-items: center;
-  background-color: #ffffff;
+  background-color: #dadada;
   user-select: none;
   font-family: 'Lato', sans-serif;
 }
@@ -50,7 +52,7 @@
 
 a.active,a:hover{
   border-left: 5px solid var(--accent-color);
-  color: #000000;
+  color: #fff;
    background: linear-gradient(to left, var(--accent-color), var(--gradient-color));
 }
 .sidebar a i{
@@ -73,14 +75,14 @@ label #btn,label #cancel{
   margin: 15px 30px;
   font-size: 29px;
   background-color: #d6af00;
-  box-shadow:inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
     inset -7px -7px 10px 0px rgba(0,0,0,.1),
    3.5px 3.5px 20px 0px rgba(0,0,0,.1),
    2px 2px 5px 0px rgba(0,0,0,.1);
   height: 45px;
   width: 45px;
   text-align: center;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
   line-height: 45px;
   transition: all .5s ease;
 }
@@ -134,6 +136,14 @@ label #cancel{
   }
 }
 
+.sidebar > a.active,.sidebar > a:hover:nth-child(even) {
+  --accent-color: #d6af00;
+  --gradient-color: #d6af00;
+}
+.sidebar a.active,.sidebar > a:hover:nth-child(odd) {
+  --accent-color: #d6af00;
+  --gradient-color: #d6af00;
+}
 
 
 .frame {
@@ -199,7 +209,7 @@ p {
   border-radius: 2px;
   transition: background-color 0.3s ease, color 0.3s ease;
   font-weight: bold;
-  width: 70px;
+  width: 100%;
 }
 
 /* Hover style for the dropdown button */

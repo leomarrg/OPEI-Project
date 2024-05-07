@@ -1,0 +1,76 @@
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background-color: #d6af00;
+}
+.main {
+    width: 350px;
+    height: 500px;
+    overflow: hidden;
+    background: #ffffff url('../images/upra_wolf.ico') no-repeat top;
+    background-size: 150px;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    padding-top: 50px; /* Add padding to the top */
+}
+
+label{
+	color: #000000;
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	margin: 60px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+input{
+	width: 60%;
+	height: 20px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+button{
+	width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #000000;
+	background: #d6af00;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+button:hover{
+	background: #d6af00;
+}
+
+.login label {
+    color: #000000;
+    font-size: 2.3em;
+    justify-content: center;
+    display: flex;
+    margin: 20px; /* Adjust the margin as needed */
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+

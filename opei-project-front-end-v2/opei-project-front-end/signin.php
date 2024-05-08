@@ -34,25 +34,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
-        // Check if user account is active
-        if ($user['Active'] == 1) {
-            // Start session and store UserID and DepartmentID for future use
-            session_start();
-            $_SESSION['UserID'] = $user['UserID'];
-            $_SESSION['DepartmentID'] = $user['DepartmentID'];
-            // Redirect to main page
-            header("Location: meta-1/tabla1.1.html");
-            exit();
+        
+        // Log hashed password and plain text password
+        echo '<script>';
+        echo 'console.log("Hashed Password from DB: ' . $user['Password'] . '");';
+        echo 'console.log("Plain Text Password from User: ' . $password . '");';
+        echo '</script>';
+
+        // Verify the password
+        if (password_verify($password, $user['Password'])) {
+            // Check if user account is active
+            if ($user['Active'] == 1) {
+                // Start session and store UserID and DepartmentID for future use
+                session_start();
+                $_SESSION['UserID'] = $user['UserID'];
+                $_SESSION['DepartmentID'] = $user['DepartmentID'];
+                // Redirect to main page
+                header("Location: meta-1/tabla1.1.html");
+                exit();
+            } else {
+                // Account is inactive
+                echo '<script>alert("Your account is inactive. Please contact the administrator.");</script>';
+                echo '<script>window.location.href = "signin.html";</script>';
+                exit();
+            }
         } else {
-            // Account is inactive
-            echo '<script>alert("Your account is inactive. Please contact the administrator.");</script>';
+            // Invalid password
+            echo '<script>alert("Invalid email or password. ITS THE PASSWORD");</script>';
             echo '<script>window.location.href = "signin.html";</script>';
             exit();
         }
-    
     } else {
         // User does not exist
-        echo '<script>alert("Invalid email or password.");</script>';
+        echo '<script>alert("Invalid email or password. ITS THE USER");</script>';
         echo '<script>window.location.href = "signin.html";</script>';
         exit();
     }

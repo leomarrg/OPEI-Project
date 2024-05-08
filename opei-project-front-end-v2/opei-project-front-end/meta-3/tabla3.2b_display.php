@@ -46,7 +46,7 @@
               <th scope="col">Programa&nbsp;académico&nbsp;del&nbsp;cual&nbsp;se&nbsp;graduó</th>
               <th scope="col">Lugar&nbsp;de&nbsp;Empleo</th>
               <th scope="col">Año&nbsp;de&nbsp;Graduación</th>
-              <th scope="col">Trabajo&nbsp;actual&nbsp;relacionado&nbsp;al&nbsp;grado&nbsp;obtenido&nbsp;en&nbsp;UPRA</th>
+              <th scope="col">Trabajo actual relacionado al&nbsp;grado&nbsp;obtenido&nbsp;en&nbsp;UPRA</th>
               <th scope="col">Comentarios</th>
               <th scope="col">Editar</th>
               <th scope="col">Borrar</th>
@@ -97,7 +97,7 @@
     </div>
   </div>
     <!-- Add your footer box below -->
-    <div style="margin-top: -95px;" class="footer-box">
+    <div class="footer-box">
         <!-- Content for the footer box goes here -->
         <p>&copy; 2024 UPRA Reports. All rights reserved.</p>
     </div>

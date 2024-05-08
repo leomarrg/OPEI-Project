@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../fonts/icomoon/style.css">
-        <link rel="stylesheet" href="../css/owl.carousel.min.css">
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="../css/bootstrap.min.css">
-        <!-- Style -->
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/style-sidemenu.css">
-        <script src="../js/jquery-3.3.1.min.js"></script>
-        <script src="../js/popper.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
-        <script src="../js/jquery.validate.min.js"></script>
-        <script src="../js/main.js"></script>
-    
+         <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../fonts/icomoon/style.css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Style -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-sidemenu.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.validate.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <title>Contact Form #2 - Page 1</title>
     </head>
 <body>
@@ -126,23 +127,30 @@
             id="clasi"
             class="formbold-form-input"
             >
-            <option value="option0">Seleccione...</option>
-            <option value="option1">Afiches</option>
-            <option value="option2">Exposición</option>
-            <option value="option2">Obras</option>
-            <option value="option2">Propuestas</option>
-            <option value="option2">Otro</option>
+            <option value="0">Seleccione...</option>
+            <option value="Afiches">Afiches</option>
+            <option value="Exposición">Exposición</option>
+            <option value="Obras">Obras</option>
+            <option value="Propuestas">Propuestas</option>
+            <option value="Otro">Otro</option>
             </select>
             <label for="clasi" class="formbold-form-label">Clasificación</label>
         </div>
         </div>
              <!-- Breve descripcion -->
         <div class="formbold-input-flex">
-          <!-- Breve descripcion -->
-            <div class="formbold-input-flex">
-                <input type="date" id="calendar" name="calendar">
-                <label for="calendar">Fecha</label>
-            </div>
+         <!-- Breve descripcion -->
+         <div>
+            <input
+                type="text"
+                id="calendar"
+                name="calendar"
+                placeholder="Escoge una fecha..."
+                class="formbold-form-input"
+            />
+            <label for="calendar" class="formbold-form-label">Fecha:</label>
+            <i class="fas fa-calendar-alt"></i>
+        </div>
             <div>
               <input
                 type="text"
@@ -174,5 +182,12 @@
         <!-- Content for the footer box goes here -->
         <p>&copy; 2024 UPRA Reports. All rights reserved.</p>
     </div>
+    <script>
+        $(function() {
+            $('#calendar').datepicker({
+                dateFormat: 'dd-mm-yy' // Set the desired date format
+            });
+        });
+    </script>
 </body>
 </html>

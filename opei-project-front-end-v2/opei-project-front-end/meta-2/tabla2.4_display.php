@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
+          <!-- Required meta tags -->
+          <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../fonts/icomoon/style.css">
@@ -12,11 +12,13 @@
     <!-- Style -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/style-sidemenu.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="../js/jquery-3.3.1.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery.validate.min.js"></script>
     <script src="../js/main.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <title>Contact Form #2 - Page 1</title>
 
@@ -45,11 +47,11 @@
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Título&nbsp;del&nbsp;trabajo&nbsp;de&nbsp;investigación&nbsp;o&nbsp;creación</th>
+              <th scope="col">Título del trabajo de investigación o creación</th>
               <th scope="col">Clasificación</th>
               <th scope="col">Fecha</th>
-              <th scope="col">Profesor&nbsp;(mentor&nbsp;o&nbsp;supervisor)</th>
-              <th scope="col">Número&nbsp;de&nbsp;estudiantes&nbsp;investigadores&nbsp;por&nbsp;proyecto</th>
+              <th scope="col">Profesor (mentor o supervisor)</th>
+              <th scope="col">Número de estudiantes investigadores por proyecto</th>
               <th scope="col">Editar</th>
               <th scope="col">Borrar</th>
             </tr>

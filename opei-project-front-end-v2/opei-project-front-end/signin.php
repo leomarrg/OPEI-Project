@@ -21,37 +21,53 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    // Check if the email domain is upr.edu
-    if (substr($email, -8) !== "@upr.edu") {
-        echo '<script>alert("Only users with email addresses ending in @upr.edu can log in.");</script>';
-        echo '<script>window.location.href = "signin.html";</script>';
-        exit();
-    }
+    // Fetch user from the usuario table
+    $sql_user = "SELECT * FROM usuario WHERE Email = '$email'";
+    $result_user = $conn->query($sql_user);
 
-    // Fetch user from the database
-    $sql = "SELECT * FROM usuario WHERE Email = '$email'";
-    $result = $conn->query($sql);
+    // Fetch admin from the admin table
+    $sql_admin = "SELECT * FROM admin WHERE Email = '$email'";
+    $result_admin = $conn->query($sql_admin);
 
-    if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
+    // Check if the user exists
+    if ($result_user->num_rows > 0) {
+        $user = $result_user->fetch_assoc();
         // Check if user account is active
-        if ($user['Active'] == 1) {
+        if ($user['Active'] == 1 && password_verify($password, $user['Password'])) {
             // Start session and store UserID and DepartmentID for future use
             session_start();
             $_SESSION['UserID'] = $user['UserID'];
             $_SESSION['DepartmentID'] = $user['DepartmentID'];
-            // Redirect to main page
+            // Redirect to user page
             header("Location: meta-1/tabla1.1.html");
             exit();
         } else {
-            // Account is inactive
-            echo '<script>alert("Your account is inactive. Please contact the administrator.");</script>';
+            // User does not exist or invalid password
+            echo '<script>alert("Invalid email or password.");</script>';
             echo '<script>window.location.href = "signin.html";</script>';
             exit();
         }
-    
+    } elseif ($result_admin->num_rows > 0) {
+        $admin = $result_admin->fetch_assoc();
+        // Check if admin account is active
+        if ($admin['Active'] == 1 && password_verify($password, $admin['Password'])) {
+            // Start session and store admin ID, email, name, etc.
+            session_start();
+            $_SESSION['adminID'] = $admin['adminID'];
+            $_SESSION['adminEmail'] = $admin['Email'];
+            $_SESSION['adminName'] = $admin['Name'];
+            $_SESSION['adminLastName'] = $admin['LastName'];
+            // Redirect admin to admin page
+            header("Location: admin/website.php");
+            exit();
+        } else {
+            // Admin does not exist or invalid password
+            echo '<script>alert("Invalid email or password.");</script>';
+            echo '<script>window.location.href = "signin.html";</script>';
+            exit();
+        }
     } else {
-        // User does not exist
+        // Neither user nor admin exists
         echo '<script>alert("Invalid email or password.");</script>';
         echo '<script>window.location.href = "signin.html";</script>';
         exit();

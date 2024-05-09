@@ -22,7 +22,7 @@ $usuarioResult = mysqli_query($conn, $usuarioQuery);
 </head>
 <body>
     <header>
-        <a href='Website.html' class="backmainmenu"><h1>UPRA Reports</h1></a>
+        <a href='website.php' class="backmainmenu"><h1>UPRA Reports</h1></a>
         <h2 class="metaheader">Administración De Cuentas</span></h2>
     </header>
 

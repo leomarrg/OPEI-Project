@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+        header("Location: viewusers.php");
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -54,7 +54,7 @@ $conn->close();
     </head>
     <body>
         <header>
-            <a href='Website.html' class="backmainmenu"><h1>UPRA Reports</h1></a>
+            <a href='website.php' class="backmainmenu"><h1>UPRA Reports</h1></a>
               <h3 class="metaheader">Registrar Usuario Nuevo</h3>
           </header>
           <form action="#" method="post">

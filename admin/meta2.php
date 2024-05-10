@@ -1,3 +1,33 @@
+<?php
+    // Start session
+    session_start();
+
+    // Check if admin session is not set, redirect to signin.html
+    if (!isset($_SESSION['adminID'])) {
+        header("Location: ../signin.html");
+        exit();
+    }
+
+    // Include database connection
+    include_once "db_info.php";
+
+    // Prepare and execute query to fetch admin details
+    $adminID = $_SESSION['adminID'];
+    $sql = "SELECT `Name` FROM `admin` WHERE `adminID` = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $adminID);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    // Fetch admin's name
+    $adminName = "";
+    if ($row = $result->fetch_assoc()) {
+        $adminName = $row['Name'];
+    }
+
+    // Store admin's name in session variable
+    $_SESSION['adminName'] = $adminName;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +39,15 @@
 <body>
     <header>
       <?php $year = $_GET['year']; ?>
+      <!-- Dropdown menu -->
+      <div class="Adminbtn">
+        <button class="dropbtn"><?php echo $_SESSION['adminName']; ?></button>
+            <div class="Admin-content">
+                <a href="signup.php">Registrar Usuario Nuevo</a>
+                <a href="viewusers.php">Administrar Cuentas</a>
+                <a href="logout.php" >Cerrar Session</a>
+            </div>
+      </div>
       <a href='website.php' class="backmainmenu"><h1>UPRA Reports</h1></a>
       <h2 class="metaheader" id="departmentHeader">Nombre del departamento</h2>
       <h2 class="metaheader">Meta 2 <span id="year"></span></h2>
@@ -17,7 +56,7 @@
 <!--Table 2.1A-->
       <h2>Table 2.1A</h2>
       <?php
-      session_start();
+      
       include 'db_info.php';
 
       // Function to update a row in the table21a table
@@ -695,7 +734,16 @@
         <!-- Content for the footer box goes here -->
         <p>&copy; 2024 UPRA Reports. All rights reserved.</p>
     </div>
-    <script src="js/mainmenu.js"></script>
+    <script>
+        //Main menu Admin info dropdown
+        function toggleAdminContent() {
+            var adminContent = document.querySelector('.Admin-content');
+            adminContent.classList.toggle('active');
+        }
+
+        var menuButton = document.querySelector('.dropbtn');
+        menuButton.addEventListener('click', toggleAdminContent);
+      </script>
     <script src="js/metapage.js"></script>
 </body>
 </html>

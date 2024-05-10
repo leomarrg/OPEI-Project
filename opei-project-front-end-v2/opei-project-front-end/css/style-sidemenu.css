@@ -3,7 +3,7 @@
   padding: 0;
 }
 :root {
-  --accent-color: #d6af00;
+  --accent-color: #FFC107;
 }
 .sidemenu{
   position: fixed;
@@ -72,7 +72,7 @@ label #btn,label #cancel{
   border-radius: 5px;
   margin: 15px 30px;
   font-size: 29px;
-  background-color: #d6af00;
+  background-color: #FFC107;
   box-shadow:inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
     inset -7px -7px 10px 0px rgba(0,0,0,.1),
    3.5px 3.5px 20px 0px rgba(0,0,0,.1),
@@ -143,24 +143,7 @@ label #cancel{
   text-align: center;
 }
 
-h2 {
-  position: relative;
-  text-align: center;
-  color: #353535;
-  font-size: 60px;
-  font-family: 'Lato', sans-serif;
-  margin: 0;
-  color: #a759f5;
-}
 
-p {
-  font-family: 'Lato', sans-serif;
-  font-weight: 800;
-  text-align: center;
-  font-size: 25px;
-  color: #000;
-  margin: 0;
-}
 
    /* Style for the dropdown container */
 .dropdown {

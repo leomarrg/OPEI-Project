@@ -8,10 +8,7 @@ body {
   color: #999;
 }
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Poppins", sans-serif;
-  color: #000; }
+
 
 a {
   -webkit-transition: .3s all ease;
@@ -218,8 +215,8 @@ th {
 }
 
 .header {
-  background: #d6af00 url('../images/arecibo.ico') no-repeat;
-  color: #000000;
+  background: #333 url('../images/arecibo.ico') no-repeat;
+  color: #FFC107;
   text-align: center;
   height: 70px; 
   width: 100%;
@@ -233,39 +230,60 @@ th {
 /* Add styling for the header box */
 
 header {
-  background: #d6af00 url('../images/arecibo.ico') no-repeat;
-  height: 70px; 
-  width: 100%;
-  background-size: contain;
-  display: flex;
-  justify-content: center;
+  background-color: #000;
+    color: #FFC107;
+    padding: 10px;
+    text-align: center;
 }
 
 /* Add styling for the footer box */
 .footer-box {
-  background-color: #d6af00;
-  color: #000000;
+  background-color: #000;
+  color: #FFC107;
   text-align: center;
-  padding: 10px 0;
-  position: relative;
-  bottom: 0%;
-  width: 100%;
-  z-index: 999;
-  font-weight: bold;
-  margin-top: 100px;
-  z-index: -1;
-}
-
-.footer-boxtabla1-2 {
-  background-color: #d6af00;
-  color: #000000;
-  text-align: center;
-  padding: 10px 0;
+  padding: 1px 0;
   position: fixed;
   bottom: 0%;
   width: 100%;
   z-index: 999;
   font-weight: bold;
+}
+.footer-box p{
+  background-color: #000;
+    color: #FFC107;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    z-index: 999;
+    font-weight: bold;
+    font-size: 16px;
+    
+}
+.footer-boxtabla1-2 {
+  background-color: #000;
+    color: #FFC107;
+    text-align: center;
+    padding: 1px 0;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    z-index: 999;
+    font-weight: bold;
+}
+.footer-boxtabla1-2 p{
+  background-color: #000;
+    color: #FFC107;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    z-index: 999;
+    font-weight: bold;
+    font-size: 16px;
+    
 }
 
 html, body {
@@ -370,7 +388,7 @@ html, body {
 
   .formbold-form-wrapper h5 {
     background-color: #fff; /* Set your desired background color */
-    color: #d6af00; /* Set the text color */
+    color: #FFC107; /* Set the text color */
     padding: 10px; /* Adjust padding as needed */
     margin-bottom: 10px; /* Adjust margin as needed */
 }
@@ -392,7 +410,7 @@ html, body {
 }
 
   .formbold-input-flex > div {
-    width: 60%;
+    width: 100%;
     display: flex;
     flex-direction: column-reverse;
     align-items: top;
@@ -400,7 +418,7 @@ html, body {
   }
 
   .formbold-input-flex-top > div {
-    width: 35%;
+    width: 100%;
     display: flex;
     flex-direction:column-reverse;
     align-items: center;
@@ -445,7 +463,7 @@ html, body {
     color: #000;
   }
   .formbold-form-input:focus {
-    border-color: #d6af00;
+    border-color: #FFC107;
   }
   .formbold-form-label {
     color: #000;
@@ -462,11 +480,11 @@ html, body {
   }
 
   .formbold-form-input:focus + .formbold-form-label {
-    color: #d6af00;
+    color: #FFC107;
   }
 
   .formbold-form-input:focus + .formbold-form-label-top {
-    color: #d6af00;
+    color: #FFC107;
   }
 
   .formbold-input-file {
@@ -507,24 +525,29 @@ html, body {
     padding: 12px 25px;
     border: none;
     font-weight: 500;
-    background-color: #d6af00;
+    background-color: #FFC107;
     color: white;
     cursor: pointer;
     margin-top: 25px;
     border: 1px solid #000;
   }
-  .formbold-btn:hover {
+  .formbold-btn:hover { 
+    background-color: white;
+    color: black;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
   }
 
   a.underline-button {
-    background-color: transparent !important;
-    border: none !important;
-    cursor: pointer !important;
-    font-size: 22px !important;
-    color: #000000 !important;
-    transition: text-decoration 0.3s ease !important;
-    align-self: flex-end !important;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 16px 25px;
+    border: none;
+    font-weight: 500;
+    background-color: #FFC107;
+    color: white;
+    cursor: pointer;
+    margin-top: 25px;
+    border: 1px solid #000;
   }
   
   .underline-button:hover {
@@ -539,7 +562,7 @@ html, body {
 
 /* Style the dropdown button */
 .dashboardbtn {
-  background-color: #d6af00;
+  background-color: #FFC107;
   color: rgb(0, 0, 0);
   padding: 10px;
   font-size: 16px;
@@ -601,3 +624,31 @@ select {
   display: none;
 }
 
+.uprareports h1 {
+  color: #FFC107;
+  text-align: center;
+  margin-left: 120px;
+}
+.bienvenidosusuario {
+  font-size: 1.5em;
+  color: #FFC107;
+  text-align: center;
+  padding: 10px;
+ 
+}
+.tablaheader {
+  font-size: 1.5em;
+  color: #FFC107;
+  text-align: center;
+  padding: 10px;
+ 
+}
+h6 {
+  font-size: 2em;
+  color: #FFC107;
+  text-align: center;
+  padding: 10px;
+  margin-right: 200px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.582);
+}

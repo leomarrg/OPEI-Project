@@ -2,6 +2,32 @@
     session_start();
     include 'db_info.php';
 
+    // Check if admin session is not set, redirect to signin.html
+    if (!isset($_SESSION['adminID'])) {
+        header("Location: ../signin.html");
+        exit();
+    }
+
+    // Include database connection
+    include_once "db_info.php";
+
+    // Prepare and execute query to fetch admin details
+    $adminID = $_SESSION['adminID'];
+    $sql = "SELECT `Name` FROM `admin` WHERE `adminID` = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $adminID);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    // Fetch admin's name
+    $adminName = "";
+    if ($row = $result->fetch_assoc()) {
+        $adminName = $row['Name'];
+    }
+
+    // Store admin's name in session variable
+    $_SESSION['adminName'] = $adminName;
+
    // Process form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
@@ -54,6 +80,15 @@ $conn->close();
     </head>
     <body>
         <header>
+            <!-- Dropdown menu -->
+            <div class="Adminbtn">
+                <button class="dropbtn"><?php echo $_SESSION['adminName']; ?></button>
+                    <div class="Admin-content">
+                        <a href="signup.php">Registrar Usuario Nuevo</a>
+                        <a href="viewusers.php">Administrar Cuentas</a>
+                        <a href="logout.php" >Cerrar Session</a>
+                    </div>
+            </div>
             <a href='website.php' class="backmainmenu"><h1>UPRA Reports</h1></a>
               <h3 class="metaheader">Registrar Usuario Nuevo</h3>
           </header>

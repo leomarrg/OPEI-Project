@@ -196,7 +196,49 @@ function saveChanges(table12ID) {
         console.error('Error saving changes:', error);
     });
 }   
+// Update the header with the department value
+document.getElementById('departmentHeader').innerText = department;
 
+//Selected year makes it so the url becomes that year
+document.addEventListener("DOMContentLoaded", function() {
+  var yearDropdown = document.getElementById("yearDropdown");
+
+  // Check if the element exists before adding the event listener
+  if (yearDropdown) {
+      yearDropdown.addEventListener("change", function() {
+          var selectedYear = this.value;
+          var yearLinks = document.querySelectorAll(".year-link");
+
+          console.log("Selected Year:", selectedYear);
+
+          yearLinks.forEach(function(link) {
+              var href = link.getAttribute("href");
+              console.log("Original Href:", href);
+              var newHref = href.replace(/year=\d{4}/, "year=" + selectedYear);
+              console.log("New Href:", newHref);
+              link.setAttribute("href", newHref);
+          });
+      });
+  }
+
+  // Get department from URL parameters
+  const urlParams = new URLSearchParams(window.location.search);
+  const department = urlParams.get('department');
+
+  // Update the header with the department value if it's not null
+  var departmentHeader = document.getElementById('departmentHeader');
+  if (departmentHeader && department !== null) {
+      departmentHeader.innerText = department;
+  }
+});
+
+function toggleAdminContent() {
+    var adminContent = document.querySelector('.Admin-content');
+    adminContent.classList.toggle('active');
+}
+
+var menuButton = document.querySelector('.dropbtn');
+menuButton.addEventListener('click', toggleAdminContent);
 /*
 // Editar Tabla12
 function editRow(event) {

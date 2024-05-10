@@ -1,3 +1,34 @@
+<?php
+    // Start session
+    session_start();
+
+    // Check if admin session is not set, redirect to signin.html
+    if (!isset($_SESSION['adminID'])) {
+        header("Location: ../signin.html");
+        exit();
+    }
+
+    // Include database connection
+    include_once "db_info.php";
+
+    // Prepare and execute query to fetch admin details
+    $adminID = $_SESSION['adminID'];
+    $sql = "SELECT `Name` FROM `admin` WHERE `adminID` = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $adminID);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    // Fetch admin's name
+    $adminName = "";
+    if ($row = $result->fetch_assoc()) {
+        $adminName = $row['Name'];
+    }
+
+    // Store admin's name in session variable
+    $_SESSION['adminName'] = $adminName;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +36,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UPRA Reports</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    
 </head>
 <body>
     <header>
-        <h1>UPRA Reports</h1>
+        <!-- Dropdown menu -->
+        <div class="Adminbtn">
+        <button class="dropbtn"><?php echo $_SESSION['adminName']; ?></button>
+            <div class="Admin-content">
+                <a href="signup.php">Registrar Usuario Nuevo</a>
+                <a href="viewusers.php">Administrar Cuentas</a>
+                <a href="logout.php" >Cerrar Session</a>
+            </div>
+        </div>
+        <h1 class="uprareports">UPRA Reports</h1>
         <div class="menu-bar">
             <a href="javascript:void(0)" class="menu-option-bar" onclick="showOptions('set-1', 'CCOM', this)">CCOM</a>
             <a href="javascript:void(0)" class="menu-option-bar" onclick="showOptions('set-2', 'ADEM', this)">ADEM</a>
@@ -21,13 +62,15 @@
             <a href="javascript:void(0)" class="menu-option-bar" onclick="showOptions('set-9','MATE', this)">MATE</a>
             <a href="javascript:void(0)" class="menu-option-bar" onclick="showOptions('set-10','HUMA', this)">HUMA</a>
         </div>
+        
     </header>
 
     <div class="welcome-container" id="welcome-text">
         <p>Bienvenidos a UPRA Reports</p>
-        <p>Presiona un departamento arriba para ver sus metas</p>
-        <a href="signup.php"><h3>Registrar Usuario Nuevo</h3></a>
-        <a href="viewusers.php"><h3>Administrar Cuentas</h3></a>
+        <p>Presiona un departamento arriba para ver las metas</p>
+        
+
+       
     </div>
     <div class="year-container" id="active-set-text"></div>
     <div class="year-container" id="year-text">
@@ -132,5 +175,15 @@
         <p>&copy; 2024 UPRA Reports. All rights reserved.</p>
     </div>
     <script src="js/mainmenu.js"></script>
+    <script>
+        //Main menu Admin info dropdown
+        function toggleAdminContent() {
+            var adminContent = document.querySelector('.Admin-content');
+            adminContent.classList.toggle('active');
+        }
+
+        var menuButton = document.querySelector('.dropbtn');
+        menuButton.addEventListener('click', toggleAdminContent);
+    </script>
 </body>
 </html>

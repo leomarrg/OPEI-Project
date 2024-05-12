@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     // Prepare and bind the SQL statement
-    $stmt = $conn->prepare("INSERT INTO table25 ((DepartmentID, year, field1, field2, field3, field4, field5) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO table25 (DepartmentID, year, field1, field2, field3, field4, field5) VALUES (?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("iisssss", $departmentID, $currentYear, $obj21, $obj22, $obj23, $obj24, $obj25);
 
     // Execute the statement

@@ -136,5 +136,15 @@ $conn->close();
             <p>&copy; 2024 UPRA Reports. All rights reserved.</p>
         </div>
         <script src="js/mainmenu.js"></script>
+        <script>
+        //Main menu Admin info dropdown
+        function toggleAdminContent() {
+            var adminContent = document.querySelector('.Admin-content');
+            adminContent.classList.toggle('active');
+        }
+
+        var menuButton = document.querySelector('.dropbtn');
+        menuButton.addEventListener('click', toggleAdminContent);
+    </script>
     </body>
     </html>

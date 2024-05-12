@@ -42,7 +42,7 @@ $stmt_table14a->execute();
 $result_table14a = $stmt_table14a->get_result();
 
 // Fetch data from Table 1.4B (Table14b)
-$sql_table14b = "SELECT field1, field2, field3, field4, field5, field6, field7 FROM table14b WHERE DepartmentID = (SELECT DepartmentID FROM departamento WHERE DepartmentName = ?) AND year = ?";
+$sql_table14b = "SELECT field1, field2, field3, field4, field5, field6 FROM table14b WHERE DepartmentID = (SELECT DepartmentID FROM departamento WHERE DepartmentName = ?) AND year = ?";
 $stmt_table14b = $conn->prepare($sql_table14b);
 $stmt_table14b->bind_param("si", $department, $year);
 $stmt_table14b->execute();
@@ -98,7 +98,7 @@ $stmt_table25->execute();
 $result_table25 = $stmt_table25->get_result();
 
 // Fetch data from Table 3.1
-$sql_table31 = "SELECT field1, field2, field3, field4 FROM table31 WHERE DepartmentID = (SELECT DepartmentID FROM departamento WHERE DepartmentName = ?) AND year = ?";
+$sql_table31 = "SELECT field1, field2, field3, field4, field5 FROM table31 WHERE DepartmentID = (SELECT DepartmentID FROM departamento WHERE DepartmentName = ?) AND year = ?";
 $stmt_table31 = $conn->prepare($sql_table31);
 $stmt_table31->bind_param("si", $department, $year);
 $stmt_table31->execute();
@@ -507,7 +507,7 @@ fwrite($output, PHP_EOL);
 
 // Write Table 3.1 header
 fwrite($output, '"Table 3.1"' . PHP_EOL);
-$header_line = '"Tipo de Reconocimiento","Cantidad de Estudiantes Reconocidos (Valor numérico)","Descripción del reconocimiento","Organismo que otorga el reconocimiento"' . PHP_EOL;
+$header_line = '"Tipo de Reconocimiento","Cantidad de Estudiantes Reconocidos (Valor numérico)","Descripción del reconocimiento","fecha","Organismo que otorga el reconocimiento"' . PHP_EOL;
 $header_line = html_entity_decode($header_line, ENT_QUOTES, 'UTF-8');
 $header_line = utf8_decode($header_line);
 fwrite($output, $header_line);
@@ -526,7 +526,7 @@ fwrite($output, PHP_EOL);
 
 // Write Table 3.2A header
 fwrite($output, '"Table 3.2A"' . PHP_EOL);
-$header_line = '"Tipo de Reconocimiento","Cantidad de Estudiantes Reconocidos (Valor numérico)","Descripción del reconocimiento","Organismo que otorga el reconocimiento"' . PHP_EOL;
+$header_line = '"Título de la actividad	","Tipo de actividad","Fecha"' . PHP_EOL;
 $header_line = html_entity_decode($header_line, ENT_QUOTES, 'UTF-8');
 $header_line = utf8_decode($header_line);
 fwrite($output, $header_line);

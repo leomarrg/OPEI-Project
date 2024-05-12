@@ -548,7 +548,7 @@ if ($result->num_rows > 0) {
                             <td><input type='text' name='field3' value='" . $row["field3"] . "' class='editable' readonly></td>
                             <td><input type='text' name='field4' value='" . $row["field4"] . "' class='editable' readonly></td>
                             <td><input type='text' name='field5' value='" . $row["field5"] . "' class='editable' readonly></td>
-                            <td><input type='text' name='field6' value='" . $row["field6"] . "' class='editable' readonly></td>
+                            <td><div><input type='text' name='field6' value='" . $row["field6"] . "' class='editable' readonly></td>
                             <td class='editar-column'><a href='#' class='editar-btn' onclick='makeEditable(event)'>Editar</a></td>
                             <td class='borrar-column'><a href='?action13=delete&id13=" . $row["table13ID"] . "&department=$department&year=$year' class='borrar-btn'>Borrar</a></td>
                             <td class='salvar-column' style='display: none;'> <button type='submit' name='action13' value='salvar' class='salvar-btn'>Salvar Cambios</button></td>

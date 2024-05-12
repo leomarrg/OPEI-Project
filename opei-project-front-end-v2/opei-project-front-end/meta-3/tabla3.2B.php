@@ -207,9 +207,9 @@
                   id="emplRelUPRA"
                   class="formbold-form-input"
                   >
-                  <option value="option0">Seleccione...</option>
-                  <option value="option1">Si </option>
-                  <option value="option2">No</option>
+                  
+                  <option value="Si">Si </option>
+                  <option value="No">No</option>
                   </select>
                   <label for="emplRelUPRA" class="formbold-form-label">Trabajo actual relacionado al grado obtenido en UPRA</label>
               </div>

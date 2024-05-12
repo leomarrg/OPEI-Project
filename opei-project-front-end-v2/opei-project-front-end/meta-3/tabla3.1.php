@@ -160,15 +160,14 @@
                 id="reconType"
                 class="formbold-form-input"
                 >
-                <option value="option0">Seleccione...</option>
-                <option value="option1">Artístico </option>
-                <option value="option2">Desportista del año</option>
-                <option value="option2">Excelencia académica</option>
-                <option value="option2">Investigación</option>
-                <option value="option2">Liderazgo</option>
-                <option value="option2">Nominaciones</option>
-                <option value="option2">Servicio Comunitario</option>
-                <option value="option2">Otro</option>
+                <option value="Artístico">Artístico </option>
+                <option value="Desportista del año">Desportista del año</option>
+                <option value="Excelencia académica">Excelencia académica</option>
+                <option value="Investigación">Investigación</option>
+                <option value="Liderazgo">Liderazgo</option>
+                <option value="Nominaciones">Nominaciones</option>
+                <option value="Servicio Comunitario">Servicio Comunitario</option>
+                <option value="Otro">Otro</option>
                 </select>
                 <label for="reconType" class="formbold-form-label">Tipo de Reconocimiento</label>
             </div>

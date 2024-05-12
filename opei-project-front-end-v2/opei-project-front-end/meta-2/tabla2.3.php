@@ -172,10 +172,10 @@
             id="agency"
             class="formbold-form-input"
             >
-            <option value="option0">Seleccione...</option>
-            <option value="option1">Federal</option>
-            <option value="option2">Estatal</option>
-            <option value="option2">Privado</option>
+            
+            <option value="Federal">Federal</option>
+            <option value="Estatal">Estatal</option>
+            <option value="Privado">Privado</option>
             </select>
             <label for="agency" class="formbold-form-label">Agencia</label>
         </div>
@@ -189,10 +189,9 @@
             id="status"
             class="formbold-form-input"
             >
-            <option value="option0">Seleccione...</option>
-            <option value="option1">Aprobado</option>
-            <option value="option2">No aprobado</option>
-            <option value="option2">Pendiente a aprobacion</option>
+            <option value="Aprobado">Aprobado</option>
+            <option value="No aprobado">No aprobado</option>
+            <option value="Pendiente a aprobacion">Pendiente a aprobacion</option>
             </select>
             <label for="status" class="formbold-form-label">Estatus</label>
         </div>

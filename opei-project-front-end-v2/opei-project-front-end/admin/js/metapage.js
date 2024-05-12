@@ -197,7 +197,7 @@ function saveChanges(table12ID) {
     });
 }   
 // Update the header with the department value
-document.getElementById('departmentHeader').innerText = department;
+document.getElementById('departmentHeader').innerText = department1;
 
 //Selected year makes it so the url becomes that year
 document.addEventListener("DOMContentLoaded", function() {

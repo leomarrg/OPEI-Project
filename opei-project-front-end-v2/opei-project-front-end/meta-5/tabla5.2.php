@@ -158,12 +158,12 @@
                 id="iniciativas"
                 class="formbold-form-input"
                 >
-                <option value="option0">Seleccione...</option>
-                <option value="option1">Conferencia, foro o panel</option>
-                <option value="option2">Cursos con o sin crédito</option>
-                <option value="option3">Simposio</option>
-                <option value="option4">Taller</option>
-                <option value="option5">Otro</option>
+               
+                <option value="Conferencia, foro o panel">Conferencia, foro o panel</option>
+                <option value="Cursos con o sin crédito">Cursos con o sin crédito</option>
+                <option value="Simposio">Simposio</option>
+                <option value="Taller">Taller</option>
+                <option value="Otro">Otro</option>
                 </select>
                 <label for="iniciativas" class="formbold-form-label">Iniciativas</label>
             </div>

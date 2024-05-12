@@ -122,7 +122,7 @@
             </tbody>
         </table>
                     <div class="formbold-main-wrapperDept">
-                <a class="underline-button" href="tabla3.2.php">Editar</a>
+                <a class="underline-button" href="tabla3.2.php">Volver</a>
             </div>
     </div>
 </div>

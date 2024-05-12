@@ -170,12 +170,12 @@
             id="clasi"
             class="formbold-form-input"
             >
-            <option value="option0">Seleccione...</option>
-            <option value="option1">Afiches</option>
-            <option value="option2">Exposición</option>
-            <option value="option2">Obras</option>
-            <option value="option2">Propuestas</option>
-            <option value="option2">Otro</option>
+            
+            <option value="Afiches">Afiches</option>
+            <option value="Exposición">Exposición</option>
+            <option value="Obras">Obras</option>
+            <option value="Propuestas">Propuestas</option>
+            <option value="Otro">Otro</option>
             </select>
             <label for="clasi" class="formbold-form-label">Clasificación</label>
         </div>

@@ -62,9 +62,9 @@
       // Function to update a row in the table31 table
       function updateRowa($id, $field1, $field2, $field3, $field4) {
         global $conn;
-        $sql = "UPDATE table31 SET field1=?, field2=?, field3=?, field4=? WHERE table31ID=?";
+        $sql = "UPDATE table31 SET field1=?, field2=?, field3=?, field4=?, field=? WHERE table31ID=?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssssi", $field1, $field2, $field3, $field4, $id);
+        $stmt->bind_param("sssssi", $field1, $field2, $field3, $field4, $field5, $id);
         $stmt->execute();
         $stmt->close();
       }
@@ -91,6 +91,7 @@
         $field2 = $_POST['field2'];
         $field3 = $_POST['field3'];
         $field4 = $_POST['field4'];
+        $field5 = $_POST['field5'];
       
 
 
@@ -115,6 +116,7 @@
                       <th scope='col'>Tipo&nbsp;de&nbsp;Reconocimiento</th>
                       <th scope='col' colspan='2'>Cantidad&nbsp;de&nbsp;Estudiantes&nbsp;Reconocidos&nbsp;(Valor&nbsp;numérico)</th>
                       <th scope='col'>Descripción&nbsp;del&nbsp;reconocimiento </th>
+                      <th scope='col'>Fecha </th>
                       <th scope='col'>Organismo&nbsp;que&nbsp;otorga&nbsp;el&nbsp;reconocimiento</th>
                       <th scope='col' class='editar-header'>Editar</th>
                       <th scope='col' class='borrar-header'>Borrar</th>
@@ -135,6 +137,7 @@
                       <td colspan='2'><input type='text' name='field2' value='" . $row["field2"] . "' class='editable' readonly></td>
                       <td><input type='text' name='field3' value='" . $row["field3"] . "' class='editable' readonly></td>
                       <td><input type='text' name='field4' value='" . $row["field4"] . "' class='editable' readonly></td>
+                      <td><input type='text' name='field4' value='" . $row["field5"] . "' class='editable' readonly></td>
                       <td class='editar-column'><a href='#' class='editar-btn' onclick='makeEditable(event)'>Editar</a></td>
                       <td class='borrar-column'><a href='?actionA=delete&idA=" . $row["table31ID"] . "&department=$department&year=$year' class='borrar-btn'>Borrar</a></td>
                       <td class='salvar-column' style='display: none;'> <button type='submit' name='actionA' value='salvar' class='salvar-btn'>Salvar Cambios</button></td>
@@ -169,11 +172,11 @@
             include 'db_info.php';
 
             // Function to update a row in the table32a table
-            function updateRowb($id, $field1, $field2, $field3, $field4) {
+            function updateRowb($id, $field1, $field2, $field3) {
               global $conn;
-              $sql = "UPDATE table32a SET field1=?, field2=?, field3=?, field4=? WHERE table32aID=?";
+              $sql = "UPDATE table32a SET field1=?, field2=?, field3=? WHERE table32aID=?";
               $stmt = $conn->prepare($sql);
-              $stmt->bind_param("ssssi", $field1, $field2, $field3, $field4, $id);
+              $stmt->bind_param("sssi", $field1, $field2, $field3, $id);
               $stmt->execute();
               $stmt->close();
             }
@@ -199,11 +202,11 @@
           $field1 = $_POST['field1'];
           $field2 = $_POST['field2'];
           $field3 = $_POST['field3'];
-          $field4 = $_POST['field4'];
+          
         
 
 
-          updateRowb($id, $field1, $field2, $field3, $field4);
+          updateRowb($id, $field1, $field2, $field3);
           
           // Redirect back to the same department and year after updating
           $department = $_GET['department'];
@@ -220,10 +223,10 @@
                   <thead>
                     <tr>
                       <th scope='col'>#</th>
-                      <th scope='col'>Tipo&nbsp;de&nbsp;Reconocimiento</th>
-                      <th scope='col' colspan='2'>Cantidad&nbsp;de&nbsp;Estudiantes&nbsp;Reconocidos&nbsp;(Valor&nbsp;numérico)</th>
-                      <th scope='col'>Descripción&nbsp;del&nbsp;reconocimiento </th>
-                      <th scope='col'>Organismo&nbsp;que&nbsp;otorga&nbsp;el&nbsp;reconocimiento</th>
+                      <th scope='col'>Título de la actividad	</th>
+                      <th scope='col' colspan='2'>Tipo de actividad</th>
+                      <th scope='col'>Fecha</th>
+                      
                       <th scope='col' class='editar-header'>Editar</th>
                       <th scope='col' class='borrar-header'>Borrar</th>
                       <th scope='col' class='salvar-header' style='display: none;'>Modo de editar</th> 
@@ -242,7 +245,7 @@
                       <td><input type='text' name='field1' value='" . $row["field1"] . "' class='editable' readonly></td>
                       <td colspan='2'><input type='text' name='field2' value='" . $row["field2"] . "' class='editable' readonly></td>
                       <td><input type='text' name='field3' value='" . $row["field3"] . "' class='editable' readonly></td>
-                      <td><input type='text' name='field4' value='" . $row["field4"] . "' class='editable' readonly></td>
+                     
                       <td class='editar-column'><a href='#' class='editar-btn' onclick='makeEditable(event)'>Editar</a></td>
                       <td class='borrar-column'><a href='?actionB=delete&idB=" . $row["table32aID"] . "&department=$department&year=$year' class='borrar-btn'>Borrar</a></td>
                       <td class='salvar-column' style='display: none;'> <button type='submit' name='actionB' value='salvar' class='salvar-btn'>Salvar Cambios</button></td>

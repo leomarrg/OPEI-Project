@@ -1,3 +1,48 @@
+<?php
+    // Start session
+    session_start();
+    
+    // Check if the user is logged in
+    if (!isset($_SESSION['UserID'])) {
+        // Redirect the user to the login page if they are not logged in
+        header("Location: ../signin.html");
+        exit; // Ensure that script execution stops after redirection
+    }
+
+
+    // Include database connection using MySQLi
+    include_once "db_info.php";
+
+    // Prepare and execute query to fetch User details
+    $UserID = $_SESSION['UserID'];
+    $sql = "SELECT `Name`, `DepartmentID` FROM `usuario` WHERE `UserID` = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $UserID);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $userDetails = $result->fetch_assoc();
+
+    // Store user's name and department ID in session variables
+    $_SESSION['userName'] = $userDetails['Name'];
+    $_SESSION['DepartmentID'] = $userDetails['DepartmentID'];
+
+    // Check if DepartmentID exists in the session
+    if (isset($_SESSION['DepartmentID'])) {
+        // Retrieve the DepartmentID of the logged-in user from the session
+        $departmentID = $_SESSION['DepartmentID'];
+
+        // Query the departamento table to get the department name
+        $sql = "SELECT DepartmentName FROM departamento WHERE DepartmentID = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $departmentID);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $department = $result->fetch_assoc();
+
+    } 
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +63,7 @@
         <script src="../js/jquery.validate.min.js"></script>
         <script src="../js/main.js"></script>
     
-        <title>Contact Form #2 - Page 1</title>
+        <title>UPRA Reports Tabla 1-1B Editar</title>
         <script>
       $(document).ready(function() {
         editRow11b();
@@ -26,21 +71,21 @@
     </script>
 </head>
 <body>
-    <header></header>
+    <header>
+        <h1 class="uprareports">UPRA Reports</h1>
+        <h2 class="bienvenidosusuario"><?php echo $department['DepartmentName'] ?></h2>        <h2 class="tablaheader">Tabla 1.1B: Cursos en diversas modalidades educativas</h2>
+        <h2 class="tablaheader"> Editar Informaci&oacute;n en la Tabla 1.1B</h2>
+    </header>
 
-       <!-- Dropdown list -->
-<div class="formbold-main-wrapperDept">
-    <a class="underline-button" href = "../meta-1/tabla1.1B.html">Editar</a>
-</div>
+       
 
 <!-- Main form -->
 <div class="formbold-main-wrapper-edit">
     <div class="formbold-form-wrapper-edit">
-        <h6>Tabla 1.1B Cursos en diversas modalidades educativas  (IMPORTANTE: DEBERA SER CERTIFICADA POR EL DECANATO DE ASUNTOS ACADEMICOS</h6>
             <table class="table">
                     <thead>
                         <tr>
-                        <th scope="col">#</th>
+                        
                         <th scope="col">Cambio&nbsp;académico</th>
                         <th scope="col">Cambio&nbsp;adacémico&nbsp;institucional&nbsp;o&nbsp;menor</th>
                         <th scope="col">Cambio&nbsp;académico&nbsp;significativo</th>
@@ -60,13 +105,13 @@
                         // Output data of each row
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>";
-                            echo "<td>" . $row['table11bID'] . "</td>";
+                            echo "<td style='display: none;'>" . $row['table11bID'] . "</td>";
                             echo "<td>" . $row['field1'] . "</td>";
                             echo "<td>" . $row['field2'] . "</td>";
                             echo "<td>" . $row['field3'] . "</td>";
                             echo "<td>" . $row['field4'] . "</td>";
                             echo "<td><a href='javascript:void(0);' class='edit-btn'>Editar</a></td>";
-                            echo "<td><a href='../meta-1/tabla1.1b_delete.php?id=" . $row['table11bID'] . "'>Borrar</a></td>";
+                            echo "<td><a class='delete-btn' href='../meta-1/tabla1.1b_delete.php?id=" . $row['table11bID'] . "'>Borrar</a></td>";
                             echo "</tr>";
                         }
 
@@ -76,6 +121,9 @@
                     </tbody>
                 </table>
         </form>
+        <div class="formbold-main-wrapperDept" >
+            <a class="underline-button"  href="../meta-1/tabla1.1B.php" style="">Volver</a>
+        </div>
     </div>
 </div>
     <!-- Add your footer box below -->

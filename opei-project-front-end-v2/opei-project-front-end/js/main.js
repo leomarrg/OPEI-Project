@@ -455,17 +455,8 @@ $(document).ready(function(){
             }
         });
 
-         // Check if any of the dropdown lists have the default value "0"
-         var dropdownEmpty = false;
-         $(this).find('select').each(function() {
-             if ($(this).val() === '0') {
-                 dropdownEmpty = true;
-                 return false; // Exit the loop early if a dropdown list with default value is found
-             }
-         });
-
-         // If any required field is empty, prevent form submission
-         if (empty || dropdownEmpty) {
+        // If any required field is empty, prevent form submission
+        if (empty) {
             alert('Please fill in all the required fields.');
             return;
         }
@@ -490,9 +481,6 @@ $(document).ready(function(){
                     console.log('Form submitted successfully!');
                     // Clear form fields
                     $form.find('input[type=text], input[type=number], textarea').val('');
-                    // Clear drop down
-                    $form.find('select').val('0');
-
                     // Show success message
                     alert('Form submitted successfully!');
                 } else {
@@ -520,20 +508,11 @@ $(document).ready(function(){
             }
         });
 
-        // Check if any of the dropdown lists have the default value "0"
-        var dropdownEmpty = false;
-        $(this).find('select').each(function() {
-            if ($(this).val() === '0') {
-                dropdownEmpty = true;
-                return false; // Exit the loop early if a dropdown list with default value is found
-            }
-        });
-
         // If any required field is empty, prevent form submission
-        if (empty || dropdownEmpty) {
-           alert('Please fill in all the required fields.');
-           return;
-       }
+        if (empty) {
+            alert('Please fill in all the required fields.');
+            return;
+        }
 
         // Get form data
         var formData = $(this).serialize();
@@ -555,8 +534,6 @@ $(document).ready(function(){
                     console.log('Form submitted successfully!');
                     // Clear form fields
                     $form.find('input[type=text], input[type=number], textarea').val('');
-                    // Clear drop down
-                    $form.find('select').val('0');
                     // Show success message
                     alert('Form submitted successfully!');
                 } else {
@@ -584,20 +561,11 @@ $(document).ready(function(){
             }
         });
 
-        // Check if any of the dropdown lists have the default value "0"
-        var dropdownEmpty = false;
-        $(this).find('select').each(function() {
-            if ($(this).val() === '0') {
-                dropdownEmpty = true;
-                return false; // Exit the loop early if a dropdown list with default value is found
-            }
-        });
-
         // If any required field is empty, prevent form submission
-        if (empty || dropdownEmpty) {
-           alert('Please fill in all the required fields.');
-           return;
-       }
+        if (empty) {
+            alert('Please fill in all the required fields.');
+            return;
+        }
 
         // Get form data
         var formData = $(this).serialize();
@@ -619,8 +587,6 @@ $(document).ready(function(){
                     console.log('Form submitted successfully!');
                     // Clear form fields
                     $form.find('input[type=text], input[type=number], textarea').val('');
-                    // Clear drop down
-                    $form.find('select').val('0');
                     // Show success message
                     alert('Form submitted successfully!');
                 } else {
@@ -648,20 +614,11 @@ $(document).ready(function(){
             }
         });
 
-        // Check if any of the dropdown lists have the default value "0"
-        var dropdownEmpty = false;
-        $(this).find('select').each(function() {
-            if ($(this).val() === '0') {
-                dropdownEmpty = true;
-                return false; // Exit the loop early if a dropdown list with default value is found
-            }
-        });
-
         // If any required field is empty, prevent form submission
-        if (empty || dropdownEmpty) {
-           alert('Please fill in all the required fields.');
-           return;
-       }
+        if (empty) {
+            alert('Please fill in all the required fields.');
+            return;
+        }
 
         // Get form data
         var formData = $(this).serialize();
@@ -683,8 +640,6 @@ $(document).ready(function(){
                     console.log('Form submitted successfully!');
                     // Clear form fields
                     $form.find('input[type=text], input[type=number], textarea').val('');
-                    // Clear drop down
-                    $form.find('select').val('0');
                     // Show success message
                     alert('Form submitted successfully!');
                 } else {
@@ -712,13 +667,11 @@ $(document).ready(function(){
             }
         });
 
-
-
         // If any required field is empty, prevent form submission
         if (empty) {
-           alert('Please fill in all the required fields.');
-           return;
-       }
+            alert('Please fill in all the required fields.');
+            return;
+        }
 
         // Get form data
         var formData = $(this).serialize();
@@ -740,8 +693,6 @@ $(document).ready(function(){
                     console.log('Form submitted successfully!');
                     // Clear form fields
                     $form.find('input[type=text], input[type=number], textarea').val('');
-                    // Clear drop down
-                    $form.find('select').val('0');
                     // Show success message
                     alert('Form submitted successfully!');
                 } else {
@@ -769,20 +720,11 @@ $(document).ready(function(){
             }
         });
 
-        // Check if any of the dropdown lists have the default value "0"
-        var dropdownEmpty = false;
-        $(this).find('select').each(function() {
-            if ($(this).val() === '0') {
-                dropdownEmpty = true;
-                return false; // Exit the loop early if a dropdown list with default value is found
-            }
-        });
-
         // If any required field is empty, prevent form submission
-        if (empty || dropdownEmpty) {
-           alert('Please fill in all the required fields.');
-           return;
-       }
+        if (empty) {
+            alert('Please fill in all the required fields.');
+            return;
+        }
 
         // Get form data
         var formData = $(this).serialize();
@@ -804,8 +746,6 @@ $(document).ready(function(){
                     console.log('Form submitted successfully!');
                     // Clear form fields
                     $form.find('input[type=text], input[type=number], textarea').val('');
-                    // Clear drop down
-                    $form.find('select').val('0');
                     // Show success message
                     alert('Form submitted successfully!');
                 } else {
@@ -833,20 +773,11 @@ $(document).ready(function(){
             }
         });
 
-        // Check if any of the dropdown lists have the default value "0"
-        var dropdownEmpty = false;
-        $(this).find('select').each(function() {
-            if ($(this).val() === '0') {
-                dropdownEmpty = true;
-                return false; // Exit the loop early if a dropdown list with default value is found
-            }
-        });
-
         // If any required field is empty, prevent form submission
-        if (empty || dropdownEmpty) {
-           alert('Please fill in all the required fields.');
-           return;
-       }
+        if (empty) {
+            alert('Please fill in all the required fields.');
+            return;
+        }
 
         // Get form data
         var formData = $(this).serialize();
@@ -868,8 +799,6 @@ $(document).ready(function(){
                     console.log('Form submitted successfully!');
                     // Clear form fields
                     $form.find('input[type=text], input[type=number], textarea').val('');
-                    // Clear drop down
-                    $form.find('select').val('0');
                     // Show success message
                     alert('Form submitted successfully!');
                 } else {
@@ -897,20 +826,11 @@ $(document).ready(function(){
             }
         });
 
-        // Check if any of the dropdown lists have the default value "0"
-        var dropdownEmpty = false;
-        $(this).find('select').each(function() {
-            if ($(this).val() === '0') {
-                dropdownEmpty = true;
-                return false; // Exit the loop early if a dropdown list with default value is found
-            }
-        });
-
         // If any required field is empty, prevent form submission
-        if (empty || dropdownEmpty) {
-           alert('Please fill in all the required fields.');
-           return;
-       }
+        if (empty) {
+            alert('Please fill in all the required fields.');
+            return;
+        }
 
         // Get form data
         var formData = $(this).serialize();
@@ -932,8 +852,6 @@ $(document).ready(function(){
                     console.log('Form submitted successfully!');
                     // Clear form fields
                     $form.find('input[type=text], input[type=number], textarea').val('');
-                    // Clear drop down
-                    $form.find('select').val('0');
                     // Show success message
                     alert('Form submitted successfully!');
                 } else {
@@ -961,20 +879,11 @@ $(document).ready(function(){
             }
         });
 
-        // Check if any of the dropdown lists have the default value "0"
-        var dropdownEmpty = false;
-        $(this).find('select').each(function() {
-            if ($(this).val() === '0') {
-                dropdownEmpty = true;
-                return false; // Exit the loop early if a dropdown list with default value is found
-            }
-        });
-
         // If any required field is empty, prevent form submission
-        if (empty || dropdownEmpty) {
-           alert('Please fill in all the required fields.');
-           return;
-       }
+        if (empty) {
+            alert('Please fill in all the required fields.');
+            return;
+        }
 
         // Get form data
         var formData = $(this).serialize();
@@ -996,8 +905,6 @@ $(document).ready(function(){
                     console.log('Form submitted successfully!');
                     // Clear form fields
                     $form.find('input[type=text], input[type=number], textarea').val('');
-                    // Clear drop down
-                    $form.find('select').val('0');
                     // Show success message
                     alert('Form submitted successfully!');
                 } else {
@@ -1025,20 +932,11 @@ $(document).ready(function(){
             }
         });
 
-        // Check if any of the dropdown lists have the default value "0"
-        var dropdownEmpty = false;
-        $(this).find('select').each(function() {
-            if ($(this).val() === '0') {
-                dropdownEmpty = true;
-                return false; // Exit the loop early if a dropdown list with default value is found
-            }
-        });
-
         // If any required field is empty, prevent form submission
-        if (empty || dropdownEmpty) {
-           alert('Please fill in all the required fields.');
-           return;
-       }
+        if (empty) {
+            alert('Please fill in all the required fields.');
+            return;
+        }
 
         // Get form data
         var formData = $(this).serialize();
@@ -1060,8 +958,6 @@ $(document).ready(function(){
                     console.log('Form submitted successfully!');
                     // Clear form fields
                     $form.find('input[type=text], input[type=number], textarea').val('');
-                    // Clear drop down
-                    $form.find('select').val('0');
                     // Show success message
                     alert('Form submitted successfully!');
                 } else {
@@ -1089,20 +985,11 @@ $(document).ready(function(){
             }
         });
 
-       // Check if any of the dropdown lists have the default value "0"
-       var dropdownEmpty = false;
-       $(this).find('select').each(function() {
-           if ($(this).val() === '0') {
-               dropdownEmpty = true;
-               return false; // Exit the loop early if a dropdown list with default value is found
-           }
-       });
-
-       // If any required field is empty, prevent form submission
-       if (empty || dropdownEmpty) {
-          alert('Please fill in all the required fields.');
-          return;
-      }
+        // If any required field is empty, prevent form submission
+        if (empty) {
+            alert('Please fill in all the required fields.');
+            return;
+        }
 
         // Get form data
         var formData = $(this).serialize();
@@ -1124,8 +1011,6 @@ $(document).ready(function(){
                     console.log('Form submitted successfully!');
                     // Clear form fields
                     $form.find('input[type=text], input[type=number], textarea').val('');
-                    // Clear drop down
-                    $form.find('select').val('0');
                     // Show success message
                     alert('Form submitted successfully!');
                 } else {
@@ -1153,20 +1038,11 @@ $(document).ready(function(){
             }
         });
 
-        // Check if any of the dropdown lists have the default value "0"
-        var dropdownEmpty = false;
-        $(this).find('select').each(function() {
-            if ($(this).val() === '0') {
-                dropdownEmpty = true;
-                return false; // Exit the loop early if a dropdown list with default value is found
-            }
-        });
-
         // If any required field is empty, prevent form submission
-        if (empty || dropdownEmpty) {
-           alert('Please fill in all the required fields.');
-           return;
-       }
+        if (empty) {
+            alert('Please fill in all the required fields.');
+            return;
+        }
 
         // Get form data
         var formData = $(this).serialize();
@@ -1188,8 +1064,6 @@ $(document).ready(function(){
                     console.log('Form submitted successfully!');
                     // Clear form fields
                     $form.find('input[type=text], input[type=number], textarea').val('');
-                    // Clear drop down
-                    $form.find('select').val('0');
                     // Show success message
                     alert('Form submitted successfully!');
                 } else {
@@ -1217,20 +1091,11 @@ $(document).ready(function(){
             }
         });
 
-        // Check if any of the dropdown lists have the default value "0"
-        var dropdownEmpty = false;
-        $(this).find('select').each(function() {
-            if ($(this).val() === '0') {
-                dropdownEmpty = true;
-                return false; // Exit the loop early if a dropdown list with default value is found
-            }
-        });
-
         // If any required field is empty, prevent form submission
-        if (empty || dropdownEmpty) {
-           alert('Please fill in all the required fields.');
-           return;
-       }
+        if (empty) {
+            alert('Please fill in all the required fields.');
+            return;
+        }
 
         // Get form data
         var formData = $(this).serialize();
@@ -1252,8 +1117,6 @@ $(document).ready(function(){
                     console.log('Form submitted successfully!');
                     // Clear form fields
                     $form.find('input[type=text], input[type=number], textarea').val('');
-                    // Clear drop down
-                    $form.find('select').val('0');
                     // Show success message
                     alert('Form submitted successfully!');
                 } else {
@@ -1281,20 +1144,11 @@ $(document).ready(function(){
             }
         });
 
-        // Check if any of the dropdown lists have the default value "0"
-        var dropdownEmpty = false;
-        $(this).find('select').each(function() {
-            if ($(this).val() === '0') {
-                dropdownEmpty = true;
-                return false; // Exit the loop early if a dropdown list with default value is found
-            }
-        });
-
         // If any required field is empty, prevent form submission
-        if (empty || dropdownEmpty) {
-           alert('Please fill in all the required fields.');
-           return;
-       }
+        if (empty) {
+            alert('Please fill in all the required fields.');
+            return;
+        }
 
         // Get form data
         var formData = $(this).serialize();
@@ -1316,8 +1170,6 @@ $(document).ready(function(){
                     console.log('Form submitted successfully!');
                     // Clear form fields
                     $form.find('input[type=text], input[type=number], textarea').val('');
-                    // Clear drop down
-                    $form.find('select').val('0');
                     // Show success message
                     alert('Form submitted successfully!');
                 } else {
@@ -1345,20 +1197,11 @@ $(document).ready(function(){
             }
         });
 
-        // Check if any of the dropdown lists have the default value "0"
-        var dropdownEmpty = false;
-        $(this).find('select').each(function() {
-            if ($(this).val() === '0') {
-                dropdownEmpty = true;
-                return false; // Exit the loop early if a dropdown list with default value is found
-            }
-        });
-
         // If any required field is empty, prevent form submission
-        if (empty || dropdownEmpty) {
-           alert('Please fill in all the required fields.');
-           return;
-       }
+        if (empty) {
+            alert('Please fill in all the required fields.');
+            return;
+        }
 
         // Get form data
         var formData = $(this).serialize();
@@ -1380,8 +1223,6 @@ $(document).ready(function(){
                     console.log('Form submitted successfully!');
                     // Clear form fields
                     $form.find('input[type=text], input[type=number], textarea').val('');
-                    // Clear drop down
-                    $form.find('select').val('0');
                     // Show success message
                     alert('Form submitted successfully!');
                 } else {
@@ -1409,20 +1250,11 @@ $(document).ready(function(){
             }
         });
 
-        // Check if any of the dropdown lists have the default value "0"
-        var dropdownEmpty = false;
-        $(this).find('select').each(function() {
-            if ($(this).val() === '0') {
-                dropdownEmpty = true;
-                return false; // Exit the loop early if a dropdown list with default value is found
-            }
-        });
-
         // If any required field is empty, prevent form submission
-        if (empty || dropdownEmpty) {
-           alert('Please fill in all the required fields.');
-           return;
-       }
+        if (empty) {
+            alert('Please fill in all the required fields.');
+            return;
+        }
 
         // Get form data
         var formData = $(this).serialize();
@@ -1444,8 +1276,6 @@ $(document).ready(function(){
                     console.log('Form submitted successfully!');
                     // Clear form fields
                     $form.find('input[type=text], input[type=number], textarea').val('');
-                    // Clear drop down
-                    $form.find('select').val('0');
                     // Show success message
                     alert('Form submitted successfully!');
                 } else {
@@ -2682,7 +2512,7 @@ function editRow14() {
         };
 
         $.ajax({
-            url: '../meta-1/tabla1.1B_update.php',
+            url: '../meta-1/tabla1.4_update.php',
             method: 'POST',
             data: rowData,
             success: function(response) {
@@ -3154,27 +2984,8 @@ function editRow24() {
 
         row.find('td:not(:last-child):not(:first-child):not(:nth-last-child(2))').each(function() {
             var currentValue = $(this).text().trim();
-            var inputField;
-            if ($(this).index() === 2) { // Check if it's field3 column
-                // Add options specific to field3
-                inputField = "<select>";
-                var options = ['Afiches', 'Exposición', 'Obras', 'Propuestas', 'Otro'];
-                options.forEach(function(option) {
-                    inputField += "<option value='" + option + "'" + (currentValue === option ? " selected" : "") + ">" + option + "</option>";
-                });
-                inputField += "</select>";
-            } else if ($(this).index() === 3) { //change this line to change where the date picker appears
-                inputField = "<input type='text' class='datepicker' value='" + currentValue + "'>";
-            } else {
-                inputField = "<input type='text' value='" + currentValue + "'>";
-            }
+            var inputField = "<input type='text' value='" + currentValue + "'>";
             $(this).html(inputField);
-        });
-
-        $('.datepicker').datepicker({
-            dateFormat: 'dd-mm-yy', // Set the desired date format
-            showOn: 'focus', // Show the datepicker only when the input field is focused
-            autoHide: false // Prevent automatic hiding of the datepicker
         });
 
         row.find('.edit-btn').text('Actualizar');
@@ -3188,10 +2999,10 @@ function editRow24() {
         var rowData = {
             table24ID: row.find('td:eq(0)').text().trim(),
             field1: row.find('input:eq(0)').val().trim(),
-            field2: row.find('select:eq(0)').val(),
-            field3: row.find('input:eq(1)').val().trim(),
-            field4: row.find('input:eq(2)').val().trim(),
-            field5: row.find('input:eq(3)').val().trim()
+            field2: row.find('input:eq(1)').val().trim(),
+            field3: row.find('input:eq(2)').val().trim(),
+            field4: row.find('input:eq(3)').val().trim(),
+            field5: row.find('input:eq(4)').val().trim()
         };
 
         $.ajax({
@@ -3288,15 +3099,7 @@ function editRow31() {
         row.find('td:not(:last-child):not(:first-child):not(:nth-last-child(2))').each(function() {
             var currentValue = $(this).text().trim();
             var inputField;
-            if ($(this).index() === 1) { // Check if it's field1 column
-                // Add options specific to field1
-                inputField = "<select>";
-                var options = ['Artístico', 'Desportista del año', 'Excelencia académica', 'Investigación', 'Liderazgo', 'Nominaciones', 'Servicio Comunitario', 'Otro'];
-                options.forEach(function(option) {
-                    inputField += "<option value='" + option + "'" + (currentValue === option ? " selected" : "") + ">" + option + "</option>";
-                });
-                inputField += "</select>";
-            } else if ($(this).index() === 4) { //change this line to change where the date picker appears
+            if ($(this).index() === 4) { //change this line to change where the date picker appears
                 inputField = "<input type='text' class='datepicker' value='" + currentValue + "'>";
             } else {
                 inputField = "<input type='text' value='" + currentValue + "'>";
@@ -3321,11 +3124,11 @@ function editRow31() {
         var row = $(this).closest('tr');
         var rowData = {
             table31ID: row.find('td:eq(0)').text().trim(),
-            field1: row.find('select:eq(0)').val(),
-            field2: row.find('input:eq(0)').val().trim(),
-            field3: row.find('input:eq(1)').val().trim(),
-            field4: row.find('input:eq(2)').val().trim(),
-            field5: row.find('input:eq(3)').val().trim()
+            field1: row.find('input:eq(0)').val().trim(),
+            field2: row.find('input:eq(1)').val().trim(),
+            field3: row.find('input:eq(2)').val().trim(),
+            field4: row.find('input:eq(3)').val().trim(),
+            field5: row.find('input:eq(4)').val().trim()
         };
 
         $.ajax({
@@ -3365,15 +3168,7 @@ function editRow32() {
         row.find('td:not(:last-child):not(:first-child):not(:nth-last-child(2))').each(function() {
             var currentValue = $(this).text().trim();
             var inputField;
-            if ($(this).index() === 2) { // Check if it's field1 column
-                // Add options specific to field1
-                inputField = "<select>";
-                var options = ['Académica', 'Artistica', 'Cultural', 'Deportiva', 'Social', 'Tecnológica', 'Otra'];
-                options.forEach(function(option) {
-                    inputField += "<option value='" + option + "'" + (currentValue === option ? " selected" : "") + ">" + option + "</option>";
-                });
-                inputField += "</select>";
-            } else if ($(this).index() === 3) { //change this line to change where the date picker appears
+            if ($(this).index() === 3) { //change this line to change where the date picker appears
                 inputField = "<input type='text' class='datepicker' value='" + currentValue + "'>";
             } else {
                 inputField = "<input type='text' value='" + currentValue + "'>";
@@ -3399,8 +3194,8 @@ function editRow32() {
         var rowData = {
             table32aID: row.find('td:eq(0)').text().trim(),
             field1: row.find('input:eq(0)').val().trim(),
-            field2: row.find('select:eq(0)').val(),
-            field3: row.find('input:eq(1)').val().trim()
+            field2: row.find('input:eq(1)').val().trim(),
+            field3: row.find('input:eq(2)').val().trim()
         };
 
         $.ajax({
@@ -3440,13 +3235,12 @@ function editRow32b() {
         row.find('td:not(:last-child):not(:first-child):not(:nth-last-child(2))').each(function() {
             var currentValue = $(this).text().trim();
             var inputField;
-            if ($(this).index() === 5) { // Check if it's field1 column
-                // Add options specific to field1
+            if ($(this).index() === 5) { // Check if it's the field5 column
+                // Create a select element with options
                 inputField = "<select>";
-                var options = ['Si', 'No'];
-                options.forEach(function(option) {
-                    inputField += "<option value='" + option + "'" + (currentValue === option ? " selected" : "") + ">" + option + "</option>";
-                });
+                inputField += "<option value='Option 1'>Option 1</option>";
+                inputField += "<option value='Option 2'>Option 2</option>";
+                inputField += "<option value='Option 3'>Option 3</option>";
                 inputField += "</select>";
             } else {
                 inputField = "<input type='text' value='" + currentValue + "'>";
@@ -3468,8 +3262,8 @@ function editRow32b() {
             field2: row.find('input:eq(1)').val().trim(),
             field3: row.find('input:eq(2)').val().trim(),
             field4: row.find('input:eq(3)').val().trim(),
-            field5: row.find('select:eq(0)').val(),// Get the value from the select element
-            field6: row.find('input:eq(4)').val().trim()
+            field5: row.find('select').val(),// Get the value from the select element
+            field6: row.find('input:eq(4)').val()
         };
 
         $.ajax({
@@ -3566,13 +3360,12 @@ function editRow41() {
         row.find('td:not(:last-child):not(:first-child):not(:nth-last-child(2))').each(function() {
             var currentValue = $(this).text().trim();
             var inputField;
-            if ($(this).index() === 2) { // Check if it's field1 column
-                // Add options specific to field1
+            if ($(this).index() === 2) { // Check if it's the field2 column
+                // Create a select element with options
                 inputField = "<select>";
-                var options = ['Académicas', 'Artísticas', 'Culturales', 'Deportivas', 'Salud', 'Servicio de base comunitaria', 'Otra'];
-                options.forEach(function(option) {
-                    inputField += "<option value='" + option + "'" + (currentValue === option ? " selected" : "") + ">" + option + "</option>";
-                });
+                inputField += "<option value='Option 1'>Option 1</option>";
+                inputField += "<option value='Option 2'>Option 2</option>";
+                inputField += "<option value='Option 3'>Option 3</option>";
                 inputField += "</select>";
             } else if ($(this).index() === 3) { // Check if it's the field3 column
                 // Create an input element with the date picker
@@ -3601,8 +3394,8 @@ function editRow41() {
         var rowData = {
             table41ID: row.find('td:eq(0)').text().trim(),
             field1: row.find('input:eq(0)').val().trim(),
-            field2: row.find('select:eq(0)').val(), // Get the value from the select element
-            field3: row.find('input:eq(1)').val().trim(), // Get the value from the datepicker input
+            field2: row.find('select').val(), // Get the value from the select element
+            field3: row.find('.datepicker').val().trim(), // Get the value from the datepicker input
             field4: row.find('input:eq(2)').val().trim(),
             field5: row.find('input:eq(3)').val().trim()
         };
@@ -3758,13 +3551,12 @@ function editRow51() {
         row.find('td:not(:last-child):not(:first-child):not(:nth-last-child(2))').each(function() {
             var currentValue = $(this).text().trim();
             var inputField;
-            if ($(this).index() === 2) { // Check if it's field1 column
-                // Add options specific to field1
+            if ($(this).index() === 2) { // Check if it's the field2 column
+                // Create a select element with options
                 inputField = "<select>";
-                var options = ['Conferencia, foro o panel', 'Cursos con o sin crédito', 'Seminario, congreso o convención', 'Simposio', 'Taller', 'Otro'];
-                options.forEach(function(option) {
-                    inputField += "<option value='" + option + "'" + (currentValue === option ? " selected" : "") + ">" + option + "</option>";
-                });
+                inputField += "<option value='Option 1'>Option 1</option>";
+                inputField += "<option value='Option 2'>Option 2</option>";
+                inputField += "<option value='Option 3'>Option 3</option>";
                 inputField += "</select>";
             } else if ($(this).index() === 3) { // Check if it's the field3 column
                 // Create an input element with the date picker
@@ -3793,8 +3585,8 @@ function editRow51() {
         var rowData = {
             table51ID: row.find('td:eq(0)').text().trim(),
             field1: row.find('input:eq(0)').val().trim(),
-            field2: row.find('select:eq(0)').val(), // Get the value from the select element
-            field3: row.find('input:eq(1)').val().trim(), // Get the value from the datepicker input
+            field2: row.find('select').val(), // Get the value from the select element
+            field3: row.find('.datepicker').val().trim(), // Get the value from the datepicker input
             field4: row.find('input:eq(2)').val().trim(),
             field5: row.find('input:eq(3)').val().trim(),
             field6: row.find('input:eq(4)').val().trim()
@@ -3838,13 +3630,12 @@ function editRow52() {
         row.find('td:not(:last-child):not(:first-child):not(:nth-last-child(2))').each(function() {
             var currentValue = $(this).text().trim();
             var inputField;
-            if ($(this).index() === 1) { // Check if it's field1 column
-                // Add options specific to field1
+            if ($(this).index() === 1) { // Check if it's the field2 column
+                // Create a select element with options
                 inputField = "<select>";
-                var options = ['Certificados', 'Congresos', 'Donativos', 'Fundraising', 'Manuales', 'Mega-secciones', 'Programados', 'Ventas', 'Webinars', 'Otro'];
-                options.forEach(function(option) {
-                    inputField += "<option value='" + option + "'" + (currentValue === option ? " selected" : "") + ">" + option + "</option>";
-                });
+                inputField += "<option value='Option 1'>Option 1</option>";
+                inputField += "<option value='Option 2'>Option 2</option>";
+                inputField += "<option value='Option 3'>Option 3</option>";
                 inputField += "</select>";
             } else {
                 inputField = "<input type='text' value='" + currentValue + "'>";
@@ -3869,8 +3660,8 @@ function editRow52() {
         var row = $(this).closest('tr');
         var rowData = {
             table52ID: row.find('td:eq(0)').text().trim(),
-            field1: row.find('select:eq(0)').val(),// Get the value from the select element
-            field2: row.find('input:eq(0)').val().trim(),
+            field1: row.find('select').val(), // Get the value from the select element
+            field2: row.find('input:eq(1)').val().trim(),
             field3: row.find('input:eq(1)').val().trim()
         };
 
@@ -3912,14 +3703,12 @@ function editRow53() {
         row.find('td:not(:last-child):not(:first-child):not(:nth-last-child(2))').each(function() {
             var currentValue = $(this).text().trim();
             var inputField;
-            if ($(this).index() === 6) { // Check if it's field1 column
-                // Add options specific to field1
+            if ($(this).index() === 6) { // Check if it's the field2 column
+                // Create a select element with options
                 inputField = "<select>";
-                var options = ['Creada por estudiantes', 'Creada por exalumnos', 'Encubadora (cuenta o contó con la ayuda de un profesor mentor)',
-                'Aceleradora (existe pero esta buscando un coaching)', 'Iniciativa de emprendimiento (no genera ningún ingreso)'];
-                options.forEach(function(option) {
-                    inputField += "<option value='" + option + "'" + (currentValue === option ? " selected" : "") + ">" + option + "</option>";
-                });
+                inputField += "<option value='Option 1'>Option 1</option>";
+                inputField += "<option value='Option 2'>Option 2</option>";
+                inputField += "<option value='Option 3'>Option 3</option>";
                 inputField += "</select>";
             } else {
                 inputField = "<input type='text' value='" + currentValue + "'>";
@@ -3949,7 +3738,7 @@ function editRow53() {
             field3: row.find('input:eq(2)').val().trim(),
             field4: row.find('input:eq(3)').val().trim(),
             field5: row.find('input:eq(4)').val().trim(),
-            field6: row.find('select:eq(0)').val(),
+            field6: row.find('select').val(),
             field7: row.find('input:eq(5)').val().trim(),
             field8: row.find('input:eq(6)').val().trim()
         };

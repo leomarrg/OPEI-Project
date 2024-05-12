@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['UserID'] = $user['UserID'];
             $_SESSION['DepartmentID'] = $user['DepartmentID'];
             // Redirect to user page
-            header("Location: meta-1/tabla1.1.html");
+            header("Location: meta-1/tabla1.1.php");
             exit();
         } else {
             // User does not exist or invalid password

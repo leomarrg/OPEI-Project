@@ -126,7 +126,7 @@
             </tbody>
         </table>
                 <div class="formbold-main-wrapperDept">
-            <a class="underline-button" href="tabla5.4.php">Editar</a>
+            <a class="underline-button" href="tabla5.4.php">Volver</a>
         </div>
     </div>
   </div>

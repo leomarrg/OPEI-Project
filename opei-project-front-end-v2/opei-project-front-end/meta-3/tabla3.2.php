@@ -205,7 +205,9 @@
         <a class="underline-button" href="tabla3.2_display.php">Editar</a>
       </form>
     </div>
+    <br> <br>
   </div>
+  <br>
     <!-- Add your footer box below -->
     <div style="margin-top: -13px" class="footer-box">
         <!-- Content for the footer box goes here -->

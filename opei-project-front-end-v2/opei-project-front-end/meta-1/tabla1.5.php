@@ -239,7 +239,7 @@
             <button class="formbold-btn">
                 Submit
             </button>
-            <a class="underline-button"  href="../meta-1/tabla1.5_display.php">Editar</a>
+            <a  class="underline-button"  href="../meta-1/tabla1.5_display.php">Editar</a>
         </form>
     </div>
 </div>

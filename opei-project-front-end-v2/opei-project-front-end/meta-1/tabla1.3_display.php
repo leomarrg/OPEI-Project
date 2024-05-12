@@ -70,8 +70,9 @@
 </head>
 <body>
      <header>
-     <h1 class="uprareports">UPRA Reports</h1>
-     <h2 class="bienvenidosusuario"><?php echo $department['DepartmentName'] ?></h2>        <h2 class="tablaheader">Tabla 1.3: Programas acreditados</h2>
+        <h1 class="uprareports">UPRA Reports</h1>
+        <h2 class="bienvenidosusuario"><?php echo $department['DepartmentName'] ?></h2>
+        <h2 class="tablaheader">Tabla 1.3: Programas acreditados</h2>
         <h2 class="tablaheader"> Editar Informaci&oacute;n en la Tabla 1.3</h2>
      </header>
 

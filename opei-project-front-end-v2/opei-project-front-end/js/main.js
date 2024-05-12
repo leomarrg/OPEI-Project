@@ -2566,7 +2566,7 @@ function editRow14b() {
             field3: row.find('input:eq(2)').val().trim(),
             field4: row.find('input:eq(3)').val().trim(),
             field5: row.find('input:eq(4)').val().trim(),
-            field6: row.find('input:eq(4)').val().trim()
+            field6: row.find('input:eq(5)').val().trim() 
         };
 
         $.ajax({

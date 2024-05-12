@@ -13,6 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $field5 = $_POST['field5'];
     $field6 = $_POST['field6'];
 
+
+    
     // Prepare and execute the SQL statement to update the record
     $sql = "UPDATE table14b SET field1='$field1', field2='$field2', field3='$field3', field4='$field4', field5='$field5', field6='$field6' WHERE table14bID='$table14bID'";
 

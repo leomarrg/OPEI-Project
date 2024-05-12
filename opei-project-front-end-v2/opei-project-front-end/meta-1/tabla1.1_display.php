@@ -149,6 +149,7 @@ $year = date("Y");
             </div>
         </div>
     </div>
+    <br> <br>
 
     <!-- Add your footer box below -->
     <div class="footer-box">

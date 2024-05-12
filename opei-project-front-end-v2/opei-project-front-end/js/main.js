@@ -3238,9 +3238,9 @@ function editRow32b() {
             if ($(this).index() === 5) { // Check if it's the field5 column
                 // Create a select element with options
                 inputField = "<select>";
-                inputField += "<option value='Option 1'>Option 1</option>";
-                inputField += "<option value='Option 2'>Option 2</option>";
-                inputField += "<option value='Option 3'>Option 3</option>";
+                inputField += "<option value='Si'>Si</option>";
+                inputField += "<option value='No'>No</option>";
+                
                 inputField += "</select>";
             } else {
                 inputField = "<input type='text' value='" + currentValue + "'>";
@@ -3363,9 +3363,8 @@ function editRow41() {
             if ($(this).index() === 2) { // Check if it's the field2 column
                 // Create a select element with options
                 inputField = "<select>";
-                inputField += "<option value='Option 1'>Option 1</option>";
-                inputField += "<option value='Option 2'>Option 2</option>";
-                inputField += "<option value='Option 3'>Option 3</option>";
+                inputField += "<option value='Si'>Si</option>";
+                inputField += "<option value='No'>No</option>";
                 inputField += "</select>";
             } else if ($(this).index() === 3) { // Check if it's the field3 column
                 // Create an input element with the date picker

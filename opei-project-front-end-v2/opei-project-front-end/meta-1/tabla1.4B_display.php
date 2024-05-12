@@ -93,7 +93,7 @@ $year = date("Y");
         <table class="table">
             <thead>
               <tr>
-                <th scope="col" >#</th>
+                <th scope="col" style='display: none;'>#</th>
                 <th scope="col">Servicio o Proceso Evaluado o a evaluar</th>
                 <th scope="col">Indicador de ejecución</th>
                 <th scope="col">Estrategia o instrumento de avalúo</th>
@@ -125,7 +125,7 @@ $year = date("Y");
                 // Output data of each row
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
-                    echo "<td >" . $row['table14bID'] . "</td>";
+                    echo "<td style='display: none;'>" . $row['table14bID'] . "</td>";
                     echo "<td>" . $row['field1'] . "</td>";
                     echo "<td>" . $row['field2'] . "</td>";
                     echo "<td>" . $row['field3'] . "</td>";

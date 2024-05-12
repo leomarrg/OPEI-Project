@@ -231,6 +231,7 @@
     </form>
     </div>
   </div>
+  <br> <br>
     <!-- Add your footer box below -->
     <div class="footer-box">
         <!-- Content for the footer box goes here -->

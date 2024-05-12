@@ -241,10 +241,10 @@
             </button>
             <a  class="underline-button"  href="../meta-1/tabla1.5_display.php">Editar</a>
         </form>
-    </div>
+    </div> 
 </div>
 
-
+<br> <br> <br> 
     
     <!-- Add your footer box below -->
     <div class="footer-box">

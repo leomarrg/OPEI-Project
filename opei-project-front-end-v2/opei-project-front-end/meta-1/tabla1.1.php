@@ -1,5 +1,5 @@
 <?php
-    // Start session
+  /*  // Start session
     session_start();
     
     // Check if the user is logged in
@@ -25,7 +25,7 @@
     // Store user's name and department ID in session variables
     $_SESSION['userName'] = $userDetails['Name'];
     $_SESSION['DepartmentID'] = $userDetails['DepartmentID'];
-
+*/
     // Check if DepartmentID exists in the session
     if (isset($_SESSION['DepartmentID'])) {
         // Retrieve the DepartmentID of the logged-in user from the session
@@ -62,14 +62,21 @@
     <script src="../js/jquery.validate.min.js"></script>
     <script src="../js/main.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    function logout() {
+        // Redirect to logout script
+        window.location.href = "logout.php";
+    }
+    </script>
+
+    
         <title>UPRA Reports Tabla 1-1A</title>
     </head>
 
 <body>
     <header>
         <h1 class="uprareports">UPRA Reports</h1>
-        <h2 class="bienvenidosusuario"><?php echo $department['DepartmentName'] ?></h2>        <h2 class="tablaheader">Tabla 1.1A: Acciones de Cursos</h2>
-        <h2 class="tablaheader"> Llenar Informaci&oacute;n en la Tabla 1.1A</h2>
+        <h2 class="bienvenidosusuario"><?php echo $department['DepartmentName'] ?></h2>
     </header>
     
     <input type="checkbox" id="check">
@@ -144,6 +151,10 @@
             </div>
         </div>
 
+        <div class="logout-wrapper">
+        <button class="dashboardbtn" onclick="logout()">Logout</button>
+        </div>
+
         <!-- Add more dashdropdown-wrapper for additional meta items -->
     </div>
  
@@ -152,6 +163,7 @@
         <div class="formbold-form-wrapper">
             
             <form  id="myForm1_1">
+            <h4 class="header1"> Llenar Informaci&oacute;n<br>  <br> Tabla 1.1A: Acciones de Cursos</h4>
                 <!-- Curso input text -->
                 <div class="formbold-input-flex">
                     <div>
@@ -230,9 +242,9 @@
 
     </div>
         <!-- Add your footer box below -->
-        <div class="footer-boxtabla1-2">
+        <div class="footer-box">
             <!-- Content for the footer box goes here -->
-            <p style="font-weight: 800;">&copy; 2024 UPRA Reports. All rights reserved.</p>
+            <p>&copy; 2024 UPRA Reports. All rights reserved.</p>
         </div>
 
 </body>

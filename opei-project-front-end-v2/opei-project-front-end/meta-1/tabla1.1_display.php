@@ -1,5 +1,5 @@
 <?php
-    // Start session
+  /*  // Start session
     session_start();
     
     // Check if the user is logged in
@@ -8,7 +8,7 @@
         header("Location: ../signin.html");
         exit; // Ensure that script execution stops after redirection
     }
-
+*/
 
     // Include database connection using MySQLi
     include_once "db_info.php";

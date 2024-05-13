@@ -61,13 +61,18 @@
     <script src="../js/jquery.validate.min.js"></script>
     <script src="../js/main.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    function logout() {
+        // Redirect to logout script
+        window.location.href = "logout.php";
+    }
+    </script>
     <title>UPRA Reports Tabla 1-1B</title>
     </head>
 <body>
     <header>
         <h1 class="uprareports">UPRA Reports</h1>
-        <h2 class="bienvenidosusuario"><?php echo $department['DepartmentName'] ?></h2>        <h2 class="tablaheader">Tabla 1.1B: Cursos en diversas modalidades educativas</h2>
-        <h2 class="tablaheader"> Editar Informaci&oacute;n en la Tabla 1.1B</h2>
+        <h2 class="bienvenidosusuario"><?php echo $department['DepartmentName'] ?></h2>
     </header>
 
     
@@ -142,6 +147,10 @@
                     </div>
                 </div>
             </div>
+
+            <div class="logout-wrapper">
+        <button class="dashboardbtn" onclick="logout()">Logout</button>
+        </div>
     
             <!-- Add more dashdropdown-wrapper for additional meta items -->
         </div>
@@ -156,6 +165,7 @@
     <div class="formbold-form-wrapper">
        
         <form id="myForm1_1b">
+        <h4 class="header1"> Llenar Informaci&oacute;n<br>  <br> Tabla 1.1B: Cursos en diversas modalidades educativas</h4>
             <!-- Cambio académico input text -->
             <div class="formbold-input-flex">
                 <div>

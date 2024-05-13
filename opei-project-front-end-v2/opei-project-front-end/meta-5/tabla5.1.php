@@ -63,14 +63,18 @@
         <!-- Add jQuery UI library -->
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script>
+            function logout() {
+                // Redirect to logout script
+                window.location.href = "logout.php";
+            }
+    </script>
         <title>UPRA Reports Tabla 5-1</title>
     </head>
 <body>
         <header> 
             <h1 class="uprareports">UPRA Reports</h1>
             <h2 class="bienvenidosusuario"><?php echo $department['DepartmentName'] ?></h2>
-            <h2 class="tablaheader">Tabla 5.1:  Actividades de adiestramiento y readiestramiento ofrecidas por su Departamento a la Facultad</h2>
-            <h2 class="tablaheader"> Llenar Informaci&oacute;n en la Tabla 5.1</h2>
         </header>
 
         <input type="checkbox" id="check">
@@ -144,6 +148,10 @@
                     </div>
                 </div>
             </div>
+
+            <div class="logout-wrapper">
+            <button class="dashboardbtn" onclick="logout()">Logout</button>
+            </div>
     
             <!-- Add more dashdropdown-wrapper for additional meta items -->
         </div>
@@ -154,6 +162,8 @@
 <div class="formbold-main-wrapper">
     <div class="formbold-form-wrapper">
       <form id="myForm5_1">
+      <h4 class="header1">Llenar Informaci&oacute;n<br>  <br>Tabla 5.1:  Actividades de adiestramiento y readiestramiento ofrecidas por su Departamento a la Facultad</h4>
+
         <!-- Curso input text -->
         <div class="formbold-input-flex">
           <div>

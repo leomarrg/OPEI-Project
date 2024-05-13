@@ -149,8 +149,8 @@
             </div>
 
             <div class="logout-wrapper">
-        <button class="dashboardbtn" onclick="logout()">Logout</button>
-        </div>
+            <button class="dashboardbtn" onclick="logout()">Logout</button>
+            </div>
     
             <!-- Add more dashdropdown-wrapper for additional meta items -->
         </div>

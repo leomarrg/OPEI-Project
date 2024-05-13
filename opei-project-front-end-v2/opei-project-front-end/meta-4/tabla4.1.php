@@ -62,14 +62,18 @@
         <script src="../js/jquery.validate.min.js"></script>
         <script src="../js/main.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+            function logout() {
+                // Redirect to logout script
+                window.location.href = "logout.php";
+            }
+    </script>
         <title>UPRA Reports Tabla 4-1</title>
     </head>
 <body>
         <header>
             <h1 class="uprareports">UPRA Reports</h1>
             <h2 class="bienvenidosusuario"><?php echo $department['DepartmentName'] ?></h2>
-            <h2 class="tablaheader">Tabla 4.1: Actividades dirigidas a la comunidad externa</h2>
-            <h2 class="tablaheader"> Llenar Informaci&oacute;n en la Tabla 4.1</h2>
         </header>
     <body>
         <input type="checkbox" id="check">
@@ -143,6 +147,10 @@
                     </div>
                 </div>
             </div>
+
+            <div class="logout-wrapper">
+            <button class="dashboardbtn" onclick="logout()">Logout</button>
+            </div>
     
             <!-- Add more dashdropdown-wrapper for additional meta items -->
         </div>
@@ -153,6 +161,8 @@
 <div class="formbold-main-wrapper">
     <div class="formbold-form-wrapper">
       <form id="myForm4_1">
+      <h4 class="header1"> Llenar Informaci&oacute;n<br>  <br>Tabla 4.1: Actividades dirigidas a la comunidad externa</h4>
+
         <!-- Curso input text -->
         <div class="formbold-input-flex">
           <div>

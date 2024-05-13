@@ -65,7 +65,7 @@ label #btn{
   position: absolute;
   left: 5px;
   cursor: pointer;
-  color: white;
+  color: #000;
   border-radius: 5px;
   margin: 15px 30px;
   font-size: 20px;

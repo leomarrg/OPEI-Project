@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         } else {
             // User does not exist or invalid password
-            echo '<script>alert("Invalid email or password.");</script>';
+            echo '<script>alert("Invalid email or password. USER DOESNT EXIST OR INVALID PASSWORD");</script>';
             echo '<script>window.location.href = "signin.html";</script>';
             exit();
         }
@@ -62,13 +62,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         } else {
             // Admin does not exist or invalid password
-            echo '<script>alert("Invalid email or password.");</script>';
+            echo '<script>alert("Invalid email or password. THIS IS THE MESSAGES");</script>';
             echo '<script>window.location.href = "signin.html";</script>';
             exit();
         }
     } else {
         // Neither user nor admin exists
-        echo '<script>alert("Invalid email or password.");</script>';
+        echo '<script>alert("Invalid email or password. USER NOR ADMIN EXISTS");</script>';
         echo '<script>window.location.href = "signin.html";</script>';
         exit();
     }

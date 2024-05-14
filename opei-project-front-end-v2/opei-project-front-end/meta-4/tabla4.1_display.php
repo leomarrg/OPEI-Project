@@ -133,11 +133,11 @@ $year = date("Y");
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td style='display: none;'>" . $row['table41ID'] . "</td>";
-                echo "<td>" . $row['field1'] . "</td>";
-                echo "<td>" . $row['field2'] . "</td>";
-                echo "<td>" . $row['field3'] . "</td>";
-                echo "<td>" . $row['field4'] . "</td>";
-                echo "<td>" . $row['field5'] . "</td>";
+                echo "<td  class='breve-description'>" . $row['field1'] . "</td>";
+                echo "<td class='breve-description'>" . $row['field2'] . "</td>";
+                echo "<td class='breve-description'>" . $row['field3'] . "</td>";
+                echo "<td class='breve-description'>" . $row['field4'] . "</td>";
+                echo "<td class='breve-description'>" . $row['field5'] . "</td>";
                 echo "<td><a href='javascript:void(0);' class='edit-btn'>Editar</a></td>";
                 echo "<td><a class='delete-btn' href='../meta-4/tabla4.1_delete.php?id=" . $row['table41ID'] . "'>Borrar</a></td>";
                 echo "</tr>";

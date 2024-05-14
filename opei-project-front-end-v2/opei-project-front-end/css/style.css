@@ -136,12 +136,10 @@ body {
   background-color: #fff;
   color: #999;
   line-height: 2;
-  overflow-x: auto; /* Enable horizontal scrolling */
+
 }
 
 /* Rest of your CSS remains unchanged */
-
-
 .table {
   width: 100%;
   margin: auto;
@@ -162,6 +160,7 @@ th, td {
   vertical-align: bottom;
   border-bottom: 2px solid #8d8b8b; 
   background-color: #dddddd;
+  word-wrap: break-word;
 }
 
 .table th, .table td {
@@ -203,13 +202,12 @@ th, td {
 
 
 .header {
-  background: #333 url('../images/arecibo.ico') no-repeat;
-  color: #FFC107;
+  background: #FFC107 url('../images/arecibo.ico') no-repeat;
+  color: #000;
   text-align: center;
   height: 70px; 
   width: 100%;
   background-size: contain;
-  overflow-x: auto; /* Enable horizontal scrolling */
 }
 
 .top-box h1 {
@@ -219,35 +217,23 @@ th, td {
 /* Add styling for the header box */
 
 header {
-  background-color: #000;
-    color: #FFC107;
+  background-color: #FFC107;
+    color: #000;
     padding: 10px;
     text-align: center;
-    width: 100%;
-    overflow-x: auto;
+}
+#myForm1_5 {
+  padding-bottom: 100px;
+  
+}
+.myform3_3 {
+  padding-bottom: 100px;
 }
 
 /* Add styling for the footer box */
 .footer-box {
   background-color: #FFC107;
-  color: #000;
-  text-align: center;
-  padding: 10px 0; /* Adjust padding as needed */
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: -1; /* Set z-index to a negative value to make it go behind other content */
-}
-
-.footer-box p {
-  font-size: 20px;
-  font-weight: bold; /* Set font-weight to bold */
-  margin: 0; /* Remove default margin */
-}
-
-.footer-boxtabla1-2 {
-  background-color: #000;
-    color: #FFC107;
+    color: #000;
     text-align: center;
     padding: 1px 0;
     position: fixed;
@@ -255,6 +241,24 @@ header {
     width: 100%;
     z-index: 999;
     font-weight: bold;
+    
+}
+.footer-box p{
+    
+    font-size: 16px;
+    
+}
+.footer-boxtabla1-2 {
+  background-color: #FFC107;
+    color: #000;
+    text-align: center;
+    padding: 1px 0;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    z-index: 999;
+    font-weight: bold;
+    
 }
 .footer-boxtabla1-2 p{
     font-size: 16px;
@@ -285,6 +289,11 @@ html, body {
   /* This property is widely supported in modern browsers */
   overflow-wrap: break-word;
 }
+.breve-description input {
+  width: 200px;
+  white-space: pre-wrap; /* Preserve spaces and allow wrapping */
+  overflow-wrap: break-word; /* Allow word break when needed */
+}
 
 #myTable2 input[type="text"] {
   width: 100%;
@@ -309,6 +318,7 @@ html, body {
     padding: 2px;
     max-height: 900px;
     margin-bottom: 200px;
+
   }
 
   .formbold-main-wrapper input, option, select, textarea, label{
@@ -359,7 +369,7 @@ html, body {
 
   .formbold-form-wrapper {
     margin: 0 auto;
-    max-width: 90%;
+    max-width: 40%;
     width: 60%;
     background: white;
     min-height: 550px;
@@ -511,7 +521,7 @@ html, body {
     border: none;
     font-weight: 500;
     background-color: #FFC107;
-    color: white;
+    color: #000;
     cursor: pointer;
     margin-top: 25px;
     border: 1px solid #000;
@@ -535,7 +545,7 @@ html, body {
     border: none;
     font-weight: 500;
     background-color: #FFC107;
-    color: white;
+    color: #000;
     cursor: pointer;
     margin-top: 25px;
     border: 1px solid #000;
@@ -608,11 +618,8 @@ html, body {
 }
 
 select {
+  width: 100%;
   height: 40px;
-  display: inline-block;
-  position: relative;
-  width: 400px;
-  font-size:16px;
 }
 
 .hidden {
@@ -620,20 +627,20 @@ select {
 }
 
 .uprareports h1 {
-  color: #FFC107;
+  color: #000;
   text-align: center;
   margin-left: 120px;
 }
 .bienvenidosusuario {
-  font-size: 1.5em;
-  color: #FFC107;
+  font-size: 1.0em;
+  color: #000;
   text-align: center;
   padding: 10px;
  
 }
 .tablaheader {
   font-size: 1.5em;
-  color: #FFC107;
+  color: #000;
   text-align: center;
   padding: 10px;
  
@@ -650,14 +657,20 @@ h6 {
 .edit-mode  input {
   display: inline-block;
   position: relative;
-  width: 100%;
+  
   font-size: 16px;
+  width: calc(100% - 20px); /* Adjust width for padding */
+  box-sizing: border-box;
+  margin: 0;
 }
 .edit-mode select{
   display: inline-block;
   position: relative;
-  width: 100%;
+  
   font-size: 16px;
+  width: calc(100% - 20px); /* Adjust width for padding */
+  box-sizing: border-box;
+  margin: 0;
 }
 .edit-btn,  .delete-btn, .update-btn {
   font-size: 16px;
@@ -670,6 +683,7 @@ h6 {
   cursor: pointer;
   margin-top: 1px;
   border: 1px solid #000;
+  display: inline-flex;
 }
 .edit-btn:hover,  .delete-btn:hover, .update-btn:hover {
   text-decoration: none !important;
@@ -716,4 +730,28 @@ cursor: pointer;
 border-radius: 4px;
 margin-top: 20px;
 margin-bottom: 20px;
+}
+select{
+display: inline-block;
+position: relative;
+width: 400px;
+font-size:16px;
+}
+
+
+.header1 {
+  border-bottom: 3px solid #FFC107;
+  color: #000;
+  padding-bottom: 10px; /* Adjust as needed */
+}
+.header2 {
+  border-bottom: 3px solid #FFC107;
+  color: #000;
+  padding-bottom: 50px; /* Adjust as needed */
+  margin-bottom: 50px;
+}
+
+.logout-wrapper {
+  text-align: center; /* Center-align the button */
+  margin-top: 350px; /* Adjust the top margin to move it lower */
 }

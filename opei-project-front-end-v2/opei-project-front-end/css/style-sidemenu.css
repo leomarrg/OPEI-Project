@@ -65,7 +65,7 @@ label #btn{
   position: absolute;
   left: 5px;
   cursor: pointer;
-  color: white;
+  color: #000;
   border-radius: 5px;
   margin: 15px 30px;
   font-size: 20px;
@@ -295,7 +295,7 @@ label #cancel{
     min-height: 550px;
     max-height: 900px;
     padding-left: 50px;
-    margin-bottom: 200px;
+    margin-bottom: 400px;
   }
   .formbold-btn {
     -webkit-transition: .3s all ease;
@@ -331,6 +331,8 @@ label #cancel{
     font-size: 16px;
   }
 }
+
+
 
 
 

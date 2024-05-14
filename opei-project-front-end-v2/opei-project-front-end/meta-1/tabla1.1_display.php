@@ -1,5 +1,5 @@
 <?php
-  /*  // Start session
+    // Start session
     session_start();
     
     // Check if the user is logged in
@@ -8,7 +8,7 @@
         header("Location: ../signin.html");
         exit; // Ensure that script execution stops after redirection
     }
-*/
+
 
     // Include database connection using MySQLi
     include_once "db_info.php";
@@ -132,7 +132,7 @@ $year = date("Y");
                             echo "<td>" . $row['field1'] . "</td>";
                             echo "<td>" . $row['field2'] . "</td>";
                             echo "<td>" . $row['field3'] . "</td>";
-                            echo "<td>" . $row['field4'] . "</td>";
+                            echo "<td style='word-wrap: break-word;'>" . $row['field4'] . "</td>";
                             echo "<td><a href='javascript:void(0);' class='edit-btn'>Editar</a></td>";
                             echo "<td><a class='delete-btn' href='../meta-1/tabla1.1_delete.php?id=" . $row['table11aID'] . "'>Borrar</a></td>";
                             echo "</tr>";
@@ -149,7 +149,6 @@ $year = date("Y");
             </div>
         </div>
     </div>
-    <br> <br>
 
     <!-- Add your footer box below -->
     <div class="footer-box">

@@ -125,11 +125,11 @@ $year = date("Y");
               while ($row = $result->fetch_assoc()) {
                   echo "<tr>";
                   echo "<td style='display: none;'>" . $row['table52ID'] . "</td>";
-                  echo "<td>" . $row['field1'] . "</td>";
-                  echo "<td>" . $row['field2'] . "</td>";
-                  echo "<td>" . $row['field3'] . "</td>";
-                  echo "<td><a href='javascript:void(0);' class='edit-btn'>Editar</a></td>";
-                  echo "<td><a class='delete-btn' href='../meta-5/tabla5.2_delete.php?id=" . $row['table52ID'] . "'>Borrar</a></td>";
+                  echo "<td class='breve-description'>" . $row['field1'] . "</td>";
+                  echo "<td class='breve-description'>" . $row['field2'] . "</td>";
+                  echo "<td class='breve-description'>" . $row['field3'] . "</td>";
+                  echo "<td class='breve-description'><a href='javascript:void(0);' class='edit-btn'>Editar</a></td>";
+                  echo "<td class='breve-description'><a class='delete-btn' href='../meta-5/tabla5.2_delete.php?id=" . $row['table52ID'] . "'>Borrar</a></td>";
                   echo "</tr>";
               }
               // Close connection

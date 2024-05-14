@@ -60,9 +60,9 @@
         <script src="../js/bootstrap.min.js"></script>
         <script src="../js/jquery.validate.min.js"></script>
         <script src="../js/main.js"></script>
-        function logout() {
+        <script>function logout() {
         // Redirect to logout script
-        window.location.href = "logout.php";
+        window.location.href = "../logout.php";
     }
     </script>
         <title>UPRA Reports Tabla 2-5</title>

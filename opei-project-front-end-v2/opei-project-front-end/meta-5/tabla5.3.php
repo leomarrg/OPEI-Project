@@ -63,7 +63,7 @@
         <script>
             function logout() {
                 // Redirect to logout script
-                window.location.href = "logout.php";
+                window.location.href = "../logout.php";
             }
     </script>
         <title>UPRA Reports Tabla 5-3</title>

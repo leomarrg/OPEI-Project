@@ -83,8 +83,7 @@ $year = date("Y");
 
     <header>
         <h1 class="uprareports">UPRA Reports</h1>
-        <h2 class="bienvenidosusuario"><?php echo $department['DepartmentName'] ?></h2>        <h2 class="tablaheader">Tabla 1.1A: Acciones de Cursos</h2>
-        <h2 class="tablaheader"> Editar Informaci&oacute;n en la Tabla 1.1A</h2>
+        <h2 class="bienvenidosusuario"><?php echo $department['DepartmentName'] ?></h2>
     </header>
     
 
@@ -93,6 +92,7 @@ $year = date("Y");
     <div class="formbold-main-wrapper-edit">
         <div class="formbold-form-wrapper-edit">
             <form action="tabla1.1-display.php" method="POST"> <!-- Specify action to tabla1.1-display.php -->
+            <h4 class="header1">Editar Informaci&oacute;n<br>  <br>Tabla 1.1A: Acciones de Cursos</h4>
                 <!-- Curso input text -->
                 <table class="table">
                     <thead>

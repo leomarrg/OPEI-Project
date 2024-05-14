@@ -152,6 +152,71 @@ $(document).ready(function(){
         });
     });
 
+    $('#myForm1_2').submit(function(e){
+        e.preventDefault(); // Prevent default form submission
+    
+        // Check if any of the required fields are empty
+        var empty = false;
+        $(this).find('input[type=text], input[type=number], textarea').each(function() {
+            if ($(this).val() === '') {
+                empty = true;
+                return false; // Exit the loop early if an empty field is found
+            }
+        });
+
+        // Get the value of the dropdown list
+        var dropdownValue = $(this).find('select[name=numProgAcredit]').val();
+    
+        // Check if the dropdown list value is "0"
+        if (dropdownValue === "0") {
+            // Prompt the user to fill in all required fields
+            alert('Please fill in all the required fields.');
+            return; // Prevent form submission
+        }
+    
+        // If any required field is empty, prevent form submission
+        if (empty) {
+            alert('Please fill in all the required fields.');
+            return;
+        }
+    
+        // Get form data
+        var formData = $(this).serialize();
+    
+        // Store reference to form for later use
+        var $form = $(this);
+    
+        // Send form data using AJAX
+        $.ajax({
+            type: 'POST',
+            url: '../meta-1/tabla1.2_insert.php', // Change this URL to the correct PHP file
+            data: formData,
+            success: function(response){
+                console.log('Response:', response); // Log the response for debugging
+    
+                // Check if the response indicates success
+                if (response.trim() === 'success') {
+                    // Handle success
+                    console.log('Form submitted successfully!');
+                    // Clear form fields
+                    $form.find('input[type=text], input[type=number], textarea').val('');
+                    // Reset dropdown list to "Seleccione..."
+                    $form.find('select[name=numProgAcredit]').val('0');
+                    // Show success message
+                    alert('Form submitted successfully!');
+                } else {
+                    // Show error message if response is not 'success'
+                    console.error('An error occurred while submitting the form.');
+                    alert('An error occurred while submitting the form.');
+                }
+            },
+            error: function(xhr, status, error){
+                // Handle errors (if needed)
+                console.error('Error:', error); // Log the error for debugging
+            }
+        });
+    });
+
     $('#myForm1_3').submit(function(e){
         e.preventDefault(); // Prevent default form submission
     
@@ -3909,3 +3974,9 @@ function editRow54() {
     });
 }
 
+$(function(){
+    var $select = $(".formbold-form-input");
+    for (i=1;i<=60;i++){
+        $select.append($('<option></option>').val(i).html(i))
+    }
+});

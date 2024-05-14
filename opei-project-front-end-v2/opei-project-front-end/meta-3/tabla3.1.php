@@ -171,6 +171,7 @@
                 id="reconType"
                 class="formbold-form-input"
                 >
+                <option value="0">Seleccione una opción...</option>
                 <option value="Artístico">Artístico </option>
                 <option value="Desportista del año">Desportista del año</option>
                 <option value="Excelencia académica">Excelencia académica</option>

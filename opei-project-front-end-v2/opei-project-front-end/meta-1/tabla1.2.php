@@ -62,6 +62,12 @@
         <!-- Style -->
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/style-sidemenu.css">
+        <script>
+        function logout() {
+            // Redirect to logout script
+            window.location.href = "../logout.php";
+        }
+        </script>
         
         <title>UPRA Reports Tabla 1-2 Editar</title>
     </head>
@@ -69,8 +75,6 @@
         <header>
         <h1 class="uprareports">UPRA Reports</h1>
         <h2 class="bienvenidosusuario"><?php echo $department['DepartmentName'] ?></h2>
-        <h2 class="tablaheader">Tabla 1.2: Programas acreditados</h2>
-        <h2 class="tablaheader"> Editar Informaci&oacute;n en la Tabla 1.2</h2>
      </header>
 
     
@@ -145,32 +149,23 @@
                     </div>
                 </div>
             </div>
+
+            <div class="logout-wrapper">
+            <button class="dashboardbtn" onclick="logout()">Logout</button>
+        </div>
     
             <!-- Add more dashdropdown-wrapper for additional meta items -->
         </div>
-        <br> <br>
+    
     
 
-       <!-- Dropdown list -->
-<div class="formbold-main-wrapperDept">
-    <div>
-        <select 
-            name="deptAcademicos"
-            id="deptAcademicos"
-            class="formbold-form-input"
-        >
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-        </select>
-        <label for="deptAcademicos" class="formbold-form-label-top">Departamentos Academicos </label>
-    </div>
     
-</div>
 
 <!-- Main form -->
 <div class="formbold-main-wrapper">
     <div class="formbold-form-wrapper">
+    <form  id="myForm1_2">
+    <h4 class="header1">Llenar Informaci&oacute;n<br>  <br>Tabla 1.2: Programas acreditados</h4>
         
         <h5>Comunidades de Aprendizaje  </h5>
          <!-- Curso input text -->
@@ -487,16 +482,17 @@
             <button class="formbold-btn">
                 Submit
             </button>
+
+            <a class="underline-button" href = "tabla1.2_display.php">Editar</a>
             
         </form>
-        <a class="underline-button" href = "tabla1.2_display.php">Editar</a>
         <br> <br> <br> <br> <br>
     </div>
 </div>
 
     
     <!-- Add your footer box below -->
-    <div class="footer-box">
+    <div class="footer-boxtabla1-2">
         <!-- Content for the footer box goes here -->
         <p style="font-weight: 800;">&copy; 2024 UPRA Reports. All rights reserved.</p>
     </div>

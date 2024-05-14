@@ -182,7 +182,7 @@
             id="classAct"
             class="formbold-form-input"
             >
-            
+            <option value="0">Seleccione una opción...</option>
             <option value="Conferencia, foro o panel">Conferencia, foro o panel</option>
             <option value="Cursos con o sin crédito">Cursos con o sin crédito</option>
             <option value="Simposio">Simposio</option>

@@ -152,9 +152,6 @@
     
             <!-- Add more dashdropdown-wrapper for additional meta items -->
         </div>
-    <
-
-
 
 <!-- Main form -->
 <div class="formbold-main-wrapper">
@@ -194,7 +191,7 @@
                 id="status"
                 class="formbold-form-input"
                 >
-                <option>Seleccione...</option>
+                <option value="0">Seleccione una opción...</option>
                 <option value="Aprobado">Aprobado</option>
                 <option value="No aprobado">No aprobado</option>
                 <option value="Pendiente a aprobacion">Pendiente a aprobacion</option>

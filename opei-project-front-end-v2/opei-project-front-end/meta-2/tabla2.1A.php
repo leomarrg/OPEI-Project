@@ -206,7 +206,7 @@
                 id="publ"
                 class="formbold-form-input"
                 >
-                <option value="0">Seleccione...</option>
+                <option value="0">Seleccione una opción...</option>
                 <option value="Si">Si</option>
                 <option value="No">No</option>
                 </select>
@@ -221,7 +221,7 @@
             id="clasType"
             class="formbold-form-input"
             >
-            <option value="0">Seleccione...</option>
+            <option value="0">Seleccione una opción...</option>
             <option value="Antología">Antología</option>
             <option value="Artículo en periódico">Artículo en periódico</option>
             <option value="Artículo Publicado en Revistas de uso general o populares">Artículo Publicado en Revistas de uso general o populares</option>
@@ -243,7 +243,7 @@
             id="pubType"
             class="formbold-form-input"
             >
-            <option value="0">Seleccione...</option>
+            <option value="0">Seleccione una opción...</option>
             <option value="Arbritada">Arbritada</option>
             <option value="No arbritada">No arbritada</option>
             </select>
@@ -258,7 +258,7 @@
             id="sponsoredCIC"
             class="formbold-form-input"
             >
-            <option value="0">Seleccione...</option>
+            <option value="0">Seleccione una opción...</option>
             <option value="Si">Si</option>
             <option value="No">No</option>
             </select>

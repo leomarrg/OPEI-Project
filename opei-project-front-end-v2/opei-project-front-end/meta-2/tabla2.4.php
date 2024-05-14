@@ -55,11 +55,13 @@
         <!-- Style -->
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/style-sidemenu.css">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <script src="../js/jquery-3.3.1.min.js"></script>
         <script src="../js/popper.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
         <script src="../js/jquery.validate.min.js"></script>
         <script src="../js/main.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script>
             function logout() {
                 // Redirect to logout script
@@ -179,7 +181,7 @@
             id="clasi"
             class="formbold-form-input"
             >
-            
+            <option value="0">Seleccione una opción...</option>
             <option value="Afiches">Afiches</option>
             <option value="Exposición">Exposición</option>
             <option value="Obras">Obras</option>
@@ -192,10 +194,17 @@
              <!-- Breve descripcion -->
         <div class="formbold-input-flex">
           <!-- Breve descripcion -->
-            <div class="formbold-input-flex">
-                <input type="date" id="calendar" name="calendar">
-                <label for="calendar">Fecha</label>
-            </div>
+          <div>
+            <input
+                type="text"
+                id="calendar"
+                name="calendar"
+                placeholder="Escoge una fecha..."
+                class="formbold-form-input"
+            />
+            <label for="calendar" class="formbold-form-label">Fecha:</label>
+            <i class="fas fa-calendar-alt"></i>
+        </div>
             <div>
               <input
                 type="text"
@@ -228,5 +237,12 @@
         <!-- Content for the footer box goes here -->
         <p>&copy; 2024 UPRA Reports. All rights reserved.</p>
     </div>
+    <script>
+        $(function() {
+            $('#calendar').datepicker({
+                dateFormat: 'dd-mm-yy' // Set the desired date format
+            });
+        });
+    </script>
 </body>
 </html>

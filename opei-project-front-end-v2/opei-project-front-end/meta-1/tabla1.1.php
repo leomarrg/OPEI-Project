@@ -75,8 +75,7 @@
 <body>
     <header>
         <h1 class="uprareports">UPRA Reports</h1>
-        <h2 class="bienvenidosusuario"><?php echo $department['DepartmentName'] ?></h2>        <h2 class="tablaheader">Tabla 1.1A: Acciones de Cursos</h2>
-        <h2 class="tablaheader"> Llenar Informaci&oacute;n en la Tabla 1.1A</h2>
+        <h2 class="bienvenidosusuario"><?php echo $department['DepartmentName'] ?></h2>
     </header>
     
     <input type="checkbox" id="check">
@@ -151,6 +150,10 @@
             </div>
         </div>
 
+        <div class="logout-wrapper">
+            <button class="dashboardbtn" onclick="logout()">Logout</button>
+        </div>
+
         <!-- Add more dashdropdown-wrapper for additional meta items -->
     </div>
  
@@ -159,6 +162,7 @@
         <div class="formbold-form-wrapper">
             
             <form  id="myForm1_1">
+            <h4 class="header1">Llenar Informaci&oacute;n<br>  <br>Tabla 1.1A: Acciones de Cursos</h4>
                 <!-- Curso input text -->
                 <div class="formbold-input-flex">
                     <div>
@@ -183,7 +187,7 @@
                             id="accDeCurso"
                             class="formbold-form-input"
                         >
-                            <option value="0">Seleccione una opción</option>
+                            <option value="0">Seleccione una opción...</option>
                             <option value="Activación">Activación</option>
                             <option value="Cambio de código">Cambio de código</option>
                             <option value="Creación">Creación</option>
@@ -237,9 +241,9 @@
 
     </div>
         <!-- Add your footer box below -->
-        <div class="footer-boxtabla1-2">
+        <div class="footer-box">
             <!-- Content for the footer box goes here -->
-            <p style="font-weight: 800;">&copy; 2024 UPRA Reports. All rights reserved.</p>
+            <p>&copy; 2024 UPRA Reports. All rights reserved.</p>
         </div>
 
 </body>

@@ -60,14 +60,19 @@
         <script src="../js/bootstrap.min.js"></script>
         <script src="../js/jquery.validate.min.js"></script>
         <script src="../js/main.js"></script>
+        <script>
+        function logout() {
+            // Redirect to logout script
+            window.location.href = "../logout.php";
+        }
+        </script>
     
         <title>UPRA Reports Tabla 1-4 A</title>
     </head>
 <body>
         <header>
             <h1 class="uprareports">UPRA Reports</h1>
-            <h2 class="bienvenidosusuario"><?php echo $department['DepartmentName'] ?></h2>            <h2 class="tablaheader">Tabla 1.4 A: Estrategias de avalúo del aprendizaje</h2>
-            <h2 class="tablaheader"> Llenar Informaci&oacute;n en la Tabla 1.4 A</h2>
+            <h2 class="bienvenidosusuario"><?php echo $department['DepartmentName'] ?></h2>
         </header>
     
         <input type="checkbox" id="check">
@@ -141,6 +146,10 @@
                     </div>
                 </div>
             </div>
+
+            <div class="logout-wrapper">
+                <button class="dashboardbtn" onclick="logout()">Logout</button>
+            </div>
     
             <!-- Add more dashdropdown-wrapper for additional meta items -->
         </div>
@@ -154,6 +163,7 @@
         
         <!-- Opening form tag -->
         <form id="myForm1_4a">
+        <h4 class="header1">Llenar Informaci&oacute;n<br>  <br>Tabla 1.4 A: Estrategias de avalúo del aprendizaje</h4>
 
             <!-- Nombre del programa académico acreditado input text -->
             <div class="formbold-input-flex">

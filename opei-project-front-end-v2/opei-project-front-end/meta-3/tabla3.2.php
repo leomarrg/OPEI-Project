@@ -66,7 +66,7 @@
         <script>
             function logout() {
                 // Redirect to logout script
-                window.location.href = "logout.php";
+                window.location.href = "../logout.php";
             }
     </script>
         

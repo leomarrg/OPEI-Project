@@ -50,19 +50,26 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
         <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../fonts/icomoon/style.css">
-        <link rel="stylesheet" href="../css/owl.carousel.min.css">
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="../css/bootstrap.min.css">
-        <!-- Style -->
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/style-sidemenu.css">
-        <script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../fonts/icomoon/style.css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Style -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-sidemenu.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.validate.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
         function logout() {
             // Redirect to logout script
             window.location.href = "../logout.php";
@@ -172,46 +179,34 @@
          <div class="formbold-input-flex">
             <div>
                 <select 
-                    name="primerSemestre"
-                    id="primerSemestre"
+                    name="comPrimerSemestre"
+                    id="comPrimerSemestre"
                     class="formbold-form-input"
                 >
-                    <option value="option1">Activación</option>
-                    <option value="option2">Cambio de código</option>
-                    <option value="option3">Creación</option>
+                <option value="0">Seleccione una opción...</option>
                 </select>
-                <label for="primerSemestre" class="formbold-form-label">Primer Semestre</label>
+                <label for="comPrimerSemestre" class="formbold-form-label">Primer Semestre</label>
             </div>
             <!--Accion de curso dropdown list-->
             <div>
                 <select 
-                    name="segundoSemestre"
-                    id="segundoSemestre"
+                    name="comSegundoSemestre"
+                    id="comSegundoSemestre"
                     class="formbold-form-input"
                 >
-                    <option value="option1">Activación</option>
-                    <option value="option2">Cambio de código</option>
-                    <option value="option3">Creación</option>
-                    <option value="option4">Inactivación</option>
-                    <option value="option5">Reactivación</option>
-                    <option value="option6">Revisión</option>
+                    <option value="0">Seleccione una opción...</option>
                 </select>
-                <label for="segundoSemestre" class="formbold-form-label">Segundo Semestre</label>
+                <label for="comSegundoSemestre" class="formbold-form-label">Segundo Semestre</label>
             </div>
             <div>
                 <select 
-                    name="verano"
-                    id="verano"
+                    name="comVerano"
+                    id="comVerano"
                     class="formbold-form-input"
                 >
-                    <option value="option1">Activación</option>
-                    <option value="option2">Cambio de código</option>
-                    <option value="option3">Creación</option>
-                    <option value="option4">Inactivación</option>
-                    <option value="option5">Reactivación</option>
-                    <option value="option6">Revisión</option>
+                    <option value="0">Seleccione una opción...</option>
                 </select>
-                <label for="verano" class="formbold-form-label">Verano</label>
+                <label for="comVerano" class="formbold-form-label">Verano</label>
             </div>
             
             
@@ -221,49 +216,34 @@
          <div class="formbold-input-flex">
             <div>
                 <select 
-                    name="primerSemestre"
-                    id="primerSemestre"
+                    name="eduPrimerSemestre"
+                    id="eduPrimerSemestre"
                     class="formbold-form-input"
                 >
-                    <option value="option1">Activación</option>
-                    <option value="option2">Cambio de código</option>
-                    <option value="option3">Creación</option>
-                    <option value="option4">Inactivación</option>
-                    <option value="option5">Reactivación</option>
-                    <option value="option6">Revisión</option>
+                    <option value="0">Seleccione una opción...</option>
                 </select>
-                <label for="primerSemestre" class="formbold-form-label">Primer Semestre</label>
+                <label for="eduPrimerSemestre" class="formbold-form-label">Primer Semestre</label>
             </div>
             <!--Accion de curso dropdown list-->
             <div>
                 <select 
-                    name="segundoSemestre"
-                    id="segundoSemestre"
+                    name="eduSegundoSemestre"
+                    id="eduSegundoSemestre"
                     class="formbold-form-input"
                 >
-                    <option value="option1">Activación</option>
-                    <option value="option2">Cambio de código</option>
-                    <option value="option3">Creación</option>
-                    <option value="option4">Inactivación</option>
-                    <option value="option5">Reactivación</option>
-                    <option value="option6">Revisión</option>
+                    <option value="0">Seleccione una opción...</option>
                 </select>
-                <label for="segundoSemestre" class="formbold-form-label">Segundo Semestre</label>
+                <label for="eduSegundoSemestre" class="formbold-form-label">Segundo Semestre</label>
             </div>
             <div>
                 <select 
-                    name="verano"
-                    id="verano"
+                    name="eduVerano"
+                    id="eduVerano"
                     class="formbold-form-input"
                 >
-                    <option value="option1">Activación</option>
-                    <option value="option2">Cambio de código</option>
-                    <option value="option3">Creación</option>
-                    <option value="option4">Inactivación</option>
-                    <option value="option5">Reactivación</option>
-                    <option value="option6">Revisión</option>
+                    <option value="0">Seleccione una opción...</option>
                 </select>
-                <label for="verano" class="formbold-form-label">Verano</label>
+                <label for="eduVerano" class="formbold-form-label">Verano</label>
             </div>
             
         </div>
@@ -272,49 +252,34 @@
          <div class="formbold-input-flex">
             <div>
                 <select 
-                    name="primerSemestre"
-                    id="primerSemestre"
+                    name="coopPrimerSemestre"
+                    id="coopPrimerSemestre"
                     class="formbold-form-input"
                 >
-                    <option value="option1">Activación</option>
-                    <option value="option2">Cambio de código</option>
-                    <option value="option3">Creación</option>
-                    <option value="option4">Inactivación</option>
-                    <option value="option5">Reactivación</option>
-                    <option value="option6">Revisión</option>
+                    <option value="0">Seleccione una opción...</option>
                 </select>
-                <label for="primerSemestre" class="formbold-form-label">Primer Semestre</label>
+                <label for="coopPrimerSemestre" class="formbold-form-label">Primer Semestre</label>
             </div>
             <!--Accion de curso dropdown list-->
             <div>
                 <select 
-                    name="segundoSemestre"
-                    id="segundoSemestre"
+                    name="coopSegundoSemestre"
+                    id="coopSegundoSemestre"
                     class="formbold-form-input"
                 >
-                    <option value="option1">Activación</option>
-                    <option value="option2">Cambio de código</option>
-                    <option value="option3">Creación</option>
-                    <option value="option4">Inactivación</option>
-                    <option value="option5">Reactivación</option>
-                    <option value="option6">Revisión</option>
+                    <option value="0">Seleccione una opción...</option>
                 </select>
-                <label for="segundoSemestre" class="formbold-form-label">Segundo Semestre</label>
+                <label for="coopSegundoSemestre" class="formbold-form-label">Segundo Semestre</label>
             </div>
             <div>
                 <select 
-                    name="verano"
-                    id="verano"
+                    name="coopVerano"
+                    id="coopVerano"
                     class="formbold-form-input"
                 >
-                    <option value="option1">Activación</option>
-                    <option value="option2">Cambio de código</option>
-                    <option value="option3">Creación</option>
-                    <option value="option4">Inactivación</option>
-                    <option value="option5">Reactivación</option>
-                    <option value="option6">Revisión</option>
+                    <option value="0">Seleccione una opción...</option>
                 </select>
-                <label for="verano" class="formbold-form-label">Verano</label>
+                <label for="coopVerano" class="formbold-form-label">Verano</label>
             </div>
             
         </div>
@@ -323,49 +288,34 @@
          <div class="formbold-input-flex">
             <div>
                 <select 
-                    name="primerSemestre"
-                    id="primerSemestre"
+                    name="inveprimerSemestre"
+                    id="inveprimerSemestre"
                     class="formbold-form-input"
                 >
-                    <option value="option1">Activación</option>
-                    <option value="option2">Cambio de código</option>
-                    <option value="option3">Creación</option>
-                    <option value="option4">Inactivación</option>
-                    <option value="option5">Reactivación</option>
-                    <option value="option6">Revisión</option>
+                    <option value="0">Seleccione una opción...</option>
                 </select>
-                <label for="primerSemestre" class="formbold-form-label">Primer Semestre</label>
+                <label for="inveprimerSemestre" class="formbold-form-label">Primer Semestre</label>
             </div>
             <!--Accion de curso dropdown list-->
             <div>
                 <select 
-                    name="segundoSemestre"
-                    id="segundoSemestre"
+                    name="inveSegundoSemestre"
+                    id="inveSegundoSemestre"
                     class="formbold-form-input"
                 >
-                    <option value="option1">Activación</option>
-                    <option value="option2">Cambio de código</option>
-                    <option value="option3">Creación</option>
-                    <option value="option4">Inactivación</option>
-                    <option value="option5">Reactivación</option>
-                    <option value="option6">Revisión</option>
+                    <option value="0">Seleccione una opción...</option>
                 </select>
-                <label for="segundoSemestre" class="formbold-form-label">Segundo Semestre</label>
+                <label for="inveSegundoSemestre" class="formbold-form-label">Segundo Semestre</label>
             </div>
             <div>
                 <select 
-                    name="verano"
-                    id="verano"
+                    name="inveVerano"
+                    id="inveVerano"
                     class="formbold-form-input"
                 >
-                    <option value="option1">Activación</option>
-                    <option value="option2">Cambio de código</option>
-                    <option value="option3">Creación</option>
-                    <option value="option4">Inactivación</option>
-                    <option value="option5">Reactivación</option>
-                    <option value="option6">Revisión</option>
+                    <option value="0">Seleccione una opción...</option>
                 </select>
-                <label for="verano" class="formbold-form-label">Verano</label>
+                <label for="inveVerano" class="formbold-form-label">Verano</label>
             </div>
             
         </div>
@@ -375,49 +325,34 @@
          <div class="formbold-input-flex">
             <div>
                 <select 
-                    name="primerSemestre"
-                    id="primerSemestre"
+                    name="interPrimerSemestre"
+                    id="interPrimerSemestre"
                     class="formbold-form-input"
                 >
-                    <option value="option1">Activación</option>
-                    <option value="option2">Cambio de código</option>
-                    <option value="option3">Creación</option>
-                    <option value="option4">Inactivación</option>
-                    <option value="option5">Reactivación</option>
-                    <option value="option6">Revisión</option>
+                <option value="0">Seleccione una opción...</option>
                 </select>
-                <label for="primerSemestre" class="formbold-form-label">Primer Semestre</label>
+                <label for="interPrimerSemestre" class="formbold-form-label">Primer Semestre</label>
             </div>
             <!--Accion de curso dropdown list-->
             <div>
                 <select 
-                    name="segundoSemestre"
-                    id="segundoSemestre"
+                    name="interSegundoSemestre"
+                    id="interSegundoSemestre"
                     class="formbold-form-input"
                 >
-                    <option value="option1">Activación</option>
-                    <option value="option2">Cambio de código</option>
-                    <option value="option3">Creación</option>
-                    <option value="option4">Inactivación</option>
-                    <option value="option5">Reactivación</option>
-                    <option value="option6">Revisión</option>
+                <option value="0">Seleccione una opción...</option>
                 </select>
-                <label for="segundoSemestre" class="formbold-form-label">Segundo Semestre</label>
+                <label for="interSegundoSemestre" class="formbold-form-label">Segundo Semestre</label>
             </div>
             <div>
                 <select 
-                    name="verano"
-                    id="verano"
+                    name="interVerano"
+                    id="interVerano"
                     class="formbold-form-input"
                 >
-                    <option value="option1">Activación</option>
-                    <option value="option2">Cambio de código</option>
-                    <option value="option3">Creación</option>
-                    <option value="option4">Inactivación</option>
-                    <option value="option5">Reactivación</option>
-                    <option value="option6">Revisión</option>
+                <option value="0">Seleccione una opción...</option>
                 </select>
-                <label for="verano" class="formbold-form-label">Verano</label>
+                <label for="interVerano" class="formbold-form-label">Verano</label>
             </div>
 
         </div>
@@ -431,12 +366,7 @@
                     id="nocturnos"
                     class="formbold-form-input"
                 >
-                    <option value="option1">Activación</option>
-                    <option value="option2">Cambio de código</option>
-                    <option value="option3">Creación</option>
-                    <option value="option4">Inactivación</option>
-                    <option value="option5">Reactivación</option>
-                    <option value="option6">Revisión</option>
+                <option value="0">Seleccione una opción...</option>
                 </select>
                 <label for="nocturnos" class="formbold-form-label">Nocturnos</label>
             </div>
@@ -447,12 +377,7 @@
                     id="sabatino"
                     class="formbold-form-input"
                 >
-                    <option value="option1">Activación</option>
-                    <option value="option2">Cambio de código</option>
-                    <option value="option3">Creación</option>
-                    <option value="option4">Inactivación</option>
-                    <option value="option5">Reactivación</option>
-                    <option value="option6">Revisión</option>
+                    <option value="0">Seleccione una opción...</option>
                 </select>
                 <label for="sabatino" class="formbold-form-label">Sabatino</label>
             </div>
@@ -462,21 +387,12 @@
                     id="trimestral"
                     class="formbold-form-input"
                 >
-                    <option value="option1">Activación</option>
-                    <option value="option2">Cambio de código</option>
-                    <option value="option3">Creación</option>
-                    <option value="option4">Inactivación</option>
-                    <option value="option5">Reactivación</option>
-                    <option value="option6">Revisión</option>
+                    <option value="0">Seleccione una opción...</option>
                 </select>
                 <label for="trimestral" class="formbold-form-label">Trimestral</label>
             </div>
 
         </div>
-            
-            
-        
-
 
             <!-- Submit button -->
             <button class="formbold-btn">
@@ -489,12 +405,11 @@
         <br> <br> <br> <br> <br>
     </div>
 </div>
-
     
     <!-- Add your footer box below -->
-    <div class="footer-boxtabla1-2">
+    <div class="footer-box">
         <!-- Content for the footer box goes here -->
-        <p style="font-weight: 800;">&copy; 2024 UPRA Reports. All rights reserved.</p>
+        <p>&copy; 2024 UPRA Reports. All rights reserved.</p>
     </div>
 
     <script src="../js/jquery-3.3.1.min.js"></script>

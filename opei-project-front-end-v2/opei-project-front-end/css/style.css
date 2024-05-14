@@ -136,36 +136,26 @@ body {
   background-color: #fff;
   color: #999;
   line-height: 2;
-
+  overflow-x: auto; /* Enable horizontal scrolling */
 }
 
 /* Rest of your CSS remains unchanged */
 
+
 .table {
-  border-collapse: collapse;
-  width: 90%; /* Set width to 90% of its container */
+  width: 100%;
   margin: auto;
   border: 2px solid #8d8b8b;
-  overflow-x: auto; /* Enable horizontal scrolling */
-}
-
-td, th {
-  border: 2px solid #8d8b8b;
-  text-align: center;
-  padding: 0.5em; /* Reduce padding */
-}
-
-.table input[type="text"] {
-  width: 100%; /* Ensure text input takes up full width of parent cell */
-  box-sizing: border-box; /* Include padding and border in the width */
-  resize: both; /* Allow resizing both horizontally and vertically */
+  border-collapse: collapse;
+  table-layout: fixed; /* Fixed layout to prevent cell content from affecting column width */
 }
 
 th, td {
   border: 2px solid #8d8b8b;
   text-align: center;
-  padding: 0.5em; /* Reduce padding */
-  font-size: 1rem; /* Adjust font size */
+  padding: 0.5em;
+  font-size: 1rem;
+  
 }
 
 .table thead th {
@@ -175,21 +165,22 @@ th, td {
 }
 
 .table th, .table td {
-  padding: 0.5rem; /* Reduce padding */
+  padding: 0.5em;
   vertical-align: top;
-  border-top: 1px solid #000000; 
+  border-top: 1px solid #000000;
+  max-width: 200px; /* Limit maximum width of cells to prevent content from extending too much */
 }
 
 .table-title {
   text-align: center;
-  font-size: 1.25rem; /* Adjust font size */
+  font-size: 1.25rem;
   margin-bottom: 10px;
 }
 
 .table-buttons {
   text-align: center;
   margin-top: 10px;
-}
+} 
 
 .my-table {
   width: 100%;
@@ -212,12 +203,13 @@ th, td {
 
 
 .header {
-  background: #FFC107 url('../images/arecibo.ico') no-repeat;
-  color: #000;
+  background: #333 url('../images/arecibo.ico') no-repeat;
+  color: #FFC107;
   text-align: center;
   height: 70px; 
   width: 100%;
   background-size: contain;
+  overflow-x: auto; /* Enable horizontal scrolling */
 }
 
 .top-box h1 {
@@ -227,29 +219,32 @@ th, td {
 /* Add styling for the header box */
 
 header {
-  background-color: #FFC107;
-    color: #000;
+  background-color: #000;
+    color: #FFC107;
     padding: 10px;
     text-align: center;
+    width: 100%;
+    overflow-x: auto;
 }
 
 /* Add styling for the footer box */
 .footer-box {
   background-color: #FFC107;
-    color: #000;
-    text-align: center;
-    padding: 1px 0;
-    position: fixed;
-    bottom: 0%;
-    width: 100%;
-    z-index: 999;
-    font-weight: bold;
+  color: #000;
+  text-align: center;
+  padding: 10px 0; /* Adjust padding as needed */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: -1; /* Set z-index to a negative value to make it go behind other content */
 }
-.footer-box p{
-  
-    font-size: 16px;
-    
+
+.footer-box p {
+  font-size: 20px;
+  font-weight: bold; /* Set font-weight to bold */
+  margin: 0; /* Remove default margin */
 }
+
 .footer-boxtabla1-2 {
   background-color: #000;
     color: #FFC107;
@@ -314,7 +309,6 @@ html, body {
     padding: 2px;
     max-height: 900px;
     margin-bottom: 200px;
-
   }
 
   .formbold-main-wrapper input, option, select, textarea, label{
@@ -326,18 +320,15 @@ html, body {
     
     
   }
-  .formbold-main-wrapper-edit {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 10px;
-    margin-left: auto; /* Justify margin to the left */
-    margin-right: auto;
+  .formbold-form-wrapper-edit {
+    margin: 0 auto;
+    width: 90%;
+    background: white;
     min-height: 580px;
     max-height: 900px;
-
-
-  }
+    margin-top: 10px;
+    overflow-x: auto; /* Enable horizontal scrolling if content exceeds container */
+}
 
   .formbold-main-wrapperDept {
     display: flex;
@@ -363,12 +354,12 @@ html, body {
     min-height: 580px;
     max-height: 900px;
     margin-top: 10px;
-    
-  }
+    overflow-x: auto; /* Enable horizontal scrolling if content exceeds container */
+}
 
   .formbold-form-wrapper {
     margin: 0 auto;
-    max-width: 40%;
+    max-width: 90%;
     width: 60%;
     background: white;
     min-height: 550px;
@@ -520,7 +511,7 @@ html, body {
     border: none;
     font-weight: 500;
     background-color: #FFC107;
-    color: #000;
+    color: white;
     cursor: pointer;
     margin-top: 25px;
     border: 1px solid #000;
@@ -544,7 +535,7 @@ html, body {
     border: none;
     font-weight: 500;
     background-color: #FFC107;
-    color: #000;
+    color: white;
     cursor: pointer;
     margin-top: 25px;
     border: 1px solid #000;
@@ -617,8 +608,11 @@ html, body {
 }
 
 select {
-  width: 100%;
   height: 40px;
+  display: inline-block;
+  position: relative;
+  width: 400px;
+  font-size:16px;
 }
 
 .hidden {
@@ -626,20 +620,20 @@ select {
 }
 
 .uprareports h1 {
-  color: #000;
+  color: #FFC107;
   text-align: center;
   margin-left: 120px;
 }
 .bienvenidosusuario {
-  font-size: 1.0em;
-  color: #000;
+  font-size: 1.5em;
+  color: #FFC107;
   text-align: center;
   padding: 10px;
  
 }
 .tablaheader {
   font-size: 1.5em;
-  color: #000;
+  color: #FFC107;
   text-align: center;
   padding: 10px;
  
@@ -652,6 +646,18 @@ h6 {
   margin-right: 200px;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgba(0, 0, 0, 0.582);
+}
+.edit-mode  input {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  font-size: 16px;
+}
+.edit-mode select{
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  font-size: 16px;
 }
 .edit-btn,  .delete-btn, .update-btn {
   font-size: 16px;
@@ -710,28 +716,4 @@ cursor: pointer;
 border-radius: 4px;
 margin-top: 20px;
 margin-bottom: 20px;
-}
-select{
-display: inline-block;
-position: relative;
-width: 400px;
-font-size:16px;
-}
-
-
-.header1 {
-  border-bottom: 3px solid #FFC107;
-  color: #000;
-  padding-bottom: 10px; /* Adjust as needed */
-}
-.header2 {
-  border-bottom: 3px solid #FFC107;
-  color: #000;
-  padding-bottom: 50px; /* Adjust as needed */
-  margin-bottom: 50px;
-}
-
-.logout-wrapper {
-  text-align: center; /* Center-align the button */
-  margin-top: 350px; /* Adjust the top margin to move it lower */
 }

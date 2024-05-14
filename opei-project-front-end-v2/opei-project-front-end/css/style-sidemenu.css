@@ -65,7 +65,7 @@ label #btn{
   position: absolute;
   left: 5px;
   cursor: pointer;
-  color: #000;
+  color: white;
   border-radius: 5px;
   margin: 15px 30px;
   font-size: 20px;
@@ -133,12 +133,22 @@ label #cancel{
 @media(max-width : 860px){
   .sidebar{
     height: auto;
-    width: 70px;
+    width: 60px;
     left: 0;
-    margin: 100px 0;
+    margin: 0;
+    margin-right: 70%;
+   
   }
-  header,#btn,#cancel{
+  .dashdropdown-wrapper {
+    margin-bottom: 15px;
+  }
+  #btn,#cancel{
     display: none;
+  }
+  .footer-boxtabla1-2, .footer-box{
+    
+    margin-top: 120%;
+    position: unset;
   }
   span{
     position: absolute;
@@ -146,9 +156,19 @@ label #cancel{
     opacity: 0;
     visibility: hidden;
   }
+  .sidebar button {
+    cursor: pointer;
+    border-collapse: collapse;
+    width: 100px; /* Ensure text input takes up full width of parent cell */
+    box-sizing: border-box; /* Include padding and border in the width */
+    resize: both; /* Allow resizing both horizontally and vertically */
+  }
   .sidebar a{
-    height: 60px;
+    height: 90%;
     width: 100%;
+    border: 1px solid #FFC107;
+      padding: 0px;
+    
   }
   .sidebar a i{
     margin-left: -10px;
@@ -160,6 +180,155 @@ label #cancel{
   .sidebar a:hover span{
     opacity: 1;
     visibility: visible;
+  }
+  
+  
+  #myForm1_5 label {
+    font-size: small;
+    align-items: center;
+    justify-content: center;
+    max-height: 100%;
+    word-wrap: break-word;
+    margin-bottom: 5px;
+    width: 100%;
+  
+  }
+  #myForm1_5 {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    background: white;
+    min-height: 550px;
+    max-height: 900px;
+    padding-left: 30px;
+
+  }
+  #myForm2_5 label {
+    font-size: small;
+    align-items: center;
+    justify-content: center;
+    max-height: 100%;
+    word-wrap: break-word;
+    margin-bottom: 5px;
+    width: 100%;
+  
+  }
+  #myForm2_5 {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    background: white;
+    min-height: 550px;
+    max-height: 900px;
+    padding-left: 30px;
+
+  }
+  #myForm3_3 label {
+    font-size: small;
+    align-items: center;
+    justify-content: center;
+    max-height: 100%;
+    word-wrap: break-word;
+    margin-bottom: 5px;
+    width: 100%;
+  
+  }
+  #myForm3_3 {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    background: white;
+    min-height: 550px;
+    max-height: 900px;
+    padding-left: 30px;
+
+  }
+  #myForm4_3 label {
+    font-size: small;
+    align-items: center;
+    justify-content: center;
+    max-height: 100%;
+    word-wrap: break-word;
+    margin-bottom: 5px;
+    width: 100%;
+  
+  }
+  #myForm4_3 {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    background: white;
+    min-height: 550px;
+    max-height: 900px;
+    padding-left: 30px;
+
+  }
+  #myForm5_4 label {
+    font-size: small;
+    align-items: center;
+    justify-content: center;
+    max-height: 100%;
+    word-wrap: break-word;
+    margin-bottom: 5px;
+    width: 100%;
+  
+  }
+  #myForm5_4 {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    background: white;
+    min-height: 550px;
+    max-height: 900px;
+    padding-left: 30px;
+
+  }
+
+  .dashboard-content{
+   min-width: 100px;
+  }
+  .formbold-main-wrapper {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    background: white;
+    min-height: 550px;
+    max-height: 900px;
+    padding-left: 50px;
+    margin-bottom: 200px;
+  }
+  .formbold-btn {
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease; 
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 12px 10px;
+    border: none;
+    font-weight: 500;
+    background-color: #FFC107;
+    color: white;
+    cursor: pointer;
+    margin-top: 25px;
+    border: 1px solid #000;
+  }
+  .underline-button {
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease; 
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 12px 10px;
+    border: none;
+    font-weight: 500;
+    background-color: #FFC107;
+    color: white;
+    cursor: pointer;
+    margin-top: 25px;
+    border: 1px solid #000;
+  }
+  .header1{
+    font-size: 16px;
   }
 }
 

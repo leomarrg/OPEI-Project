@@ -236,20 +236,21 @@ header {
 /* Add styling for the footer box */
 .footer-box {
   background-color: #FFC107;
-    color: #000;
-    text-align: center;
-    padding: 1px 0;
-    position: fixed;
-    bottom: 0%;
-    width: 100%;
-    z-index: 999;
-    font-weight: bold;
+  color: #000;
+  text-align: center;
+  padding: 10px 0; /* Adjust padding as needed */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: -1; /* Set z-index to a negative value to make it go behind other content */
 }
-.footer-box p{
-  
-    font-size: 16px;
-    
+
+.footer-box p {
+  font-size: 20px;
+  font-weight: bold; /* Set font-weight to bold */
+  margin: 0; /* Remove default margin */
 }
+
 .footer-boxtabla1-2 {
   background-color: #000;
     color: #FFC107;

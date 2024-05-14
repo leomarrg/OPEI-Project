@@ -1,5 +1,5 @@
 <?php
-  /*  // Start session
+    // Start session
     session_start();
     
     // Check if the user is logged in
@@ -25,7 +25,7 @@
     // Store user's name and department ID in session variables
     $_SESSION['userName'] = $userDetails['Name'];
     $_SESSION['DepartmentID'] = $userDetails['DepartmentID'];
-*/
+
     // Check if DepartmentID exists in the session
     if (isset($_SESSION['DepartmentID'])) {
         // Retrieve the DepartmentID of the logged-in user from the session
@@ -65,7 +65,7 @@
     <script>
     function logout() {
         // Redirect to logout script
-        window.location.href = "logout.php";
+        window.location.href = "../logout.php";
     }
     </script>
 

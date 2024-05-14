@@ -181,7 +181,7 @@
             id="classAct4"
             class="formbold-form-input"
             >
-            
+            <option value="0">Seleccione una opción...</option>
             <option value="Si">Si</option>
             <option value="No">No</option>
             </select>

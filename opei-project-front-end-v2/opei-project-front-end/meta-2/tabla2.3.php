@@ -182,7 +182,7 @@
             id="agency"
             class="formbold-form-input"
             >
-            
+            <option value="0">Seleccione una opción...</option>
             <option value="Federal">Federal</option>
             <option value="Estatal">Estatal</option>
             <option value="Privado">Privado</option>
@@ -199,6 +199,7 @@
             id="status"
             class="formbold-form-input"
             >
+            <option value="0">Seleccione una opción...</option>
             <option value="Aprobado">Aprobado</option>
             <option value="No aprobado">No aprobado</option>
             <option value="Pendiente a aprobacion">Pendiente a aprobacion</option>

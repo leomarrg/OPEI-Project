@@ -455,8 +455,17 @@ $(document).ready(function(){
             }
         });
 
+        // Check if any of the dropdown lists have the default value "0"
+        var dropdownEmpty = false;
+        $(this).find('select').each(function() {
+            if ($(this).val() === '0') {
+                dropdownEmpty = true;
+                return false; // Exit the loop early if a dropdown list with default value is found
+            }
+        });
+    
         // If any required field is empty, prevent form submission
-        if (empty) {
+        if (empty || dropdownEmpty) {
             alert('Please fill in all the required fields.');
             return;
         }
@@ -508,8 +517,17 @@ $(document).ready(function(){
             }
         });
 
+        // Check if any of the dropdown lists have the default value "0"
+        var dropdownEmpty = false;
+        $(this).find('select').each(function() {
+            if ($(this).val() === '0') {
+                dropdownEmpty = true;
+                return false; // Exit the loop early if a dropdown list with default value is found
+            }
+        });
+    
         // If any required field is empty, prevent form submission
-        if (empty) {
+        if (empty || dropdownEmpty) {
             alert('Please fill in all the required fields.');
             return;
         }
@@ -561,11 +579,20 @@ $(document).ready(function(){
             }
         });
 
-        // If any required field is empty, prevent form submission
-        if (empty) {
-            alert('Please fill in all the required fields.');
-            return;
-        }
+       // Check if any of the dropdown lists have the default value "0"
+       var dropdownEmpty = false;
+       $(this).find('select').each(function() {
+           if ($(this).val() === '0') {
+               dropdownEmpty = true;
+               return false; // Exit the loop early if a dropdown list with default value is found
+           }
+       });
+   
+       // If any required field is empty, prevent form submission
+       if (empty || dropdownEmpty) {
+           alert('Please fill in all the required fields.');
+           return;
+       }
 
         // Get form data
         var formData = $(this).serialize();
@@ -614,11 +641,20 @@ $(document).ready(function(){
             }
         });
 
-        // If any required field is empty, prevent form submission
-        if (empty) {
-            alert('Please fill in all the required fields.');
-            return;
-        }
+       // Check if any of the dropdown lists have the default value "0"
+       var dropdownEmpty = false;
+       $(this).find('select').each(function() {
+           if ($(this).val() === '0') {
+               dropdownEmpty = true;
+               return false; // Exit the loop early if a dropdown list with default value is found
+           }
+       });
+   
+       // If any required field is empty, prevent form submission
+       if (empty || dropdownEmpty) {
+           alert('Please fill in all the required fields.');
+           return;
+       }
 
         // Get form data
         var formData = $(this).serialize();
@@ -720,11 +756,20 @@ $(document).ready(function(){
             }
         });
 
-        // If any required field is empty, prevent form submission
-        if (empty) {
-            alert('Please fill in all the required fields.');
-            return;
-        }
+         // Check if any of the dropdown lists have the default value "0"
+         var dropdownEmpty = false;
+         $(this).find('select').each(function() {
+             if ($(this).val() === '0') {
+                 dropdownEmpty = true;
+                 return false; // Exit the loop early if a dropdown list with default value is found
+             }
+         });
+     
+         // If any required field is empty, prevent form submission
+         if (empty || dropdownEmpty) {
+             alert('Please fill in all the required fields.');
+             return;
+         }
 
         // Get form data
         var formData = $(this).serialize();
@@ -773,11 +818,20 @@ $(document).ready(function(){
             }
         });
 
-        // If any required field is empty, prevent form submission
-        if (empty) {
-            alert('Please fill in all the required fields.');
-            return;
-        }
+         // Check if any of the dropdown lists have the default value "0"
+         var dropdownEmpty = false;
+         $(this).find('select').each(function() {
+             if ($(this).val() === '0') {
+                 dropdownEmpty = true;
+                 return false; // Exit the loop early if a dropdown list with default value is found
+             }
+         });
+     
+         // If any required field is empty, prevent form submission
+         if (empty || dropdownEmpty) {
+             alert('Please fill in all the required fields.');
+             return;
+         }
 
         // Get form data
         var formData = $(this).serialize();
@@ -826,11 +880,20 @@ $(document).ready(function(){
             }
         });
 
-        // If any required field is empty, prevent form submission
-        if (empty) {
-            alert('Please fill in all the required fields.');
-            return;
-        }
+         // Check if any of the dropdown lists have the default value "0"
+         var dropdownEmpty = false;
+         $(this).find('select').each(function() {
+             if ($(this).val() === '0') {
+                 dropdownEmpty = true;
+                 return false; // Exit the loop early if a dropdown list with default value is found
+             }
+         });
+     
+         // If any required field is empty, prevent form submission
+         if (empty || dropdownEmpty) {
+             alert('Please fill in all the required fields.');
+             return;
+         }
 
         // Get form data
         var formData = $(this).serialize();
@@ -932,11 +995,20 @@ $(document).ready(function(){
             }
         });
 
-        // If any required field is empty, prevent form submission
-        if (empty) {
-            alert('Please fill in all the required fields.');
-            return;
-        }
+         // Check if any of the dropdown lists have the default value "0"
+         var dropdownEmpty = false;
+         $(this).find('select').each(function() {
+             if ($(this).val() === '0') {
+                 dropdownEmpty = true;
+                 return false; // Exit the loop early if a dropdown list with default value is found
+             }
+         });
+     
+         // If any required field is empty, prevent form submission
+         if (empty || dropdownEmpty) {
+             alert('Please fill in all the required fields.');
+             return;
+         }
 
         // Get form data
         var formData = $(this).serialize();
@@ -1091,11 +1163,20 @@ $(document).ready(function(){
             }
         });
 
-        // If any required field is empty, prevent form submission
-        if (empty) {
-            alert('Please fill in all the required fields.');
-            return;
-        }
+         // Check if any of the dropdown lists have the default value "0"
+         var dropdownEmpty = false;
+         $(this).find('select').each(function() {
+             if ($(this).val() === '0') {
+                 dropdownEmpty = true;
+                 return false; // Exit the loop early if a dropdown list with default value is found
+             }
+         });
+     
+         // If any required field is empty, prevent form submission
+         if (empty || dropdownEmpty) {
+             alert('Please fill in all the required fields.');
+             return;
+         }
 
         // Get form data
         var formData = $(this).serialize();
@@ -1144,11 +1225,20 @@ $(document).ready(function(){
             }
         });
 
-        // If any required field is empty, prevent form submission
-        if (empty) {
-            alert('Please fill in all the required fields.');
-            return;
-        }
+         // Check if any of the dropdown lists have the default value "0"
+         var dropdownEmpty = false;
+         $(this).find('select').each(function() {
+             if ($(this).val() === '0') {
+                 dropdownEmpty = true;
+                 return false; // Exit the loop early if a dropdown list with default value is found
+             }
+         });
+     
+         // If any required field is empty, prevent form submission
+         if (empty || dropdownEmpty) {
+             alert('Please fill in all the required fields.');
+             return;
+         }
 
         // Get form data
         var formData = $(this).serialize();

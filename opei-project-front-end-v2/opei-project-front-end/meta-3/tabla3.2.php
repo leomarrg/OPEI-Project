@@ -184,6 +184,7 @@
             id="actType"
             class="formbold-form-input"
             >
+            <option value="0">Seleccione una opción...</option>
             <option value="Académica">Académica </option>
             <option value="Artistica">Artistica</option>
             <option value="Cultural">Cultural</option>

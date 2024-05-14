@@ -248,6 +248,7 @@ header {
     font-size: 16px;
     
 }
+
 .footer-boxtabla1-2 {
   background-color: #FFC107;
     color: #000;
@@ -261,7 +262,7 @@ header {
     
 }
 .footer-boxtabla1-2 p{
-    font-size: 16px;
+    font-size: 20px;
     
 }
 
@@ -571,6 +572,7 @@ html, body {
   border: none;
   cursor: pointer;
   width: 155px;
+  border: solid 1px black;
 }
 
 /* Style the dropdown content (hidden by default) */
@@ -731,12 +733,14 @@ border-radius: 4px;
 margin-top: 20px;
 margin-bottom: 20px;
 }
+
 select{
 display: inline-block;
 position: relative;
 width: 400px;
 font-size:16px;
 }
+
 
 
 .header1 {

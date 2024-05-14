@@ -208,7 +208,7 @@
                 id="classAct"
                 class="formbold-form-input"
                 >
-               
+                <option value="0">Seleccione una opción...</option>
                 <option value="Bibliografías, discografía y filmografía">Bibliografías, discografía y filmografía</option>
                 <option value="Colaborador y lector en proyecto de investigación o disertación">Colaborador y lector en proyecto de investigación o disertación</option>
                 <option value="Competencia">Competencia</option>
@@ -245,7 +245,7 @@
           id="sponsoredCIC"
           class="formbold-form-input"
           >
-          
+          <option value="0">Seleccione una opción...</option>
           <option value="Si">Si</option>
           <option value="No">No</option>
           </select>

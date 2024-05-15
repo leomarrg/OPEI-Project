@@ -4128,7 +4128,7 @@ function editRow54() {
 }
 
 $(function(){
-    var $select = $(".formbold-form-input");
+    var $select = $(".formbold-form-input1");
     for (i=1;i<=60;i++){
         $select.append($('<option></option>').val(i).html(i))
     }

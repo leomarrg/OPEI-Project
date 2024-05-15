@@ -6,8 +6,8 @@ include 'db_info.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate and sanitize user input
     $titInve = mysqli_real_escape_string($conn, $_POST['titInve']);
-    $calendar = mysqli_real_escape_string($conn, $_POST['calendar']);
     $clasi = mysqli_real_escape_string($conn, $_POST['clasi']);
+    $calendar = mysqli_real_escape_string($conn, $_POST['calendar']);
     $profe = mysqli_real_escape_string($conn, $_POST['profe']);
     $numEst = mysqli_real_escape_string($conn, $_POST['numEst']);
 
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Prepare and bind the SQL statement
     $stmt = $conn->prepare("INSERT INTO table24 (DepartmentID, year, field1, field2, field3, field4, field5) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("iisssss", $departmentID, $currentYear, $titInve, $calendar, $clasi, $profe, $numEst);
+    $stmt->bind_param("iisssss", $departmentID, $currentYear, $titInve, $clasi, $calendar, $profe, $numEst);
 
     // Execute the statement
     if ($stmt->execute()) {

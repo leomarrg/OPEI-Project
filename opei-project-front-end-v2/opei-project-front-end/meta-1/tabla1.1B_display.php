@@ -74,10 +74,10 @@ $year = date("Y");
     
         <title>UPRA Reports Tabla 1-1B Editar</title>
         <script>
-      $(document).ready(function() {
-        editRow11b();
-      });
-    </script>
+            $(document).ready(function() {
+                editRow11b();
+            });
+        </script>
 </head>
 <body>
     <header>
@@ -139,7 +139,7 @@ $year = date("Y");
                 </table>
         </form>
         <div class="formbold-main-wrapperDept" >
-            <a class="underline-button"  href="../meta-1/tabla1.1B.php" style="">Volver</a>
+            <a class="underline-button"  href="../meta-1/tabla1.1B.php">Volver</a>
         </div>
     </div>
 </div>

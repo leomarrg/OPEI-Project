@@ -174,8 +174,17 @@ $(document).ready(function(){
             return; // Prevent form submission
         }
     
+        // Check if any of the dropdown lists have the default value "0"
+        var dropdownEmpty = false;
+        $(this).find('select').each(function() {
+            if ($(this).val() === '0') {
+                dropdownEmpty = true;
+                return false; // Exit the loop early if a dropdown list with default value is found
+            }
+        });
+    
         // If any required field is empty, prevent form submission
-        if (empty) {
+        if (empty || dropdownEmpty) {
             alert('Please fill in all the required fields.');
             return;
         }
@@ -1520,6 +1529,63 @@ function updateTable11bRow(table11bID) {
         }
     });
 }
+function updateTable12Row(table12ID) {
+    var field1 = document.getElementById('field1_' + table12ID).value;
+    var field2 = document.getElementById('field2_' + table12ID).value;
+    var field3 = document.getElementById('field3_' + table12ID).value;
+    var field4 = document.getElementById('field4_' + table12ID).value;
+    var field5 = document.getElementById('field5_' + table12ID).value;
+    var field6 = document.getElementById('field6_' + table12ID).value;
+    var field7 = document.getElementById('field7_' + table12ID).value;
+    var field8 = document.getElementById('field8_' + table12ID).value;
+    var field9 = document.getElementById('field9_' + table12ID).value;
+    var field10 = document.getElementById('field10_' + table12ID).value;
+    var field11 = document.getElementById('field11_' + table12ID).value;
+    var field12 = document.getElementById('field12_' + table12ID).value;
+    var field13 = document.getElementById('field13_' + table12ID).value;
+    var field14 = document.getElementById('field14_' + table12ID).value;
+    var field15 = document.getElementById('field15_' + table12ID).value;
+    var field16 = document.getElementById('field16_' + table12ID).value;
+    var field17 = document.getElementById('field17_' + table12ID).value;
+    var field18 = document.getElementById('field18_' + table12ID).value;
+
+    $.ajax({
+        type: 'POST',
+        url: '../meta-1/tabla1.2_update.php',
+        data: {
+            table12ID: table12ID,
+            field1: field1,
+            field2: field2,
+            field3: field3,
+            field4: field4,
+            field5: field5,
+            field6: field6,
+            field7: field7,
+            field8: field8,
+            field9: field9,
+            field10: field10,
+            field11: field11,
+            field12: field12,
+            field13: field13,
+            field14: field14,
+            field15: field15,
+            field16: field16,
+            field17: field17,
+            field18: field18
+        },
+        success: function(response) {
+            if (response == 'success') {
+                console.log('Update successful');
+                alert('Update successful!');
+                window.location.href = '../meta-1/tabla1.2_display.php';
+            } else {
+                console.log('Error updating record');
+                alert('Error updating record');
+            }
+        }
+    });
+}
+
 
 function updateTable13Row(table13ID) {
     console.log('Updating row with ID: ' + table13ID); // Add this line to check if the function is called
@@ -2502,6 +2568,89 @@ function editRow11a() {
     });
 }
 
+function editRow12() {
+    $(document).on('click', '.edit-btn', function(e) {
+        e.preventDefault();
+
+        $('.edit-mode').each(function() {
+            $(this).html($(this).data('original-html'));
+            $(this).removeClass('edit-mode');
+        });
+
+        var row = $(this).closest('tr');
+        var originalHtml = row.html();
+
+        row.addClass('edit-mode');
+        row.data('original-html', originalHtml);
+
+        row.find('td:not(:last-child):not(:first-child):not(:nth-last-child(2))').each(function() {
+            var currentValue = $(this).text().trim();
+            var inputField;
+            if ($(this).index() === 1) { // Check if it's field2 column
+                inputField = "<select class='formbold-form-input1'>";
+                for (i = 1; i <= 60; i++) {
+                    inputField += "<option value='" + i + "'" + (currentValue === i.toString() ? " selected" : "") + ">" + i + "</option>";
+                }
+                inputField += "</select>";
+            } else if ($(this).index() >= 2 && $(this).index() <= 18) { 
+                inputField = "<select class='formbold-form-input1'>";
+                for (i = 1; i <= 60; i++) {
+                    inputField += "<option value='" + i + "'" + (currentValue === i.toString() ? " selected" : "") + ">" + i + "</option>";
+                }
+                inputField += "</select>";
+            }
+            $(this).html(inputField);
+        });
+
+        row.find('.edit-btn').text('Actualizar');
+        row.find('.edit-btn').removeClass('edit-btn').addClass('update-btn');
+    });
+
+    $(document).on('click', '.update-btn', function(e) {
+        e.preventDefault();
+
+        var row = $(this).closest('tr');
+        var rowData = {
+            table12ID: row.find('td:eq(0)').text().trim(),
+            field1: row.find('select:eq(0)').val(),
+            field2: row.find('select:eq(1)').val(),
+            field3: row.find('select:eq(2)').val(), // Get the value from the first select element
+            field4: row.find('select:eq(3)').val(), // Get the value from the second select element
+            field5: row.find('select:eq(4)').val(),
+            field6: row.find('select:eq(5)').val(),
+            field7: row.find('select:eq(6)').val(), // Get the value from the first select element
+            field8: row.find('select:eq(7)').val(), // Get the value from the second select element
+            field9: row.find('select:eq(8)').val(),
+            field10: row.find('select:eq(9)').val(),
+            field11: row.find('select:eq(10)').val(), // Get the value from the first select element
+            field12: row.find('select:eq(11)').val(), // Get the value from the second select element
+            field13: row.find('select:eq(12)').val(),
+            field14: row.find('select:eq(13)').val(),
+            field15: row.find('select:eq(14)').val(), // Get the value from the first select element
+            field16: row.find('select:eq(15)').val(), // Get the value from the second select element
+            field17: row.find('select:eq(16)').val(),
+            field18: row.find('select:eq(17)').val()
+        };
+
+        $.ajax({
+            url: '../meta-1/tabla1.2_update.php',
+            method: 'POST',
+            data: rowData,
+            success: function(response) {
+                if (response === 'success') {
+                    alert('Update successful');
+                    location.reload();
+                } else {
+                    alert('Update failed');
+                }
+            },
+            error: function() {
+                alert('Error updating row');
+            }
+        });
+    });
+}
+
 
 // edit table 11b
 function editRow11b() {
@@ -2747,6 +2896,7 @@ function editRow15() {
     $(document).on('click', '.edit-btn', function(e) {
         e.preventDefault();
 
+        // Remove edit mode from any other row currently in edit mode
         $('.edit-mode').each(function() {
             $(this).html($(this).data('original-html'));
             $(this).removeClass('edit-mode');
@@ -2755,15 +2905,18 @@ function editRow15() {
         var row = $(this).closest('tr');
         var originalHtml = row.html();
 
+        // Save the original HTML of the row
         row.addClass('edit-mode');
         row.data('original-html', originalHtml);
 
+        // Replace text content with textareas
         row.find('td:not(:last-child):not(:first-child):not(:nth-last-child(2))').each(function() {
             var currentValue = $(this).text().trim();
-            var inputField = "<input type='text' value='" + currentValue + "'>";
-            $(this).html(inputField);
+            var textareaField = "<textarea class='resizable-textarea'>" + currentValue + "</textarea>";
+            $(this).html(textareaField);
         });
 
+        // Change the Edit button to Update button
         row.find('.edit-btn').text('Actualizar');
         row.find('.edit-btn').removeClass('edit-btn').addClass('update-btn');
     });
@@ -2774,12 +2927,12 @@ function editRow15() {
         var row = $(this).closest('tr');
         var rowData = {
             table15ID: row.find('td:eq(0)').text().trim(),
-            field1: row.find('input:eq(0)').val().trim(),
-            field2: row.find('input:eq(1)').val().trim(),
-            field3: row.find('input:eq(2)').val().trim(),
-            field4: row.find('input:eq(3)').val().trim(),
-            field5: row.find('input:eq(4)').val().trim(),
-            field6: row.find('input:eq(5)').val().trim()
+            field1: row.find('textarea:eq(0)').val().trim(),
+            field2: row.find('textarea:eq(1)').val().trim(),
+            field3: row.find('textarea:eq(2)').val().trim(),
+            field4: row.find('textarea:eq(3)').val().trim(),
+            field5: row.find('textarea:eq(4)').val().trim(),
+            field6: row.find('textarea:eq(5)').val().trim()
         };
 
         $.ajax({

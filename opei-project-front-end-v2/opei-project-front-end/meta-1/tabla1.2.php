@@ -181,7 +181,7 @@
                 <select 
                     name="comPrimerSemestre"
                     id="comPrimerSemestre"
-                    class="formbold-form-input"
+                    class="formbold-form-input1"
                 >
                 <option value="0">Seleccione una opción...</option>
                 </select>
@@ -192,7 +192,7 @@
                 <select 
                     name="comSegundoSemestre"
                     id="comSegundoSemestre"
-                    class="formbold-form-input"
+                    class="formbold-form-input1"
                 >
                     <option value="0">Seleccione una opción...</option>
                 </select>
@@ -202,7 +202,7 @@
                 <select 
                     name="comVerano"
                     id="comVerano"
-                    class="formbold-form-input"
+                    class="formbold-form-input1"
                 >
                     <option value="0">Seleccione una opción...</option>
                 </select>
@@ -218,7 +218,7 @@
                 <select 
                     name="eduPrimerSemestre"
                     id="eduPrimerSemestre"
-                    class="formbold-form-input"
+                    class="formbold-form-input1"
                 >
                     <option value="0">Seleccione una opción...</option>
                 </select>
@@ -229,7 +229,7 @@
                 <select 
                     name="eduSegundoSemestre"
                     id="eduSegundoSemestre"
-                    class="formbold-form-input"
+                    class="formbold-form-input1"
                 >
                     <option value="0">Seleccione una opción...</option>
                 </select>
@@ -239,7 +239,7 @@
                 <select 
                     name="eduVerano"
                     id="eduVerano"
-                    class="formbold-form-input"
+                    class="formbold-form-input1"
                 >
                     <option value="0">Seleccione una opción...</option>
                 </select>
@@ -254,7 +254,7 @@
                 <select 
                     name="coopPrimerSemestre"
                     id="coopPrimerSemestre"
-                    class="formbold-form-input"
+                    class="formbold-form-input1"
                 >
                     <option value="0">Seleccione una opción...</option>
                 </select>
@@ -265,7 +265,7 @@
                 <select 
                     name="coopSegundoSemestre"
                     id="coopSegundoSemestre"
-                    class="formbold-form-input"
+                    class="formbold-form-input1"
                 >
                     <option value="0">Seleccione una opción...</option>
                 </select>
@@ -275,7 +275,7 @@
                 <select 
                     name="coopVerano"
                     id="coopVerano"
-                    class="formbold-form-input"
+                    class="formbold-form-input1"
                 >
                     <option value="0">Seleccione una opción...</option>
                 </select>
@@ -290,7 +290,7 @@
                 <select 
                     name="inveprimerSemestre"
                     id="inveprimerSemestre"
-                    class="formbold-form-input"
+                    class="formbold-form-input1"
                 >
                     <option value="0">Seleccione una opción...</option>
                 </select>
@@ -301,7 +301,7 @@
                 <select 
                     name="inveSegundoSemestre"
                     id="inveSegundoSemestre"
-                    class="formbold-form-input"
+                    class="formbold-form-input1"
                 >
                     <option value="0">Seleccione una opción...</option>
                 </select>
@@ -311,7 +311,7 @@
                 <select 
                     name="inveVerano"
                     id="inveVerano"
-                    class="formbold-form-input"
+                    class="formbold-form-input1"
                 >
                     <option value="0">Seleccione una opción...</option>
                 </select>
@@ -327,7 +327,7 @@
                 <select 
                     name="interPrimerSemestre"
                     id="interPrimerSemestre"
-                    class="formbold-form-input"
+                    class="formbold-form-input1"
                 >
                 <option value="0">Seleccione una opción...</option>
                 </select>
@@ -338,7 +338,7 @@
                 <select 
                     name="interSegundoSemestre"
                     id="interSegundoSemestre"
-                    class="formbold-form-input"
+                    class="formbold-form-input1"
                 >
                 <option value="0">Seleccione una opción...</option>
                 </select>
@@ -348,7 +348,7 @@
                 <select 
                     name="interVerano"
                     id="interVerano"
-                    class="formbold-form-input"
+                    class="formbold-form-input1"
                 >
                 <option value="0">Seleccione una opción...</option>
                 </select>
@@ -364,7 +364,7 @@
                 <select 
                     name="nocturnos"
                     id="nocturnos"
-                    class="formbold-form-input"
+                    class="formbold-form-input1"
                 >
                 <option value="0">Seleccione una opción...</option>
                 </select>
@@ -375,7 +375,7 @@
                 <select 
                     name="sabatino"
                     id="sabatino"
-                    class="formbold-form-input"
+                    class="formbold-form-input1"
                 >
                     <option value="0">Seleccione una opción...</option>
                 </select>
@@ -385,7 +385,7 @@
                 <select 
                     name="trimestral"
                     id="trimestral"
-                    class="formbold-form-input"
+                    class="formbold-form-input1"
                 >
                     <option value="0">Seleccione una opción...</option>
                 </select>

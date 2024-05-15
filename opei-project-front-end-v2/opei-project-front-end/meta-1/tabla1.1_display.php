@@ -144,7 +144,7 @@ $year = date("Y");
                 </table>
             </form>
             <div class="formbold-main-wrapperDept" >
-                <a class="underline-button"  href="../meta-1/tabla1.1.php" style="">Volver</a>
+                <a class="underline-button"  href="../meta-1/tabla1.1.php">Volver</a>
             </div>
         </div>
     </div>

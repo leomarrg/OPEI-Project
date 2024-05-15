@@ -338,7 +338,6 @@ html, body {
     min-height: 580px;
     max-height: 900px;
     margin-top: 10px;
-    overflow-x: auto; /* Enable horizontal scrolling if content exceeds container */
 }
 
   .formbold-main-wrapperDept {
@@ -365,7 +364,7 @@ html, body {
     min-height: 580px;
     max-height: 900px;
     margin-top: 10px;
-    overflow-x: auto; /* Enable horizontal scrolling if content exceeds container */
+
 }
 
   .formbold-form-wrapper {
@@ -451,11 +450,35 @@ html, body {
 
   }
 
+  .formbold-form-input1 {
+    width: 100%;
+    padding-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #DDE3EC;
+    background: #FFFFFF;
+    font-weight: 500;
+    font-size: 14px;
+    color: #000;
+    outline: none;
+    margin-left: auto;
+    padding: 5px;
+    height: 50px;
+    
+
+  }
+
 
   .formbold-form-input::placeholder {
     color: #000;
   }
   .formbold-form-input:focus {
+    border-color: #FFC107;
+  }
+
+  .formbold-form-input1::placeholder {
+    color: #000;
+  }
+  .formbold-form-input1:focus {
     border-color: #FFC107;
   }
   .formbold-form-label {
@@ -762,4 +785,12 @@ font-size:16px;
 
 th[colspan='3'] div {
   display: block;
+}
+
+.resizable-textarea {
+  resize: both;
+  overflow: none;
+  width: 100%;
+  min-height: 50px; /* Optional: Adjust the minimum height as needed */
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
 }

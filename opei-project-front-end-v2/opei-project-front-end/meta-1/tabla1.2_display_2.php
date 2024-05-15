@@ -77,8 +77,10 @@ $year = date("Y");
             editRow12();
         });
     </script>
+    
 </head>
 <body>
+
      <header>
         <h1 class="uprareports">UPRA Reports</h1>
         <h2 class="bienvenidosusuario"><?php echo $department['DepartmentName'] ?></h2>
@@ -95,9 +97,9 @@ $year = date("Y");
         <thead>
         <tr>
             <th scope='col'>#</th>
-            <th scope='col' colspan='3'>Comunidades de Aprendizaje</th>
-            <th scope='col' colspan='3'>Educación a Distancia</th>
-            <th scope='col' colspan='3'>Programas COOP</th>
+            <th scope='col' colspan='3'>Investigación</th>
+            <th scope='col' colspan='3'>Internados / Prácticas</th>
+            <th scope='col' colspan='3'>Cursos no Tradicionales</th>
             <th scope='col'>Editar</th>
             <th scope='col'>Borrar</th>
         </tr>
@@ -109,15 +111,15 @@ $year = date("Y");
             <th scope='col'>Primer Semestre</th>
             <th scope='col'>Segundo Semestre</th>
             <th scope='col'>Verano</th>
-            <th scope='col'>Primer Semestre</th>
-            <th scope='col'>Segundo Semestre</th>
-            <th scope='col'>Verano</th>
+            <th scope='col'>Nocturnos</th>
+            <th scope='col'>Sabatino</th>
+            <th scope='col'>Trimestral</th>
             <th scope='col'></th>
             <th scope='col'></th>
         </tr>
         </thead>
-            <tbody>
-            <?php
+        <tbody>
+        <?php
                 // SQL query to retrieve data from table12 based on department and year
                 $sql = "SELECT * FROM table12 WHERE DepartmentID = ? AND year = ?";
 
@@ -132,31 +134,30 @@ $year = date("Y");
 
                 // Get the result
                 $result =$stmt->get_result();
-
                 $counter = 1; // Initialize counter
                 // Output data of each row
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     echo "<td>" . $counter . "</td>"; // Display counter
                     echo "<td style='display: none;'>" . $row['table12ID'] . "</td>";
-                    echo "<td class='breve-description'>" . $row['field1'] . "</td>";
-                    echo "<td class='breve-description'>" . $row['field2'] . "</td>";
-                    echo "<td class='breve-description'>" . $row['field3'] . "</td>";
-                    echo "<td class='breve-description'>" . $row['field4'] . "</td>";
-                    echo "<td class='breve-description'>" . $row['field5'] . "</td>";
-                    echo "<td class='breve-description'>" . $row['field6'] . "</td>";
-                    echo "<td class='breve-description'>" . $row['field7'] . "</td>";
-                    echo "<td class='breve-description'>" . $row['field8'] . "</td>";
-                    echo "<td class='breve-description'>" . $row['field9'] . "</td>";
-                    echo "<td class='breve-description' style='display: none;'>" . $row['field10'] . "</td>";
-                    echo "<td class='breve-description' style='display: none;'>" . $row['field11'] . "</td>";
-                    echo "<td class='breve-description' style='display: none;'>" . $row['field12'] . "</td>";
-                    echo "<td class='breve-description' style='display: none;'>" . $row['field13'] . "</td>";
-                    echo "<td class='breve-description' style='display: none;'>" . $row['field14'] . "</td>";
-                    echo "<td class='breve-description' style='display: none;'>" . $row['field15'] . "</td>";
-                    echo "<td class='breve-description' style='display: none;'>" . $row['field16'] . "</td>";
-                    echo "<td class='breve-description' style='display: none;'>" . $row['field17'] . "</td>";
-                    echo "<td class='breve-description' style='display: none;'>" . $row['field18'] . "</td>";
+                    echo "<td class='breve-description' style='display: none;'>" . $row['field1'] . "</td>";
+                    echo "<td class='breve-description' style='display: none;'>" . $row['field2'] . "</td>";
+                    echo "<td class='breve-description' style='display: none;'>" . $row['field3'] . "</td>";
+                    echo "<td class='breve-description' style='display: none;'>" . $row['field4'] . "</td>";
+                    echo "<td class='breve-description' style='display: none;'>" . $row['field5'] . "</td>";
+                    echo "<td class='breve-description' style='display: none;'>" . $row['field6'] . "</td>";
+                    echo "<td class='breve-description' style='display: none;'>" . $row['field7'] . "</td>";
+                    echo "<td class='breve-description' style='display: none;'>" . $row['field8'] . "</td>";
+                    echo "<td class='breve-description' style='display: none;'>" . $row['field9'] . "</td>";
+                    echo "<td class='breve-description'>" . $row['field10'] . "</td>";
+                    echo "<td class='breve-description'>" . $row['field11'] . "</td>";
+                    echo "<td class='breve-description'>" . $row['field12'] . "</td>";
+                    echo "<td class='breve-description'>" . $row['field13'] . "</td>";
+                    echo "<td class='breve-description'>" . $row['field14'] . "</td>";
+                    echo "<td class='breve-description'>" . $row['field15'] . "</td>";
+                    echo "<td class='breve-description'>" . $row['field16'] . "</td>";
+                    echo "<td class='breve-description'>" . $row['field17'] . "</td>";
+                    echo "<td class='breve-description'>" . $row['field18'] . "</td>";
                     echo "<td><a href='javascript:void(0);' class='edit-btn'>Editar</a></td>";
                     echo "<td><a class='delete-btn' href='../meta-1/tabla1.2_delete.php?id=" . $row['table12ID'] . "'>Borrar</a></td>";
                     echo "</tr>";
@@ -166,13 +167,12 @@ $year = date("Y");
                 // Close connection
                 $conn->close();
             ?>
-            </tbody>
+        </tbody>
 
-        </table>
+    </table>
         </div>
             <div class="formbold-main-wrapperDept">
-                <a class="underline-button" href = "tabla1.2.php">Volver</a>
-                <a class="underline-button" href = "tabla1.2_display_2.php">Proxima pagina</a>
+                <a class="underline-button" href = "tabla1.2_display.php">Volver</a>
             </div>
         </form>
     </div>

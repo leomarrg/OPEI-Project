@@ -71,18 +71,18 @@ $year = date("Y");
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery.validate.min.js"></script>
     <script src="../js/main.js"></script>
-
-    <title>UPRA Reports Tabla 1-5 Editar</title>
+    <title>UPRA Reports Tabla 1-5 Pt.2 Editar</title>
     <script>
     $(document).ready(function() {
         editRow15();
     });
     </script>
+
 </head>
 <body>
         <header>
             <h1 class="uprareports">UPRA Reports</h1>
-            <h2 class="bienvenidosusuario"><?php echo $department['DepartmentName'] ?></h2>
+            <h2 class="bienvenidosusuario"><?php echo $department['DepartmentName'] ?></h2>            
         </header>
 
 <!-- Main form -->
@@ -95,12 +95,11 @@ $year = date("Y");
             <thead>
               <tr>
                 <th scope="col" style='display: none;'>#</th>
-                <th scope="col">1.1 la oferta académica mediante el desarrollo de programas académicos y cursos
-                    pertinentes y competitivos en diversas modalidades que respondan a las necesidades del mercado laboral local e internacional</th>
-                <th scope="col">1.2 Fortalecer las comunidades de aprendizaje como apoyo a las
-                    estrategias de retención, persistencia y graduación</th>
-                <th scope="col">1.3 Fomentar el desarrollo de propuestas académicas dirigidas a satisfacer las necesidades profesionales de la  mediante iniciativas coordinadas por la División de Educación Continua y Estudios Profesionales
-                    (DECEP) y programas similares en los departamentos académicos</th>
+                <th scope="col">1.4 Evaluar la política de educación general
+                    para atemperarla al Perfil Estudiantil Puertorriqueño del Siglo XXI</th>
+                <th scope="col">1.5 Apoyar a los departamentos académicos en los trabajos dirigidos a la acreditación o reacreditación de sus programas</th>
+                <th scope="col">1.6 Promover una cultura académica orientada a evaluar los procesos de enseñanza
+                    aprendizaje para mejorar la efectividad educativa</th>
                 <th scope="col">Editar</th>
                 <th scope="col">Borrar</th>
               </tr>
@@ -127,12 +126,12 @@ $year = date("Y");
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     echo "<td style='display: none;'>" . $row['table15ID'] . "</td>";
-                    echo "<td class='breve-description'>" . $row['field1'] . "</td>";
-                    echo "<td class='breve-description'>" . $row['field2'] . "</td>";
-                    echo "<td class='breve-description'>" . $row['field3'] . "</td>";
-                    echo "<td class='breve-description' style='display: none;'>" . $row['field4'] . "</td>";
-                    echo "<td class='breve-description' style='display: none;'>" . $row['field5'] . "</td>";
-                    echo "<td class='breve-description' style='display: none;'>" . $row['field6'] . "</td>";
+                    echo "<td class='breve-description' style='display: none;'>" . $row['field1'] . "</td>";
+                    echo "<td class='breve-description' style='display: none;'>" . $row['field2'] . "</td>";
+                    echo "<td class='breve-description' style='display: none;'>" . $row['field3'] . "</td>";
+                    echo "<td class='breve-description'>" . $row['field4'] . "</td>";
+                    echo "<td class='breve-description'>" . $row['field5'] . "</td>";
+                    echo "<td class='breve-description'>" . $row['field6'] . "</td>";
                     echo "<td><a href='javascript:void(0);' class='edit-btn'>Editar</a></td>";
                     echo "<td><a class='delete-btn'  href='../meta-1/tabla1.5_delete.php?id=" . $row['table15ID'] . "'>Borrar</a></td>";
                     echo "</tr>";
@@ -144,8 +143,7 @@ $year = date("Y");
             </tbody>
         </table>
         <div class="formbold-main-wrapperDept">
-    <a class="underline-button" href="../meta-1/tabla1.5.php">Volver</a>
-    <a class="underline-button" href = "tabla1.5_display_2.php">Proxima pagina</a>
+    <a class="underline-button" href="../meta-1/tabla1.5_display.php">Volver</a>
 </div>
     </div>
 </div> 

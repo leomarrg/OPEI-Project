@@ -63,7 +63,7 @@ $stmt_table21a->execute();
 $result_table21a = $stmt_table21a->get_result();
 
 // Fetch data from Table 2.1B 
-$sql_table21b = "SELECT field1, field2, field3, field4, field5, field6, field7 FROM table21b WHERE DepartmentID = (SELECT DepartmentID FROM departamento WHERE DepartmentName = ?) AND year = ?";
+$sql_table21b = "SELECT field1, field2, field3, field4, field5, field6 FROM table21b WHERE DepartmentID = (SELECT DepartmentID FROM departamento WHERE DepartmentName = ?) AND year = ?";
 $stmt_table21b = $conn->prepare($sql_table21b);
 $stmt_table21b->bind_param("si", $department, $year);
 $stmt_table21b->execute();
@@ -105,7 +105,7 @@ $stmt_table31->execute();
 $result_table31 = $stmt_table31->get_result();
 
 // Fetch data from Table 3.2A
-$sql_table32a = "SELECT field1, field2, field3, field4 FROM table32a WHERE DepartmentID = (SELECT DepartmentID FROM departamento WHERE DepartmentName = ?) AND year = ?";
+$sql_table32a = "SELECT field1, field2, field3 FROM table32a WHERE DepartmentID = (SELECT DepartmentID FROM departamento WHERE DepartmentName = ?) AND year = ?";
 $stmt_table32a = $conn->prepare($sql_table32a);
 $stmt_table32a->bind_param("si", $department, $year);
 $stmt_table32a->execute();

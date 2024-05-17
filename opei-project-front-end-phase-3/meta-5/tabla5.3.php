@@ -222,11 +222,11 @@
                 class="formbold-form-input"
                 >
                 <option value="0">Seleccione una opción...</option>
-                <option value="Conferencia, foro o panel">Conferencia, foro o panel</option>
-                <option value="Cursos con o sin crédito">Cursos con o sin crédito</option>
-                <option value="Simposio">Simposio</option>
-                <option value="Taller">Taller</option>
-                <option value="Otro">Otro</option>
+                <option value="Creada por estudiantes">Creada por estudiantes</option>
+                <option value="Creada por exalumnos">Creada por exalumnos</option>
+                <option value="Encubadora (cuenta o contó con la ayuda de un profesor mentor)">Encubadora (cuenta o contó con la ayuda de un profesor mentor)</option>
+                <option value="Aceleradora (existe pero esta buscando un coaching)">Aceleradora (existe pero esta buscando un coaching)</option>
+                <option value="Iniciativa de emprendimiento (no genera ningún ingreso)">Iniciativa de emprendimiento (no genera ningún ingreso)</option>
                 </select>
                 <label for="empreType" class="formbold-form-label">Tipo de Empresa</label>
             </div>

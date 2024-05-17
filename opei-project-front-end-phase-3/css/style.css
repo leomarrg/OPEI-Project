@@ -265,6 +265,7 @@ header {
     z-index: 999;
     font-weight: bold;
     border-top: solid 2px black;
+    margin-top: 100px;
 }
 .footer-boxtabla1-2 p{
     font-size: 20px;
@@ -323,7 +324,7 @@ html, body {
     justify-content: center;
     padding: 2px;
     max-height: 900px;
-    margin-bottom: 200px;
+    margin-bottom: 400px;
 
   }
 
@@ -332,6 +333,7 @@ html, body {
     font-weight: 500;
     font-size: 14px;
     line-height: 24px;
+
     
     
     

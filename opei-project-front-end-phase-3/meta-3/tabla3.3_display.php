@@ -83,8 +83,6 @@ $year = date("Y");
         <header>
             <h1 class="uprareports">UPRA Annual Report</h1>
             <h2 class="bienvenidosusuario"><?php echo $department['DepartmentName'] ?></h2>
-            <h2 class="tablaheader">Tabla 3.3: Otros logros alcanzados por Objetivo y Actividad en la Meta 3</h2>
-            <h2 class="tablaheader"> Editar Informaci&oacute;n en la Tabla 3.3</h2>
         </header>
 
        <!-- Dropdown list -->

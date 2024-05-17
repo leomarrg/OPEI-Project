@@ -46,23 +46,24 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../fonts/icomoon/style.css">
-    <link rel="stylesheet" href="../css/owl.carousel.min.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <!-- Style -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/style-sidemenu.css">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="../js/jquery-3.3.1.min.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/jquery.validate.min.js"></script>
-    <script src="../js/main.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../fonts/icomoon/style.css">
+        <link rel="stylesheet" href="../css/owl.carousel.min.css">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <!-- Style -->
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/style-sidemenu.css">
+        <script src="../js/jquery-3.3.1.min.js"></script>
+        <script src="../js/popper.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/jquery.validate.min.js"></script>
+        <script src="../js/main.js"></script>
+        <!-- Add jQuery UI library -->
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script>
         function logout() {
             // Redirect to logout script
             window.location.href = "../logout.php";
@@ -71,7 +72,7 @@
     
     <title>UPRA Reports Tabla 3-1</title>
 </head>
-<body>
+<body style="height: 100%;">
         <header>
             <h1 class="uprareports">UPRA Annual Report</h1>
             <h2 class="bienvenidosusuario"><?php echo $department['DepartmentName'] ?></h2>
@@ -246,9 +247,9 @@
         <a class="underline-button" href="tabla3.1_display.php">Editar</a>
       </form>
     </div>
-  </div>
+</div>
     <!-- Add your footer box below -->
-    <div class="footer-box">
+    <div class="footer-boxtabla1-2"  style="position: relative; margin-top: -350px; padding:1px">
         <!-- Content for the footer box goes here -->
         <p>&copy; 2024 UPRA Reports. All rights reserved.</p>
     </div>

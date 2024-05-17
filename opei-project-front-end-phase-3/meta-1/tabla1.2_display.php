@@ -70,7 +70,7 @@ $year = date("Y");
     <!-- Include jQuery library -->
     <script src="../js/jquery-3.3.1.min.js"></script>
 
-    <title>UPRA Reports Tabla 1-2 Editar</title>
+    <title>UPRA Reports Tabla 1-2 Pt. 1 Editar</title>
 
     <script>
         $(document).ready(function() {

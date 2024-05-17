@@ -164,15 +164,6 @@ $(document).ready(function(){
             }
         });
 
-        // Get the value of the dropdown list
-        var dropdownValue = $(this).find('select[name=numProgAcredit]').val();
-    
-        // Check if the dropdown list value is "0"
-        if (dropdownValue === "0") {
-            // Prompt the user to fill in all required fields
-            alert('Please fill in all the required fields.');
-            return; // Prevent form submission
-        }
     
         // Check if any of the dropdown lists have the default value "0"
         var dropdownEmpty = false;
@@ -210,7 +201,7 @@ $(document).ready(function(){
                     // Clear form fields
                     $form.find('input[type=text], input[type=number], textarea').val('');
                     // Reset dropdown list to "Seleccione..."
-                    $form.find('select[name=numProgAcredit]').val('0');
+                    $('#myForm1_2 select').val('0');
                     // Show success message
                     alert('Form submitted successfully!');
                 } else {
@@ -1549,42 +1540,51 @@ function updateTable12Row(table12ID) {
     var field17 = document.getElementById('field17_' + table12ID).value;
     var field18 = document.getElementById('field18_' + table12ID).value;
 
+    var dataToSend = {
+        table12ID: table12ID,
+        field1: field1,
+        field2: field2,
+        field3: field3,
+        field4: field4,
+        field5: field5,
+        field6: field6,
+        field7: field7,
+        field8: field8,
+        field9: field9,
+        field10: field10,
+        field11: field11,
+        field12: field12,
+        field13: field13,
+        field14: field14,
+        field15: field15,
+        field16: field16,
+        field17: field17,
+        field18: field18
+    };
+
+    console.log("Data to be sent to server:", dataToSend); // Log data to be sent
+
     $.ajax({
         type: 'POST',
         url: '../meta-1/tabla1.2_update.php',
-        data: {
-            table12ID: table12ID,
-            field1: field1,
-            field2: field2,
-            field3: field3,
-            field4: field4,
-            field5: field5,
-            field6: field6,
-            field7: field7,
-            field8: field8,
-            field9: field9,
-            field10: field10,
-            field11: field11,
-            field12: field12,
-            field13: field13,
-            field14: field14,
-            field15: field15,
-            field16: field16,
-            field17: field17,
-            field18: field18
-        },
+        data: dataToSend,
         success: function(response) {
+            console.log("Server response:", response); // Log server response
             if (response == 'success') {
-                console.log('Update successful');
                 alert('Update successful!');
                 window.location.href = '../meta-1/tabla1.2_display.php';
             } else {
                 console.log('Error updating record');
-                alert('Error updating record');
+                alert('Error updating record: ' + response);
             }
+        },
+        error: function(xhr, status, error) {
+            console.error("Error details:", status, error); // Log error details
+            alert('Error updating row');
         }
     });
 }
+
 
 
 function updateTable13Row(table13ID) {
@@ -2568,89 +2568,6 @@ function editRow11a() {
     });
 }
 
-function editRow12() {
-    $(document).on('click', '.edit-btn', function(e) {
-        e.preventDefault();
-
-        $('.edit-mode').each(function() {
-            $(this).html($(this).data('original-html'));
-            $(this).removeClass('edit-mode');
-        });
-
-        var row = $(this).closest('tr');
-        var originalHtml = row.html();
-
-        row.addClass('edit-mode');
-        row.data('original-html', originalHtml);
-
-        row.find('td:not(:last-child):not(:first-child):not(:nth-last-child(2))').each(function() {
-            var currentValue = $(this).text().trim();
-            var inputField;
-            if ($(this).index() === 1) { // Check if it's field2 column
-                inputField = "<select class='formbold-form-input1'>";
-                for (i = 1; i <= 60; i++) {
-                    inputField += "<option value='" + i + "'" + (currentValue === i.toString() ? " selected" : "") + ">" + i + "</option>";
-                }
-                inputField += "</select>";
-            } else if ($(this).index() >= 2 && $(this).index() <= 18) { 
-                inputField = "<select class='formbold-form-input1'>";
-                for (i = 1; i <= 60; i++) {
-                    inputField += "<option value='" + i + "'" + (currentValue === i.toString() ? " selected" : "") + ">" + i + "</option>";
-                }
-                inputField += "</select>";
-            }
-            $(this).html(inputField);
-        });
-
-        row.find('.edit-btn').text('Actualizar');
-        row.find('.edit-btn').removeClass('edit-btn').addClass('update-btn');
-    });
-
-    $(document).on('click', '.update-btn', function(e) {
-        e.preventDefault();
-
-        var row = $(this).closest('tr');
-        var rowData = {
-            table12ID: row.find('td:eq(0)').text().trim(),
-            field1: row.find('select:eq(0)').val(),
-            field2: row.find('select:eq(1)').val(),
-            field3: row.find('select:eq(2)').val(), // Get the value from the first select element
-            field4: row.find('select:eq(3)').val(), // Get the value from the second select element
-            field5: row.find('select:eq(4)').val(),
-            field6: row.find('select:eq(5)').val(),
-            field7: row.find('select:eq(6)').val(), // Get the value from the first select element
-            field8: row.find('select:eq(7)').val(), // Get the value from the second select element
-            field9: row.find('select:eq(8)').val(),
-            field10: row.find('select:eq(9)').val(),
-            field11: row.find('select:eq(10)').val(), // Get the value from the first select element
-            field12: row.find('select:eq(11)').val(), // Get the value from the second select element
-            field13: row.find('select:eq(12)').val(),
-            field14: row.find('select:eq(13)').val(),
-            field15: row.find('select:eq(14)').val(), // Get the value from the first select element
-            field16: row.find('select:eq(15)').val(), // Get the value from the second select element
-            field17: row.find('select:eq(16)').val(),
-            field18: row.find('select:eq(17)').val()
-        };
-
-        $.ajax({
-            url: '../meta-1/tabla1.2_update.php',
-            method: 'POST',
-            data: rowData,
-            success: function(response) {
-                if (response === 'success') {
-                    alert('Update successful');
-                    location.reload();
-                } else {
-                    alert('Update failed');
-                }
-            },
-            error: function() {
-                alert('Error updating row');
-            }
-        });
-    });
-}
-
 
 // edit table 11b
 function editRow11b() {
@@ -2703,6 +2620,71 @@ function editRow11b() {
                 }
             },
             error: function() {
+                alert('Error updating row');
+            }
+        });
+    });
+}
+
+function editRow12() {
+    $(document).on('click', '.edit-btn', function(e) {
+        e.preventDefault();
+
+        // Restore previous edit mode rows to original HTML
+        $('.edit-mode').each(function() {
+            $(this).html($(this).data('original-html'));
+            $(this).removeClass('edit-mode');
+        });
+
+        var row = $(this).closest('tr');
+        var originalHtml = row.html();
+
+        row.addClass('edit-mode');
+        row.data('original-html', originalHtml);
+
+        row.find('td:not(:last-child):not(:first-child):not(:nth-last-child(2))').each(function(index) {
+            var currentValue = $(this).text().trim();
+            var inputField = "<select class='formbold-form-input1'>";
+            for (var i = 1; i <= 60; i++) {
+                inputField += "<option value='" + i + "'" + (currentValue == i ? " selected" : "") + ">" + i + "</option>";
+            }
+            inputField += "</select>";
+            $(this).html(inputField);
+        });
+
+        row.find('.edit-btn').text('Actualizar');
+        row.find('.edit-btn').removeClass('edit-btn').addClass('update-btn');
+    });
+
+    $(document).on('click', '.update-btn', function(e) {
+        e.preventDefault();
+
+        var row = $(this).closest('tr');
+        var rowData = {
+            table12ID: row.find('td:eq(0)').text().trim() // Adjusted to target the correct cell for table12ID
+        };
+
+        for (var i = 1; i <= 18; i++) {
+            rowData['field' + i] = row.find('select:eq(' + (i - 1) + ')').val();
+        }
+
+        console.log("Data to be sent to server:", rowData); // Log data to be sent
+
+        $.ajax({
+            url: '../meta-1/tabla1.2_update.php',
+            method: 'POST',
+            data: rowData,
+            success: function(response) {
+                console.log("Server response:", response); // Log server response
+                if (response === 'success') {
+                    alert('Update successful');
+                    location.reload();
+                } else {
+                    alert('Update failed');
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error("Error details:", status, error); // Log error details
                 alert('Error updating row');
             }
         });
@@ -3858,12 +3840,12 @@ function editRow51() {
         row.find('td:not(:last-child):not(:first-child):not(:nth-last-child(2))').each(function() {
             var currentValue = $(this).text().trim();
             var inputField;
-            if ($(this).index() === 2) { // Check if it's the field2 column
-                // Create a select element with options
+            if ($(this).index() === 2) { // Check if it's field2 column
                 inputField = "<select>";
-                inputField += "<option value='Option 1'>Option 1</option>";
-                inputField += "<option value='Option 2'>Option 2</option>";
-                inputField += "<option value='Option 3'>Option 3</option>";
+                var options = ['Conferencia, foro o panel', 'Cursos con o sin crédito', 'Simposio', 'Taller', 'Otro'];
+                options.forEach(function(option) {
+                    inputField += "<option value='" + option + "'" + (currentValue === option ? " selected" : "") + ">" + option + "</option>";
+                });
                 inputField += "</select>";
             } else if ($(this).index() === 3) { // Check if it's the field3 column
                 // Create an input element with the date picker
@@ -3937,12 +3919,12 @@ function editRow52() {
         row.find('td:not(:last-child):not(:first-child):not(:nth-last-child(2))').each(function() {
             var currentValue = $(this).text().trim();
             var inputField;
-            if ($(this).index() === 1) { // Check if it's the field2 column
-                // Create a select element with options
+            if ($(this).index() === 1) { // Check if it's field2 column
                 inputField = "<select>";
-                inputField += "<option value='Option 1'>Option 1</option>";
-                inputField += "<option value='Option 2'>Option 2</option>";
-                inputField += "<option value='Option 3'>Option 3</option>";
+                var options = ['Certificados', 'Congresos', 'Donativos,', 'Fundraising', 'Manuales', 'Mega-secciones', 'Programados', 'Ventas', 'Webinars', 'Otro'];
+                options.forEach(function(option) {
+                    inputField += "<option value='" + option + "'" + (currentValue === option ? " selected" : "") + ">" + option + "</option>";
+                });
                 inputField += "</select>";
             } else {
                 inputField = "<input type='text' value='" + currentValue + "'>";
@@ -4010,12 +3992,12 @@ function editRow53() {
         row.find('td:not(:last-child):not(:first-child):not(:nth-last-child(2))').each(function() {
             var currentValue = $(this).text().trim();
             var inputField;
-            if ($(this).index() === 6) { // Check if it's the field2 column
-                // Create a select element with options
+            if ($(this).index() === 6) { // Check if it's field2 column
                 inputField = "<select>";
-                inputField += "<option value='Option 1'>Option 1</option>";
-                inputField += "<option value='Option 2'>Option 2</option>";
-                inputField += "<option value='Option 3'>Option 3</option>";
+                var options = ['Creada por estudiantes', 'Creada por exalumnos', 'Encubadora (cuenta o contó con la ayuda de un profesor mentor),', 'Aceleradora (existe pero esta buscando un coaching)', 'Iniciativa de emprendimiento (no genera ningún ingreso)'];
+                options.forEach(function(option) {
+                    inputField += "<option value='" + option + "'" + (currentValue === option ? " selected" : "") + ">" + option + "</option>";
+                });
                 inputField += "</select>";
             } else {
                 inputField = "<input type='text' value='" + currentValue + "'>";

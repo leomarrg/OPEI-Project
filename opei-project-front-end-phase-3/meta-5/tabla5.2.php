@@ -169,10 +169,15 @@
                 class="formbold-form-input"
                 >
                 <option value="0">Seleccione una opción...</option>
-                <option value="Conferencia, foro o panel">Conferencia, foro o panel</option>
-                <option value="Cursos con o sin crédito">Cursos con o sin crédito</option>
-                <option value="Simposio">Simposio</option>
-                <option value="Taller">Taller</option>
+                <option value="Certificados">Certificados</option>
+                <option value="Congresos">Congresos</option>
+                <option value="Donativos">Donativos</option>
+                <option value="Fundraising">Fundraising</option>
+                <option value="Manuales">Manuales</option>
+                <option value="Mega-secciones">Mega-secciones</option>
+                <option value="Programados">Programados</option>
+                <option value="Ventas">Ventas</option>
+                <option value="Webinars">Webinars</option>
                 <option value="Otro">Otro</option>
                 </select>
                 <label for="iniciativas" class="formbold-form-label">Iniciativas</label>

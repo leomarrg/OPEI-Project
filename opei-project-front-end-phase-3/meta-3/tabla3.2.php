@@ -9,7 +9,6 @@
         exit; // Ensure that script execution stops after redirection
     }
 
-
     // Include database connection using MySQLi
     include_once "db_info.php";
 
@@ -219,7 +218,6 @@
     </div>
     <br> <br>
   </div>
-  <br>
     <!-- Add your footer box below -->
     <div style="margin-top: -13px" class="footer-box">
         <!-- Content for the footer box goes here -->

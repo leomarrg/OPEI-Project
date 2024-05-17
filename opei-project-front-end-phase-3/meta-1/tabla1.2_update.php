@@ -26,12 +26,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $fieldsToUpdate[] = "$field = ?";
             $params[] = $currentValues[$field];
         }
-        $types .= 'i';
+        $types .= 's';
     }
 
     // Add the table12ID to the params
     $params[] = $table12ID;
-    $types .= 'i';
+    $types .= 's';
 
     // Join the fields to update with commas
     $sql .= implode(", ", $fieldsToUpdate);

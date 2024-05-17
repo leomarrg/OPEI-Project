@@ -81,7 +81,6 @@
             <p class="fas fa-times" id="cancel">Cerrar  </p>
         </label>
         <div class="sidebar">
-            <header></header>
     
             <div class="dashdropdown-wrapper">
                 <div class="dashdropdown">
